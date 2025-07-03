@@ -25,21 +25,26 @@ from mlxtend.frequent_patterns import apriori, association_rules
 from pathlib import Path
 
 # ---------------- Data Loading ----------------
-@st.cache_data
-def load_data():
-    local = Path(__file__).parent / "data" / "health_drink_survey_1000_augmented.csv"
-    if local.exists():
-        path = str(local)
-    else:
-        st.sidebar.warning("❗️ Augmented data not found in 'data/'.")
-        upload = st.sidebar.file_uploader("Upload augmented CSV", type="csv", key="data_upload")
-        if upload:
-            path = upload
-        else:
-            st.sidebar.stop()
-    return pd.read_csv(path, parse_dates=["SurveyDate"])
 
-df = load_data()
+# ---------------- Data Loading ----------------
+def load_data(path_or_buf):
+    df = pd.read_csv(path_or_buf, parse_dates=["SurveyDate"])
+    return df
+
+# Sidebar: choose data source or upload
+local_path = Path(__file__).parent / "data" / "health_drink_survey_1000_augmented.csv"
+if local_path.exists():
+    data_source = str(local_path)
+else:
+    st.sidebar.warning("❗️Augmented data not found in 'data/'. Please upload CSV.")
+    uploaded_file = st.sidebar.file_uploader("Upload augmented CSV", type="csv", key="data_upload")
+    if uploaded_file:
+        data_source = uploaded_file
+    else:
+        st.sidebar.stop()
+
+df = load_data(data_source)
+
 
 # ---------------- App Config ----------------
 st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
