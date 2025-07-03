@@ -1,15 +1,19 @@
-# Health Drink Dashboard (Enhanced UI/UX)
+# Industry-Grade Health Drink Dashboard
 
-This Streamlit application features polished UI/UX with:
+This Streamlit application features:
 
-- Custom theme (health-inspired colors)
-- Intuitive sidebar with global filters
-- Tabbed interface with clear icons
-- Grid layouts for visualizations
-- Interactive controls per module
+- Custom theme with health-inspired palette
+- Interactive global filters and multi-selects
+- Advanced data visualization (Plotly)
+- Hyperparameter tuning for classification & regression
+- SHAP explainability for classification
+- Multiple clustering algorithms and PCA projection
+- Advanced association rule mining grouped by item types
+- Anomaly detection with Isolation Forest
+- Interactive layout with tabs and grid columns
 
 ## Setup
 
-1. Copy all files (`app.py`, `requirements.txt`, and `.streamlit/config.toml`) to your repo root.
+1. Copy `app.py`, `requirements.txt`, and `.streamlit/config.toml` into your repo root.
 2. Push to GitHub.
 3. On Streamlit Cloud, set App file path to `app.py` and redeploy.
