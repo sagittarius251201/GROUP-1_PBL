@@ -24,7 +24,7 @@ from mlxtend.frequent_patterns import apriori, association_rules
 
 # Page config
 st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
-st.title("🥤 Health Drink Survey Dashboard — Super Enhanced v3 (Fixed)")
+st.title("🥤 Health Drink Survey Dashboard — Super Enhanced v4 Fixed")
 
 # Sidebar
 st.sidebar.header("1. Data & Filters")
@@ -151,6 +151,7 @@ with tabs[1]:
               "Precision": precision_score(y_test,y_pred),
               "Recall": recall_score(y_test,y_pred),
               "F1": f1_score(y_test,y_pred)})
+    # ROC Curve
     fpr, tpr, _ = roc_curve(y_test, y_prob)
     roc_fig = go.Figure()
     roc_fig.add_trace(go.Scatter(x=fpr, y=tpr, mode='lines', name=algo))
@@ -182,9 +183,10 @@ with tabs[3]:
     min_conf = st.slider("Min Confidence",0.1,0.7,0.3)
     freq = apriori(df[cols], min_support=min_sup, use_colnames=True)
     rules = association_rules(freq, metric="confidence", min_threshold=min_conf)
-    st.subheader("Top 10 Rules by Lift")
-    fig = px.bar(rules.sort_values('lift', ascending=False).head(10), 
-                 x='lift', y=cols[0], orientation='h',
+    # Create rule text
+    rules['rule'] = rules['antecedents'].apply(lambda x: ','.join(list(x))) + " -> " + rules['consequents'].apply(lambda x: ','.join(list(x)))
+    top = rules.sort_values('lift', ascending=False).head(10)
+    fig = px.bar(top, x='lift', y='rule', orientation='h',
                  title='Top Rules by Lift', hover_data=['support','confidence'])
     st.plotly_chart(fig, use_container_width=True)
 
@@ -194,7 +196,7 @@ with tabs[4]:
     feats = ['Age','MonthlyDisposableIncome','SpendPerServing','HealthConsciousness']
     iso = IsolationForest(contamination=0.05, random_state=42).fit(data)
     df['Anomaly'] = iso.predict(data)
-    fig = px.scatter(df, x='MonthlyDisposableIncome', y='SpendPerServing', 
+    fig = px.scatter(df, x='MonthlyDisposableIncome', y='SpendPerServing',
                      color=df['Anomaly'].map({1:'Normal', -1:'Anomaly'}),
                      title='Anomaly Detection')
     st.plotly_chart(fig, use_container_width=True)
@@ -211,7 +213,7 @@ with tabs[5]:
     mse = mean_squared_error(yte, pred)
     rmse = np.sqrt(mse)
     st.subheader("Metrics")
-    st.write({"R2": r2_score(yte,pred), "RMSE": rmse})
+    st.write({"R2": r2_score(yte, pred), "RMSE": rmse})
     fig = px.scatter(x=yte, y=pred, labels={'x':'Actual','y':'Predicted'},
                      title='Actual vs Predicted Spend')
     st.plotly_chart(fig, use_container_width=True)
