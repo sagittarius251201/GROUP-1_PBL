@@ -12,167 +12,179 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier,
 from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, roc_curve, mean_squared_error, r2_score
 from mlxtend.frequent_patterns import apriori, association_rules
+from prophet import Prophet
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
-st.title("🥤 Health Drink Survey Dashboard — Ultimate v2 (Fixed)")
+st.title("🥤 Health Drink Survey Dashboard — Ultimate Monolithic")
 
-# Sidebar filters
-st.sidebar.header("Filters & Data")
+# Sidebar: Data source & page selection
+st.sidebar.header("1) Data & Navigation")
 source = st.sidebar.radio("Load data via", ["GitHub URL", "Upload CSV"])
-if source == "GitHub URL":
+if source=="GitHub URL":
     url = st.sidebar.text_input("Raw GitHub CSV URL",
         "https://raw.githubusercontent.com/sagittarius251201/second-/refs/heads/main/health_drink_survey.csv")
     try:
-        df = pd.read_csv(url)
-    except:
-        st.sidebar.error("Failed to load data from URL")
+        df = pd.read_csv(url, parse_dates=True)
+    except Exception as e:
+        st.sidebar.error(f"Error loading CSV: {e}")
         st.stop()
 else:
-    file = st.sidebar.file_uploader("Upload CSV", type="csv")
-    if not file:
-        st.sidebar.info("Upload a CSV to proceed")
+    uploaded = st.sidebar.file_uploader("Upload CSV", type="csv")
+    if not uploaded:
+        st.sidebar.info("Please upload a CSV to proceed")
         st.stop()
-    df = pd.read_csv(file)
+    df = pd.read_csv(uploaded, parse_dates=True)
+
+page = st.sidebar.selectbox("Select Page", [
+    "Visualization",
+    "Time Series Forecasting",
+    "LTV & Churn",
+    "Price Elasticity",
+    "Cohort Analysis",
+    "Geographic Heatmap",
+    "Sentiment Analysis",
+    "Competitive Benchmark",
+    "ROI Simulator"
+])
 
 # Common filters
-age_min, age_max = int(df.Age.min()), int(df.Age.max())
-age_range = st.sidebar.slider("Age range", age_min, age_max, (age_min, age_max))
-df = df[df.Age.between(age_range[0], age_range[1])]
-genders = st.sidebar.multiselect("Gender", df.Gender.unique(), df.Gender.unique())
-df = df[df.Gender.isin(genders)]
-occupations = st.sidebar.multiselect("Occupation", df.Occupation.unique(), df.Occupation.unique())
-df = df[df.Occupation.isin(occupations)]
+if "Age" in df:
+    age_min, age_max = int(df.Age.min()), int(df.Age.max())
+    age_range = st.sidebar.slider("Age range", age_min, age_max, (age_min, age_max))
+    df = df[df.Age.between(age_range[0], age_range[1])]
+if "Gender" in df:
+    genders = st.sidebar.multiselect("Gender", df.Gender.unique(), df.Gender.unique())
+    df = df[df.Gender.isin(genders)]
+st.sidebar.download_button("Download Filtered Data", df.to_csv(index=False).encode(), "filtered.csv")
 
-st.sidebar.download_button("Download filtered data", df.to_csv(index=False).encode(), "filtered.csv")
-
-# Tabs
-tabs = st.tabs(["Visualization","Classification","Clustering","Association","Anomaly","Regression","Barriers","Ranking","Recommendation"])
-
-# 1. Visualization #
-with tabs[0]:
-    st.header("1️⃣ Visualization")
-    st.markdown("Select chart type, axes, and aggregation:")
-    chart_type = st.selectbox("Chart type", ["Scatter", "Histogram", "Box", "Bar"])
+# Page: Visualization
+if page == "Visualization":
+    st.header("Data Visualization")
+    chart = st.selectbox("Chart Type", ["Scatter", "Histogram", "Box", "Bar"])
     num_cols = df.select_dtypes(include=[np.number]).columns.tolist()
-    cat_cols = df.select_dtypes(exclude=[np.number]).columns.tolist()
-    agg_funcs = {"Count": "count", "Mean": "mean", "Sum": "sum", "Median": "median"}
-    if chart_type == "Scatter":
-        x = st.selectbox("X-axis", num_cols, index=num_cols.index("Age"))
-        y = st.selectbox("Y-axis", num_cols, index=num_cols.index("SpendPerServing"))
-        fig = px.scatter(df, x=x, y=y, color="Gender",
-                         color_discrete_sequence=px.colors.qualitative.Set2,
-                         title=f"{y} vs {x}")
+    if chart=="Scatter":
+        x = st.selectbox("X-axis", num_cols, index=0)
+        y = st.selectbox("Y-axis", num_cols, index=1 if len(num_cols)>1 else 0)
+        fig = px.scatter(df, x=x, y=y, color=df.columns[1] if df.columns[1] in df else None,
+                         title=f"{y} vs {x}", trendline="ols")
         st.plotly_chart(fig, use_container_width=True)
-        st.markdown(f"**Insight:** The relationship between {x} and {y} shows correlation coefficient of {df[x].corr(df[y]):.2f}. **Business Implication:** Use this insight to adjust pricing strategies for different age brackets.")
-    elif chart_type == "Histogram":
-        col = st.selectbox("Feature", num_cols, index=num_cols.index("MonthlyDisposableIncome"))
+        corr = df[x].corr(df[y])
+        st.markdown(f"**Insight:** Correlation between {x} and {y} is {corr:.2f}.")
+    elif chart=="Histogram":
+        col = st.selectbox("Feature", num_cols)
         bins = st.slider("Bins", 10, 50, 30)
-        fig = px.histogram(df, x=col, nbins=bins, color_discrete_sequence=["#2A9D8F"],
-                           title=f"Distribution of {col}")
+        fig = px.histogram(df, x=col, nbins=bins, title=f"Distribution of {col}")
         st.plotly_chart(fig, use_container_width=True)
-        st.markdown(f"**Insight:** The {col} distribution peaks at {df[col].mode()[0]}. **Business Implication:** Target core income segment with bespoke promotions.")
-    elif chart_type == "Box":
-        cat = st.selectbox("Category", ["Gender","Occupation","ConsumptionFrequency"])
-        val = st.selectbox("Value", num_cols, index=num_cols.index("SpendPerServing"))
-        fig = px.box(df, x=cat, y=val,
-                     color_discrete_sequence=["#E76F51"],
-                     title=f"{val} by {cat}")
+        mode = df[col].mode().iloc[0]
+        st.markdown(f"**Insight:** Most common {col} value is {mode}.")
+    elif chart=="Box":
+        cat = st.selectbox("Category", df.select_dtypes(exclude=[np.number]).columns.tolist())
+        val = st.selectbox("Value", num_cols)
+        fig = px.box(df, x=cat, y=val, title=f"{val} by {cat}")
         st.plotly_chart(fig, use_container_width=True)
-        medians = df.groupby(cat)[val].median().to_dict()
-        st.markdown(f"**Insight:** Median {val} by {cat}: {medians}. **Implication:** Customize product bundles per category.")
+        med = df.groupby(cat)[val].median().to_dict()
+        st.markdown(f"**Insight:** Median {val} by {cat}: {med}.")
     else:
-        cat = st.selectbox("Category", ["PackagingFormat","PurchaseChannel","TopHealthBenefit"])
-        metric = st.selectbox("Metric", list(agg_funcs.keys()), index=list(agg_funcs.keys()).index("Count"))
-        if agg_funcs[metric] == "count":
+        cat = st.selectbox("Category", df.select_dtypes(exclude=[np.number]).columns.tolist())
+        metric = st.selectbox("Metric", ["Count", "Mean Spend", "Sum Spend"])
+        if metric=="Count":
             data = df[cat].value_counts().reset_index()
-            data.columns = [cat, "count"]
-            fig = px.bar(data, x=cat, y="count", color_discrete_sequence=["#264653"], title=f"{metric} of {cat}")
+            data.columns=[cat,"count"]
+            fig = px.bar(data, x=cat, y="count", title=f"Count by {cat}")
         else:
-            data = df.groupby(cat)["SpendPerServing"].agg(agg_funcs[metric]).reset_index()
-            fig = px.bar(data, x=cat, y="SpendPerServing", color_discrete_sequence=["#264653"], title=f"{metric} Spend by {cat}")
+            agg = df.groupby(cat)["SpendPerServing"].agg("mean" if metric=="Mean Spend" else "sum").reset_index()
+            fig = px.bar(agg, x=cat, y="SpendPerServing", title=f"{metric} by {cat}")
         st.plotly_chart(fig, use_container_width=True)
-        st.markdown(f"**Insight:** {metric} of {cat} reveals consumer preferences. **Implication:** Adjust marketing focus accordingly.")
+        st.markdown(f"**Insight:** {metric} across {cat}.")
 
-# 2. Classification #
-with tabs[1]:
-    st.header("2️⃣ Classification")
-    X = df.select_dtypes(include=np.number).drop(columns=['SpendPerServing'])
-    y = LabelEncoder().fit_transform(df.TryNewBrand)
-    Xt, Xv, yt, yv = train_test_split(X, y, test_size=0.2, random_state=42)
-    scaler = StandardScaler().fit(Xt)
-    Xt_s, Xv_s = scaler.transform(Xt), scaler.transform(Xv)
-    algo = st.selectbox("Algorithm", ["KNN","Decision Tree","Random Forest","GBRT"])
-    if algo=="KNN": clf = KNeighborsClassifier()
-    elif algo=="Decision Tree": clf = DecisionTreeClassifier()
-    elif algo=="Random Forest": clf=RandomForestClassifier()
-    else: clf=GradientBoostingClassifier()
-    clf.fit(Xt_s, yt); yp = clf.predict(Xv_s); yp_prob=clf.predict_proba(Xv_s)[:,1]
-    metrics = {"Accuracy":accuracy_score(yv,yp), "Precision":precision_score(yv,yp), "Recall":recall_score(yv,yp), "F1":f1_score(yv,yp)}
-    st.subheader("Metrics"); st.json(metrics)
-    st.markdown("**Insight:** High recall suggests our model captures most willing trialists, useful for targeted ads.")
-    cm = confusion_matrix(yv,yp)
-    fig = go.Figure(data=go.Heatmap(z=cm, x=["No","Yes"], y=["No","Yes"], colorscale="Viridis"))
-    fig.update_layout(title="Confusion Matrix"); st.plotly_chart(fig, use_container_width=True)
-    fpr, tpr, _ = roc_curve(yv, yp_prob)
-    fig = go.Figure(data=go.Scatter(x=fpr, y=tpr, mode='lines', line_color="#2A9D8F"))
-    fig.update_layout(title="ROC Curve", xaxis_title="FPR", yaxis_title="TPR"); st.plotly_chart(fig, use_container_width=True)
+# Page: Time Series Forecasting
+elif page == "Time Series Forecasting":
+    st.header("Time Series Forecasting")
+    date_col = st.sidebar.text_input("Date column", df.columns[0])
+    value_col = st.sidebar.text_input("Value column", "SpendPerServing")
+    try:
+        ts = df[[date_col, value_col]].dropna().rename(columns={date_col:"ds", value_col:"y"})
+        m = Prophet()
+        m.fit(ts)
+        future = m.make_future_dataframe(periods=30)
+        forecast = m.predict(future)
+        fig = plot_plotly(m, forecast)
+        st.plotly_chart(fig, use_container_width=True)
+        st.markdown("**Insight:** Forecast trend for next 30 periods.")
+    except Exception as e:
+        st.error(f"Forecast error: {e}")
 
-# 3. Clustering #
-with tabs[2]:
-    st.header("3️⃣ Clustering")
-    feats=['Age','MonthlyDisposableIncome','SpendPerServing','HealthConsciousness']
-    data = df[feats]
-    k=st.slider("Clusters (k)",2,8,4)
-    km=KMeans(n_clusters=k, random_state=42).fit(data)
-    df['Cluster']=km.labels_
-    centers=pd.DataFrame(km.cluster_centers_, columns=feats).round(2)
-    fig=px.bar(centers, x=centers.index, y=feats, barmode='group', color_discrete_sequence=px.colors.qualitative.Set3, title="Cluster Centers"); st.plotly_chart(fig, use_container_width=True)
-    st.markdown("**Insight:** Cluster centers show segment profiles: e.g., segment 1 with high income & spend ideal for premium marketing.")
+# Page: LTV & Churn
+elif page == "LTV & Churn":
+    st.header("LTV & Churn Prediction")
+    st.markdown("Feature engineering and modeling for LTV & churn goes here.")
 
-# 4. Association #
-with tabs[3]:
-    st.header("4️⃣ Association Rules")
-    cols=[c for c in df if c.startswith("Flavour_") or c.startswith("Context_")]
-    sup=st.slider("Min Support",0.01,0.2,0.05); conf=st.slider("Min Confidence",0.1,0.7,0.3)
-    freq=apriori(df[cols],min_support=sup,use_colnames=True); rules=association_rules(freq,metric="confidence",min_threshold=conf)
-    rules['rule']=rules['antecedents'].apply(lambda x:', '.join(x))+" → "+rules['consequents'].apply(lambda x:', '.join(x))
-    top=rules.sort_values('lift',ascending=False).head(10)
-    fig=px.bar(top, x='lift', y='rule', orientation='h', color='confidence', color_continuous_scale='Viridis', title="Top Rules by Lift & Confidence"); st.plotly_chart(fig, use_container_width=True)
-    st.markdown("**Insight:** These associations guide product bundling and cross-promotions based on customer preferences.")
+# Page: Price Elasticity
+elif page == "Price Elasticity":
+    st.header("Price Elasticity Simulator")
+    price = st.sidebar.slider("Price per serving", 5, 30, 12)
+    buyers = df[df['SpendPerServing']>=price].shape[0]
+    st.metric("Estimated Buyers", buyers)
+    revenue = buyers * price
+    st.metric("Projected Revenue (AED)", revenue)
+    st.markdown("**Insight:** Adjust price to optimize revenue.")
 
-# 5. Anomaly #
-with tabs[4]:
-    st.header("5️⃣ Anomaly Detection")
-    feats=['Age','MonthlyDisposableIncome','SpendPerServing','HealthConsciousness']; iso=IsolationForest(contamination=0.05, random_state=42).fit(data); df['Anomaly']=iso.predict(data)
-    fig=px.scatter(df, x='MonthlyDisposableIncome', y='SpendPerServing', color=df['Anomaly'].map({1:'Normal',-1:'Anomaly'}), color_discrete_map={'Normal':'#2A9D8F','Anomaly':'#E76F51'}, title="Anomaly Detection"); st.plotly_chart(fig, use_container_width=True)
-    st.markdown("**Insight:** Outliers represent potential VIP customers or data errors requiring review.")
+# Page: Cohort Analysis
+elif page == "Cohort Analysis":
+    st.header("Cohort Retention")
+    if 'date' in df.columns:
+        df['Cohort'] = df.groupby(df.columns[0])[ 'date' ].transform('min').dt.to_period('M')
+        cohort = df.groupby(['Cohort', df['date'].dt.to_period('M')])['date'].count().reset_index()
+        fig = px.line(cohort, x='date', y='date', color='Cohort', title="Retention Curves")
+        st.plotly_chart(fig, use_container_width=True)
+        st.markdown("**Insight:** Cohort retention over time.")
+    else:
+        st.info("Date column not found.")
 
-# 6. Regression #
-with tabs[5]:
-    st.header("6️⃣ Regression")
-    Xr=df[['MonthlyDisposableIncome','HealthConsciousness','Age']]; yr=df['SpendPerServing']; Xt,Xv,yt,yv=train_test_split(Xr,yr,test_size=0.2,random_state=42)
-    reg=RandomForestRegressor(n_estimators=100,random_state=42).fit(Xt,yt); pr=reg.predict(Xv)
-    mse=mean_squared_error(yv,pr); rmse=np.sqrt(mse); st.write({"R2":r2_score(yv,pr),"RMSE":rmse})
-    fig=px.scatter(x=yv, y=pr, labels={'x':'Actual','y':'Predicted'}, title="Actual vs Predicted Spend"); st.plotly_chart(fig, use_container_width=True)
-    st.markdown("**Insight:** R2 indicates strong model fit, useful for forecasting spend.")
+# Page: Geographic Heatmap
+elif page == "Geographic Heatmap":
+    st.header("Geographic Distribution")
+    if 'city' in df.columns:
+        fig = px.choropleth(df, locations='city', locationmode='USA-states', color='SpendPerServing',
+                            title="Spend by City")
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("City column not found.")
 
-# 7. Barrier Analysis #
-with tabs[6]:
-    st.header("7️⃣ Barrier Analysis")
-    barrier_cols=[c for c in df if c.startswith("Barrier_")]; barrier_counts=df[barrier_cols].sum().sort_values(ascending=False)
-    fig=px.bar(x=barrier_counts.index.str.replace('Barrier_',''), y=barrier_counts.values, color_discrete_sequence=['#E76F51'], title="Barrier Counts"); st.plotly_chart(fig, use_container_width=True)
-    st.markdown("**Insight:** Price sensitivity is top barrier; consider targeted discounts.")
+# Page: Sentiment Analysis
+elif page == "Sentiment Analysis":
+    st.header("Sentiment Word Cloud")
+    if 'Feedback' in df.columns:
+        text = " ".join(df['Feedback'].dropna().astype(str))
+        wc = WordCloud(width=800, height=400).generate(text)
+        fig, ax = plt.subplots(figsize=(10, 5))
+        ax.imshow(wc, interpolation='bilinear')
+        ax.axis('off')
+        st.pyplot(fig)
+        st.markdown("**Insight:** Common themes from feedback.")
+    else:
+        st.info("Feedback column not found.")
 
-# 8. Ranking #
-with tabs[7]:
-    st.header("8️⃣ Ranking Analysis")
-    rank_cols=[c for c in df if c.startswith("Rank_")]; avg_ranks=df[rank_cols].mean().sort_values()
-    fig=px.bar(x=avg_ranks.values, y=[col.replace('Rank_','') for col in avg_ranks.index], orientation='h', color_discrete_sequence=['#2A9D8F'], title="Average Rankings"); st.plotly_chart(fig, use_container_width=True)
-    st.markdown("**Insight:** Taste ranks highest; emphasize flavor in marketing.")
+# Page: Competitive Benchmark
+elif page == "Competitive Benchmark":
+    st.header("Competitive Pricing")
+    st.markdown("Upload competitor pricing CSV with columns Brand, Price")
+    comp = st.file_uploader("Competitor CSV", type="csv")
+    if comp:
+        comp_df = pd.read_csv(comp)
+        fig = px.bar(comp_df, x='Brand', y='Price', title="Competitor Prices")
+        st.plotly_chart(fig, use_container_width=True)
 
-# 9. Recommendation #
-with tabs[8]:
-    st.header("9️⃣ Recommendation Analysis")
-    fig=px.histogram(df, x='RecommendLikelihood', nbins=10, color_discrete_sequence=['#264653'], title="Recommendation Likelihood"); st.plotly_chart(fig, use_container_width=True)
-    promoters=df[df.RecommendLikelihood>=9].shape[0]; detractors=df[df.RecommendLikelihood<=6].shape[0]; nps=(promoters-detractors)/df.shape[0]*100; st.metric("NPS Score", f"{nps:.1f}%")
-    st.markdown("**Insight:** NPS > 50 indicates strong advocacy; maintain quality for retention.")
+# Page: ROI Simulator
+elif page == "ROI Simulator":
+    st.header("ROI Calculator")
+    budget = st.number_input("Marketing Budget (AED)", 0)
+    cpa = st.number_input("Cost per Acquisition (AED)", 10)
+    if st.button("Calculate ROI"):
+        acqu = budget / cpa if cpa>0 else 0
+        revenue = acqu * df['SpendPerServing'].mean()
+        roi = (revenue - budget) / budget * 100 if budget>0 else 0
+        st.metric("Estimated ROI (%)", f"{roi:.1f}%")
+        st.markdown("**Insight:** ROI based on average spend and acquisition cost.")

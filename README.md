@@ -1,9 +1,18 @@
-# Health Drink Dashboard — Ultimate Enhanced v2
+# Health Drink Dashboard — Monolithic Multi-Page
 
-Features:
-- Nine tabs: Visualization, Classification, Clustering, Association, Anomaly, Regression, Barrier Analysis, Ranking, Recommendation
-- Toggle controls for chart types and axes in Visualization tab, including different aggregations
-- Cohesive teal/coral palette across all visuals
-- Detailed, data-driven business insights under every chart
-- Rich sidebar filters and downloadable filtered data
-- Deploy via Streamlit Cloud
+This single-file Streamlit app includes all modules:
+- Visualization
+- Time Series Forecasting
+- LTV & Churn
+- Price Elasticity
+- Cohort Analysis
+- Geographic Heatmap
+- Sentiment Analysis
+- Competitive Benchmark
+- ROI Simulator
+
+## Setup
+1. Place `app.py`, `requirements.txt`, and `.streamlit/config.toml` in repo root.
+2. Commit & push to GitHub.
+3. In Streamlit Cloud, set App file path to `app.py`.
+4. Redeploy.

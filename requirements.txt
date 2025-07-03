@@ -6,3 +6,5 @@ mlxtend
 matplotlib
 plotly
 plotly-express
+prophet
+wordcloud
