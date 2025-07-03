@@ -15,7 +15,7 @@ from sklearn.ensemble import (
     RandomForestRegressor, IsolationForest
 )
 from sklearn.cluster import KMeans
-from sklearn.metrics import (
+from sklearn.metrics import (, roc_curve)
     accuracy_score, precision_score, recall_score, f1_score,
     confusion_matrix, mean_squared_error, r2_score
 )
