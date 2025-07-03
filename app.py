@@ -37,10 +37,10 @@ else:
 
 # --- Tabs ---
 tabs = st.tabs([
-    "1️⃣ Data Visualization", 
-    "2️⃣ Classification", 
-    "3️⃣ Clustering", 
-    "4️⃣ Association Mining", 
+    "1️⃣ Data Visualization",
+    "2️⃣ Classification",
+    "3️⃣ Clustering",
+    "4️⃣ Association Mining",
     "5️⃣ Regression"
 ])
 
@@ -211,16 +211,15 @@ with tabs[4]:
 
     models_reg = {
         'Linear': LinearRegression(),
-
-
-    Ridge': Ridge(),
+        'Ridge': Ridge(),
         'Lasso': Lasso(),
         'DT Regressor': DecisionTreeRegressor(random_state=42)
     }
     reg_res = []
     for name, mdl in models_reg.items():
         mdl.fit(Xtr, ytr)
-        p_train = mdl.predict(Xtr); p_test = mdl.predict(Xte)
+        p_train = mdl.predict(Xtr)
+        p_test = mdl.predict(Xte)
         reg_res.append({
             'Model': name,
             'Train R2': r2_score(ytr, p_train),
