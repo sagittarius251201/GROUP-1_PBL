@@ -298,6 +298,28 @@ elif page=="Geography":
         low_city = city_stats.iloc[-1]
         pct_top = ((top_city["SpendPerServing"] - overall_avg) / overall_avg) * 100
         pct_low = ((low_city["SpendPerServing"] - overall_avg) / overall_avg) * 100
+
         insight = (
             f"**Insight:**\n"
-            f"- **{top_city['City']}** has
+            f"- **{top_city['City']}** has the highest average spend per serving: **AED {top_city['SpendPerServing']:.2f}** "
+            f"({pct_top:+.1f}% vs. UAE avg).\n"
+            f"- **{low_city['City']}** has the lowest at **AED {low_city['SpendPerServing']:.2f}** ({pct_low:+.1f}% vs. avg).\n"
+        )
+        # Business implication
+        if pct_top > 8:
+            insight += (
+                f"> **Business Implication:** Focus premium pricing, exclusive launches, or loyalty programs in {top_city['City']}. "
+                f"For price-sensitive cities like {low_city['City']}, test value packs or discount offers."
+            )
+        elif pct_low < -8:
+            insight += (
+                f"> **Business Implication:** Consider tailoring promotions for {low_city['City']} to boost trial and repeat purchases, "
+                f"while leveraging {top_city['City']} for higher-margin SKUs."
+            )
+        else:
+            insight += (
+                f"> **Business Implication:** Spending is similar across cities—consider citywide marketing with modest regional tweaks."
+            )
+        st.markdown(insight)
+    else:
+        st.warning("No city data available in this dataset.")
