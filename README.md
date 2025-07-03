@@ -1,10 +1,7 @@
-# Health Drink Dashboard — Industry-Grade UI/UX
+# Health Drink Dashboard — Integrated Ultimate
 
-**Features**:
-- Vibrant dark-themed UI with high contrast
-- Top horizontal navigation with icons
-- Grouped filters in collapsible panels
-- Interactive, side-by-side visuals using columns
-- Consistent vibrant Plotly color palettes
-- Info tooltips and hover-enabled insights
-- Deploy via Streamlit Cloud with `app.py` as entry point
+This single `app.py` includes all modules:
+- Filters: demographics, behavior, subscription, city, date
+- Tabs: Visualization, Classification, Clustering, Association, Anomaly, Regression
+- New Tabs: Forecasting, Cohort Analysis, Geographic View, Sentiment Analysis, LTV & Churn, Price Elasticity
+- Data loaded from `data/health_drink_survey_1000_augmented.csv`
