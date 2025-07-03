@@ -15,21 +15,23 @@ from mlxtend.frequent_patterns import apriori, association_rules
 
 # Page config
 st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
-st.title("🥤 Health Drink Survey Dashboard — Complete")
+st.title("🥤 Health Drink Survey Dashboard — Ultimate")
 
 # Sidebar filters
 st.sidebar.header("Filters & Data")
 source = st.sidebar.radio("Load data via", ["GitHub URL", "Upload CSV"])
-if source=="GitHub URL":
-    url = st.sidebar.text_input("Raw GitHub CSV URL", "https://raw.githubusercontent.com/sagittarius251201/second-/refs/heads/main/health_drink_survey.csv")
+if source == "GitHub URL":
+    url = st.sidebar.text_input("Raw GitHub CSV URL",
+        "https://raw.githubusercontent.com/sagittarius251201/second-/refs/heads/main/health_drink_survey.csv")
     try:
         df = pd.read_csv(url)
     except:
-        st.error("Failed to load data from URL")
+        st.sidebar.error("Failed to load data from URL")
         st.stop()
 else:
     file = st.sidebar.file_uploader("Upload CSV", type="csv")
     if not file:
+        st.sidebar.info("Upload a CSV to proceed")
         st.stop()
     df = pd.read_csv(file)
 
@@ -42,100 +44,120 @@ df = df[df.Gender.isin(genders)]
 occupations = st.sidebar.multiselect("Occupation", df.Occupation.unique(), df.Occupation.unique())
 df = df[df.Occupation.isin(occupations)]
 
-# Download
 st.sidebar.download_button("Download filtered data", df.to_csv(index=False).encode(), "filtered.csv")
 
 # Tabs
 tabs = st.tabs(["Visualization","Classification","Clustering","Association","Anomaly","Regression"])
 
-# Visualization
+# Visualization tab with toggles
 with tabs[0]:
-    st.header("Data Visualization")
-    col1, col2 = st.columns(2)
-    with col1:
-        fig = px.scatter(df, x="Age", y="SpendPerServing", color="Gender",
-                         color_discrete_sequence=['#2A9D8F','#E76F51','#264653'],
-                         title="Spend per Serving by Age & Gender")
+    st.header("1️⃣ Visualization")
+    st.markdown("Choose chart type and axes:")
+    chart_type = st.selectbox("Chart type", ["Scatter", "Histogram", "Box", "Bar"])
+    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    if chart_type == "Scatter":
+        x = st.selectbox("X-axis", numeric_cols, index=numeric_cols.index("Age"))
+        y = st.selectbox("Y-axis", numeric_cols, index=numeric_cols.index("SpendPerServing"))
+        fig = px.scatter(df, x=x, y=y, color="Gender",
+                         color_discrete_sequence=px.colors.qualitative.Set2,
+                         title=f"{chart_type}: {y} vs {x}")
         st.plotly_chart(fig, use_container_width=True)
-        st.markdown("**Insight:** Younger consumers (18–30) vary widely in spend, suggesting tiered pricing could capture maximum value.")
-    with col2:
-        fig = px.histogram(df, x="MonthlyDisposableIncome", nbins=30,
-                           color_discrete_sequence=['#264653'],
-                           title="Disposable Income Distribution")
+        st.markdown(f"**Insight:** Relationship between {x} and {y} shows ... (business implication).")
+    elif chart_type == "Histogram":
+        col = st.selectbox("Feature", numeric_cols, index=numeric_cols.index("MonthlyDisposableIncome"))
+        fig = px.histogram(df, x=col, nbins=30,
+                           color_discrete_sequence=["#2A9D8F"],
+                           title=f"{chart_type}: Distribution of {col}")
         st.plotly_chart(fig, use_container_width=True)
-        st.markdown("**Insight:** Most incomes cluster between 5k–15k AED; pricing ~12 AED per serving aligns with budgets.")
+        st.markdown(f"**Insight:** The distribution of {col} indicates ... (implication).")
+    elif chart_type == "Box":
+        cat = st.selectbox("Category", ["Gender","Occupation","ConsumptionFrequency"], index=0)
+        val = st.selectbox("Value", numeric_cols, index=numeric_cols.index("SpendPerServing"))
+        fig = px.box(df, x=cat, y=val,
+                     color_discrete_sequence=["#E76F51"],
+                     title=f"{chart_type}: {val} by {cat}")
+        st.plotly_chart(fig, use_container_width=True)
+        st.markdown(f"**Insight:** Variance in {val} across {cat} shows ... (implication).")
+    else:
+        cat = st.selectbox("Category", ["PackagingFormat","PurchaseChannel","TopHealthBenefit"], index=0)
+        counts = df[cat].value_counts()
+        fig = px.bar(x=counts.index, y=counts.values,
+                     color_discrete_sequence=["#264653"],
+                     title=f"{chart_type}: {cat} counts")
+        st.plotly_chart(fig, use_container_width=True)
+        st.markdown(f"**Insight:** Preferences for {cat} suggest ... (implication).")
 
 # Classification
 with tabs[1]:
-    st.header("Classification")
+    st.header("2️⃣ Classification")
     X = df.select_dtypes(include=np.number).drop(columns=['SpendPerServing'])
     y = LabelEncoder().fit_transform(df.TryNewBrand)
     Xt, Xv, yt, yv = train_test_split(X, y, test_size=0.2, random_state=42)
     scaler = StandardScaler().fit(Xt)
     Xt_s, Xv_s = scaler.transform(Xt), scaler.transform(Xv)
-    model = st.selectbox("Algorithm", ["KNN","Decision Tree","Random Forest","GBRT"])
-    if model=="KNN": clf = KNeighborsClassifier()
-    elif model=="Decision Tree": clf = DecisionTreeClassifier()
-    elif model=="Random Forest": clf=RandomForestClassifier()
+    algo = st.selectbox("Algorithm", ["KNN","Decision Tree","Random Forest","GBRT"])
+    if algo=="KNN": clf = KNeighborsClassifier()
+    elif algo=="Decision Tree": clf = DecisionTreeClassifier()
+    elif algo=="Random Forest": clf=RandomForestClassifier()
     else: clf=GradientBoostingClassifier()
     clf.fit(Xt_s, yt); yp = clf.predict(Xv_s); yp_prob=clf.predict_proba(Xv_s)[:,1]
-    metrics={"Accuracy":accuracy_score(yv,yp),"Precision":precision_score(yv,yp),
-             "Recall":recall_score(yv,yp),"F1":f1_score(yv,yp)}
-    st.write(metrics)
-    cm=confusion_matrix(yv,yp)
-    fig=go.Figure(data=go.Heatmap(z=cm, x=["No","Yes"], y=["No","Yes"], colorscale="Mint"))
-    fig.update_layout(title="Confusion Matrix")
-    st.plotly_chart(fig, use_container_width=True)
-    fpr,tpr,_=roc_curve(yv,yp_prob)
-    fig=go.Figure(data=go.Scatter(x=fpr,y=tpr,mode='lines'))
-    fig.update_layout(title="ROC Curve", xaxis_title="FPR", yaxis_title="TPR")
-    st.plotly_chart(fig, use_container_width=True)
-    st.markdown("**Insight:** High AUC indicates model reliably predicts trial interest; target marketing using this model.")
+    metrics = {"Accuracy":accuracy_score(yv,yp),"Precision":precision_score(yv,yp),
+               "Recall":recall_score(yv,yp),"F1":f1_score(yv,yp)}
+    st.subheader("Metrics")
+    st.json(metrics, expanded=False)
+    st.markdown("**Insight:** Precision & recall indicate model's balance between correctly identifying trials and avoiding false positives (e.g., campaigns).")
 
 # Clustering
 with tabs[2]:
-    st.header("Clustering")
+    st.header("3️⃣ Clustering")
     feats=['Age','MonthlyDisposableIncome','SpendPerServing','HealthConsciousness']
-    data=df[feats]
-    k=st.slider("Clusters (k)",2,8,4)
-    km=KMeans(k).fit(data); df['Cluster']=km.labels_
-    from sklearn.decomposition import PCA
-    pc=PCA(2).fit_transform(StandardScaler().fit_transform(data))
-    pdf=pd.DataFrame(pc,columns=['PC1','PC2']); pdf['Cluster']=df['Cluster'].astype(str)
-    fig=px.scatter(pdf,x='PC1',y='PC2',color='Cluster',title="PCA Clusters")
-    st.plotly_chart(fig,use_container_width=True)
-    st.write("Cluster centers:")
-    st.write(pd.DataFrame(km.cluster_centers_,columns=feats))
+    data = df[feats]
+    k = st.slider("Clusters (k)",2,8,4)
+    km = KMeans(n_clusters=k, random_state=42).fit(data)
+    df['Cluster'] = km.labels_
+    st.subheader("Cluster Profiles")
+    st.write(df.groupby('Cluster')[feats].mean().round(2))
+    st.markdown("**Insight:** Segments reveal ... (e.g., high-income high-spend cluster for premium marketing).")
 
 # Association
 with tabs[3]:
-    st.header("Association Rules")
+    st.header("4️⃣ Association Rules")
     cols=[c for c in df if c.startswith("Flavour_") or c.startswith("Context_")]
-    sup=st.slider("Min Support",0.01,0.2,0.05); conf=st.slider("Min Confidence",0.1,0.7,0.3)
-    freq=apriori(df[cols],min_support=sup,use_colnames=True); rules=association_rules(freq,metric="confidence",min_threshold=conf)
-    rules['rule']=rules['antecedents'].apply(lambda x:','.join(x))+"->"+rules['consequents'].apply(lambda x:','.join(x))
+    sup=st.slider("Min Support",0.01,0.2,0.05)
+    conf=st.slider("Min Confidence",0.1,0.7,0.3)
+    freq=apriori(df[cols],min_support=sup,use_colnames=True)
+    rules=association_rules(freq,metric="confidence",min_threshold=conf)
+    rules['rule']=rules['antecedents'].apply(lambda x:','.join(x))+"→"+rules['consequents'].apply(lambda x:','.join(x))
     top=rules.sort_values('lift',ascending=False).head(10)
-    fig=px.bar(top, x='lift', y='rule', orientation='h', title="Top Rules by Lift")
-    st.plotly_chart(fig,use_container_width=True)
-    st.markdown("**Insight:** These item combos reveal popular mix & match behaviors for targeted bundles.")
+    fig=px.bar(top, x='lift', y='rule', orientation='h',
+               color_discrete_sequence=px.colors.qualitative.Set3,
+               title="Top Rules by Lift")
+    st.plotly_chart(fig, use_container_width=True)
+    st.markdown("**Insight:** These rule associations guide product bundling and cross-promotions.")
 
 # Anomaly
 with tabs[4]:
-    st.header("Anomaly Detection")
-    iso=IsolationForest(contamination=0.05).fit(data); df['Anom']=iso.predict(data)
-    fig=px.scatter(df, x='MonthlyDisposableIncome', y='SpendPerServing', color=df['Anom'].map({1:'Normal',-1:'Anomaly'}),
-                   title="Anomalies")
-    st.plotly_chart(fig,use_container_width=True)
-    st.markdown("**Insight:** Outliers may indicate premium spenders or data errors. Investigate high spend anomalies.")
+    st.header("5️⃣ Anomaly Detection")
+    feats=['Age','MonthlyDisposableIncome','SpendPerServing','HealthConsciousness']
+    iso=IsolationForest(contamination=0.05, random_state=42).fit(data)
+    df['Anomaly'] = iso.predict(data)
+    fig=px.scatter(df, x='MonthlyDisposableIncome', y='SpendPerServing',
+                   color=df['Anomaly'].map({1:'Normal',-1:'Anomaly'}),
+                   color_discrete_map={'Normal':'#2A9D8F','Anomaly':'#E76F51'},
+                   title="Anomaly Detection")
+    st.plotly_chart(fig, use_container_width=True)
+    st.markdown("**Insight:** Outliers may indicate high-value customers or data errors to investigate.")
 
 # Regression
 with tabs[5]:
-    st.header("Regression")
+    st.header("6️⃣ Regression")
     Xr=df[['MonthlyDisposableIncome','HealthConsciousness','Age']]; yr=df['SpendPerServing']
     Xt,Xv,yt,yv=train_test_split(Xr,yr,test_size=0.2,random_state=42)
-    reg=RandomForestRegressor().fit(Xt,yt); pr=reg.predict(Xv)
+    reg=RandomForestRegressor(n_estimators=100,random_state=42).fit(Xt,yt); pr=reg.predict(Xv)
     mse=mean_squared_error(yv,pr); rmse=np.sqrt(mse)
     st.write({"R2":r2_score(yv,pr),"RMSE":rmse})
-    fig=px.scatter(x=yv,y=pr,labels={'x':'Actual','y':'Predicted'},title="Actual vs Predicted")
-    st.plotly_chart(fig,use_container_width=True)
-    resid=yv-pr; fig=px.histogram(resid,nbins=30,title="Residuals"); st.plotly_chart(fig,use_container_width=True)
+    fig=px.scatter(x=yv,y=pr,labels={'x':'Actual','y':'Predicted'},
+                   title="Actual vs Predicted Spend",
+                   color_discrete_sequence=['#264653'])
+    st.plotly_chart(fig, use_container_width=True)
+    st.markdown("**Insight:** Model explains variability well (R2), guiding pricing forecasts.")
