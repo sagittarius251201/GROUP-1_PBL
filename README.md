@@ -1,11 +1,17 @@
-# Health Drink Dashboard — Monolithic Forecast Fix
+# Health Drink Dashboard — Monolithic Fixed
 
-This single-file Streamlit app includes:
-- Forecasting module: uses selectbox for date/value columns and datetime parsing
-- All other modules as before
+This single `app.py` includes:
+- Visualization with toggles
+- Time Series Forecasting (Prophet)
+- LTV & Churn module
+- Price Elasticity Simulator
+- Cohort Analysis
+- Geographic Heatmap
+- Sentiment Word Cloud
+- Competitive Benchmark
+- ROI Simulator
 
 ## Setup
-1. Place `app.py`, `requirements.txt`, and `.streamlit/config.toml` in the repo root.
+1. Place `app.py`, `requirements.txt`, `.streamlit/config.toml` at repo root.
 2. Commit & push to GitHub.
-3. In Streamlit Cloud, set App file path to `app.py`.
-4. Redeploy.
+3. On Streamlit Cloud, set **App file path** to `app.py` and redeploy.
