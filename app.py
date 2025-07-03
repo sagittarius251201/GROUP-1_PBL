@@ -223,11 +223,19 @@ elif page=="Cohort":
 
 # Geography
 elif page=="Geography":
-    st.header("🗺️ Geographic Spend")
-    city=df.groupby("City")["SpendPerServing"].mean().reset_index()
-    fig=px.choropleth(city, locations="City", locationmode="country names", color="SpendPerServing",
-                      color_continuous_scale="Viridis")
-    st.plotly_chart(fig,use_container_width=True)
+    st.header("🗺️ Average Spend Per City")
+    if "City" in df.columns and not df["City"].isnull().all():
+        city_stats = df.groupby("City")["SpendPerServing"].mean().reset_index().sort_values("SpendPerServing", ascending=False)
+        fig = px.bar(city_stats, x="City", y="SpendPerServing",
+                     color="SpendPerServing",
+                     color_continuous_scale="Viridis",
+                     labels={"SpendPerServing": "Avg Spend (AED)"},
+                     title="Average Spend by City")
+        st.plotly_chart(fig, use_container_width=True)
+        st.info("Showing the average spend per serving in each city (UAE).")
+    else:
+        st.warning("No city data available in this dataset.")
+
 
 # Sentiment
 elif page=="Sentiment":
