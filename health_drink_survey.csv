@@ -1,0 +1,1001 @@
+Age,Gender,Occupation,MonthlyDisposableIncome,HealthConsciousness,ExerciseFrequency,ConsumptionFrequency,TryNewBrand,SubscribePlan,SpendPerServing,PackagingFormat,PurchaseChannel,TopHealthBenefit,RecommendLikelihood,CurrentBrands,ExtraFeatures,Flavour_MixedBerry,Flavour_Mango,Flavour_GreenTea,Flavour_Chocolate,Flavour_Coffee,Flavour_Herbal,Flavour_Other,Context_PostWorkout,Context_Breakfast,Context_Afternoon,Context_Evening,Context_SpecialOccasion,Barrier_HighPrice,Barrier_PoorTaste,Barrier_LackTrust,Barrier_HardToFind,Barrier_UnsustainablePack,Rank_Taste,Rank_Price,Rank_NutritionalValue,Rank_BrandReputation,Rank_Packaging
+23,Male,Working professional,12758,4,1-2,Rarely,No,Yes,23.39,Bottle,Online retailer,Energy boost,2,BrandC,High protein,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,2,1,5,4,3
+54,Female,Working professional,8564,3,1-2,Daily,No,No,16.7,Can,Supermarket,Weight management,1,BrandD,No artificial flavors,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,2,4,5,1,3
+33,Female,Retired,9093,4,5+,Rarely,No,No,18.06,Tetra Pak,Supermarket,Immune support,1,BrandA,Gluten-free,1,0,0,1,0,0,1,1,0,0,0,0,1,1,1,0,0,4,3,2,5,1
+28,Female,Working professional,1437,1,5+,Never,Yes,No,4.6,Bottle,Convenience store,Energy boost,5,BrandC,Gluten-free,1,0,0,0,0,1,0,0,1,1,0,0,1,0,0,0,0,1,2,3,4,5
+20,Female,Working professional,78613,4,3-4,Rarely,Yes,Yes,158.72,Tetra Pak,Online retailer,Immune support,4,BrandA,Low sugar,1,0,0,1,0,0,0,1,1,0,1,0,0,0,1,1,0,2,3,1,5,4
+20,Female,Self-employed,6218,4,5+,Weekly,Yes,Yes,12.68,Tetra Pak,Pharmacy,Muscle recovery,5,BrandA,No artificial flavors,0,1,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,5,4,3,2
+18,Female,Working professional,3525,1,3-4,Never,Yes,Yes,2.75,Can,Online retailer,Muscle recovery,1,BrandB,Gluten-free,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4,2,5,1,3
+42,Female,Self-employed,5592,2,3-4,Daily,Yes,No,12.07,Can,Online retailer,Muscle recovery,5,BrandB,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,5,3,1,4
+29,Male,Student,994,4,None,Weekly,No,No,1.45,Bottle,Supermarket,Energy boost,4,BrandC,Low sugar,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,2,4,1,3,5
+32,Female,Working professional,7100,4,1-2,Rarely,No,No,16.98,Can,Convenience store,Energy boost,4,None,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,4,5,2,3,1
+18,Male,Student,1946,4,3-4,Monthly,No,Yes,6.2,Bottle,Supermarket,Weight management,4,BrandD,None,0,1,1,0,0,0,1,1,0,0,1,0,1,1,0,0,0,1,4,3,5,2
+60,Other,Student,1455,4,5+,Weekly,No,No,1.03,Bottle,Online retailer,Energy boost,4,BrandB,None,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,0,4,3,5,1,2
+39,Female,Retired,1249,4,3-4,Weekly,No,Yes,3.66,Powder sachet,Supermarket,Immune support,5,BrandD,Eco packaging,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,3,1,5,4,2
+20,Male,Student,13379,4,1-2,Weekly,Yes,Yes,27.96,Can,Supermarket,Muscle recovery,4,BrandC,No artificial flavors,0,0,0,0,0,1,0,0,1,1,0,0,0,1,0,1,0,5,1,3,2,4
+20,Female,Working professional,2790,3,1-2,Monthly,No,No,6.64,Tetra Pak,Supermarket,Weight management,4,BrandD,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,2,3,5,4
+20,Female,Working professional,19543,2,5+,Weekly,Yes,Yes,39.89,Can,Online retailer,Digestive health,1,BrandB,Organic,0,0,0,0,0,1,0,1,1,0,0,0,0,1,0,0,1,3,2,5,1,4
+22,Male,Working professional,3034,4,1-2,Never,Yes,No,7.33,Bottle,Pharmacy,Immune support,3,BrandA,Organic,1,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,5,2,1,3,4
+26,Female,Homemaker,1057,4,3-4,Never,No,No,5.12,Can,Online retailer,Immune support,5,BrandC,No artificial flavors,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,5,1,3,4,2
+24,Female,Student,1799,1,None,Rarely,No,No,2.5,Jar,Online retailer,Digestive health,4,BrandC,Gluten-free,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,2,5,4,1,3
+22,Male,Working professional,14946,4,None,Weekly,Yes,No,28.08,Bottle,Convenience store,Weight management,5,None,Organic,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,5,4,3,1,2
+29,Female,Other,4271,2,3-4,Monthly,Yes,No,10.11,Jar,Gym/Fitness centre,Energy boost,4,BrandA,None,0,0,0,0,1,0,0,0,1,1,1,0,1,0,1,0,0,3,2,5,4,1
+19,Male,Working professional,3001,4,3-4,Never,Yes,No,2.24,Can,Pharmacy,Energy boost,5,BrandC,Organic,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,2,1,3,4,5
+22,Female,Retired,5676,4,1-2,Rarely,Yes,Yes,12.66,Bottle,Online retailer,Energy boost,2,BrandB,Eco packaging,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,3,1,4,2,5
+23,Other,Student,7720,4,1-2,Weekly,No,Yes,16.39,Can,Pharmacy,Energy boost,1,BrandB,Gluten-free,1,1,0,1,0,0,0,1,0,0,1,0,0,1,0,0,0,3,5,2,1,4
+25,Female,Working professional,13436,5,5+,Daily,Yes,No,22.18,Bottle,Online retailer,Immune support,4,BrandD,Organic,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4,1,5,2,3
+36,Male,Working professional,18100,3,1-2,Daily,Yes,No,34.93,Bottle,Supermarket,Immune support,4,None,Organic,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,3,1,2,4,5
+20,Female,Self-employed,3555,5,3-4,Monthly,Yes,No,10.26,Jar,Supermarket,Muscle recovery,3,BrandD,Low sugar,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,5,1,3,2,4
+26,Female,Other,1490,4,5+,Monthly,Yes,Yes,1.0,Powder sachet,Supermarket,Muscle recovery,4,BrandA,None,1,0,0,1,1,0,0,0,1,1,0,0,1,0,0,0,0,2,4,1,3,5
+28,Male,Working professional,3388,4,1-2,Rarely,Yes,Yes,7.2,Jar,Supermarket,Weight management,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,1,2,5,4
+18,Female,Working professional,6212,4,5+,Weekly,No,Yes,10.41,Jar,Pharmacy,Energy boost,5,BrandA,Low sugar,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,3,2,1,4,5
+29,Male,Working professional,2064,4,1-2,Daily,Yes,No,2.71,Powder sachet,Gym/Fitness centre,Immune support,2,BrandB,None,1,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,3,5,2,4,1
+20,Female,Working professional,2077,4,3-4,Weekly,Yes,No,7.99,Powder sachet,Convenience store,Energy boost,2,BrandC,Eco packaging,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,5,3,1,2,4
+18,Male,Working professional,6697,4,1-2,Weekly,Yes,No,13.64,Bottle,Online retailer,Muscle recovery,5,BrandC,Low sugar,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,0,1,1,2,3,5,4
+53,Male,Other,4704,2,5+,Daily,Yes,Yes,10.44,Can,Gym/Fitness centre,Energy boost,4,BrandD,No artificial flavors,0,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,2,3,1,4,5
+58,Male,Working professional,5062,1,1-2,Monthly,No,Yes,9.9,Bottle,Supermarket,Digestive health,4,BrandC,No artificial flavors,0,0,0,1,0,1,0,1,0,0,1,0,1,0,0,0,0,2,5,3,1,4
+37,Female,Working professional,2483,4,1-2,Monthly,Yes,No,1.94,Can,Online retailer,Muscle recovery,1,BrandC,Low sugar,1,0,0,0,0,0,0,0,0,1,0,0,1,1,1,1,0,3,2,4,5,1
+22,Male,Student,3994,3,5+,Rarely,No,No,5.62,Powder sachet,Gym/Fitness centre,Muscle recovery,5,BrandC,No artificial flavors,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,2,5,4,3,1
+19,Female,Working professional,2139,4,3-4,Weekly,Yes,Yes,6.63,Bottle,Pharmacy,Energy boost,5,BrandB,Organic,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5,2,3,4
+31,Male,Working professional,10951,2,3-4,Weekly,Yes,No,22.21,Tetra Pak,Online retailer,Weight management,5,BrandB,High protein,0,0,1,0,0,1,0,1,1,0,0,0,1,0,0,0,0,5,3,1,4,2
+24,Male,Working professional,12478,4,1-2,Weekly,Yes,Yes,23.42,Tetra Pak,Online retailer,Weight management,5,BrandA,Low sugar,0,0,0,0,1,0,1,0,1,0,1,0,0,1,0,0,0,4,5,1,2,3
+19,Female,Homemaker,933,5,3-4,Rarely,Yes,No,4.47,Bottle,Supermarket,Energy boost,4,None,Low sugar,0,0,0,0,1,1,0,0,1,0,1,0,0,0,0,0,0,4,5,3,2,1
+26,Female,Working professional,2129,5,None,Daily,No,No,5.58,Bottle,Gym/Fitness centre,Digestive health,4,None,None,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,4,3,2,1,5
+18,Male,Working professional,1278,4,None,Rarely,Yes,No,3.46,Can,Pharmacy,Digestive health,4,BrandD,No artificial flavors,0,0,0,0,0,0,0,0,1,0,1,0,1,1,0,1,0,5,1,2,4,3
+46,Female,Student,2738,4,3-4,Weekly,Yes,No,3.94,Bottle,Online retailer,Weight management,5,BrandC,Organic,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,2,1,3,4,5
+21,Female,Homemaker,4559,5,1-2,Rarely,Yes,Yes,5.97,Can,Supermarket,Weight management,5,BrandC,Gluten-free,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,4,2,5,3
+31,Female,Self-employed,1333,4,5+,Rarely,Yes,No,1.85,Can,Supermarket,Digestive health,4,BrandB,None,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,4,2,5,3,1
+22,Male,Student,2144,3,5+,Weekly,No,No,6.51,Can,Online retailer,Energy boost,3,BrandA,Organic,1,0,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0,1,4,2,3,5
+26,Male,Self-employed,1991,5,3-4,Monthly,Yes,No,5.69,Bottle,Online retailer,Energy boost,5,BrandB,Gluten-free,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,4,5,3,2,1
+27,Female,Working professional,5923,4,5+,Daily,Yes,No,12.67,Can,Supermarket,Energy boost,4,None,High protein,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,1,3,5,2,1,4
+20,Male,Student,5231,4,3-4,Rarely,No,Yes,10.12,Bottle,Pharmacy,Energy boost,3,BrandA,Gluten-free,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,2,4,5,3
+59,Female,Working professional,2567,3,1-2,Weekly,Yes,No,4.1,Powder sachet,Supermarket,Weight management,4,BrandC,Gluten-free,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,5,3,4,1,2
+35,Female,Working professional,5763,2,3-4,Weekly,Yes,No,11.22,Bottle,Supermarket,Energy boost,5,None,High protein,0,0,0,0,1,0,0,0,1,0,1,1,0,0,0,0,0,4,5,2,1,3
+51,Female,Working professional,3005,5,1-2,Rarely,Yes,Yes,7.57,Powder sachet,Gym/Fitness centre,Muscle recovery,3,BrandB,None,0,1,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,1,5,2,4,3
+45,Female,Retired,3849,4,1-2,Rarely,No,No,9.72,Tetra Pak,Online retailer,Muscle recovery,2,BrandC,None,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,2,3,1,5,4
+28,Other,Self-employed,22161,3,5+,Weekly,No,Yes,43.8,Jar,Pharmacy,Weight management,1,None,Organic,0,0,1,1,0,0,0,0,1,0,0,0,1,1,0,0,0,1,3,4,5,2
+48,Male,Working professional,16423,3,3-4,Monthly,Yes,Yes,37.92,Bottle,Supermarket,Weight management,3,BrandC,None,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,4,5,2,3,1
+19,Female,Working professional,1526,4,5+,Weekly,Yes,Yes,9.08,Bottle,Supermarket,Digestive health,3,BrandD,No artificial flavors,1,0,0,0,0,0,0,0,0,1,1,0,0,1,0,1,0,4,2,3,5,1
+20,Male,Working professional,10371,4,1-2,Weekly,No,No,20.05,Can,Supermarket,Muscle recovery,5,BrandB,Gluten-free,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,4,1,2,3,5
+18,Male,Working professional,10201,3,3-4,Monthly,Yes,No,23.35,Bottle,Supermarket,Energy boost,3,BrandD,None,0,0,0,1,0,0,0,0,1,1,1,0,0,1,1,0,0,2,4,5,1,3
+22,Female,Working professional,1749,5,None,Weekly,Yes,No,1.0,Powder sachet,Pharmacy,Weight management,5,BrandA,No artificial flavors,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,5,1,4,3,2
+23,Female,Student,10269,2,3-4,Weekly,Yes,No,21.5,Bottle,Supermarket,Energy boost,2,BrandA,Low sugar,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,2,1,3,4,5
+21,Other,Working professional,19617,4,3-4,Rarely,No,Yes,39.09,Powder sachet,Convenience store,Weight management,5,BrandC,None,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,5,1,2,4,3
+39,Female,Self-employed,1790,4,3-4,Daily,Yes,Yes,6.48,Jar,Gym/Fitness centre,Immune support,3,BrandB,Low sugar,0,0,1,1,0,0,0,1,1,0,0,0,0,0,1,1,0,1,3,5,2,4
+23,Male,Working professional,2152,3,1-2,Monthly,Yes,Yes,5.51,Bottle,Online retailer,Energy boost,4,None,No artificial flavors,1,1,0,0,0,0,0,0,1,0,0,1,1,1,0,0,0,2,3,1,4,5
+21,Male,Student,12282,5,None,Weekly,Yes,No,24.84,Tetra Pak,Convenience store,Muscle recovery,3,BrandB,Eco packaging,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5,2,3,1,4
+27,Female,Self-employed,6275,4,1-2,Daily,Yes,No,13.88,Bottle,Supermarket,Energy boost,4,BrandD,Low sugar,1,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,1,5,4,2,3
+19,Male,Working professional,8073,5,3-4,Daily,No,Yes,14.03,Bottle,Supermarket,Immune support,2,BrandA,None,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,2,5,1,4,3
+37,Male,Working professional,6678,2,5+,Monthly,Yes,No,15.29,Bottle,Gym/Fitness centre,Weight management,4,None,Organic,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,1,5,3,2,4
+18,Male,Working professional,6986,2,1-2,Rarely,Yes,No,11.28,Powder sachet,Supermarket,Weight management,3,BrandB,None,0,0,0,1,0,0,0,0,1,1,1,0,1,0,1,0,0,2,3,5,1,4
+70,Male,Working professional,1489,3,3-4,Daily,Yes,Yes,3.69,Can,Convenience store,Muscle recovery,5,BrandA,None,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,5,4,2,1
+35,Male,Self-employed,12614,4,5+,Daily,Yes,No,25.3,Tetra Pak,Convenience store,Muscle recovery,3,BrandD,High protein,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,3,1,5
+20,Male,Working professional,14082,4,3-4,Never,No,No,24.64,Bottle,Convenience store,Muscle recovery,3,None,High protein,0,1,0,0,0,1,0,1,0,0,0,0,1,0,1,0,0,3,4,1,5,2
+18,Male,Working professional,3998,5,3-4,Daily,Yes,No,8.13,Can,Convenience store,Muscle recovery,3,None,Eco packaging,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,4,1,2,3,5
+38,Male,Homemaker,4726,4,5+,Rarely,No,Yes,10.02,Bottle,Online retailer,Weight management,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,3,2,5,4
+32,Other,Homemaker,1239,5,1-2,Weekly,Yes,No,1.17,Bottle,Online retailer,Weight management,2,BrandC,No artificial flavors,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,1,3,2,5,4
+33,Male,Homemaker,7807,4,1-2,Rarely,Yes,No,13.59,Bottle,Supermarket,Muscle recovery,3,BrandC,None,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1,2,5,3
+35,Male,Working professional,8224,3,None,Weekly,Yes,Yes,17.43,Can,Gym/Fitness centre,Muscle recovery,4,BrandD,Eco packaging,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,2,5,4,1,3
+18,Female,Working professional,4647,3,5+,Rarely,Yes,No,10.02,Tetra Pak,Supermarket,Energy boost,2,BrandB,None,1,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,4,1,3,5,2
+23,Male,Other,13520,4,5+,Rarely,Yes,Yes,27.49,Bottle,Pharmacy,Muscle recovery,4,BrandB,Eco packaging,1,1,1,0,0,0,0,0,1,0,0,0,1,1,0,0,0,3,1,5,4,2
+19,Female,Self-employed,3639,3,3-4,Weekly,No,No,7.3,Powder sachet,Convenience store,Immune support,2,None,No artificial flavors,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,1,3,5,2,4
+41,Female,Student,8169,2,None,Daily,Yes,No,15.2,Bottle,Supermarket,Digestive health,4,None,Low sugar,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0,4,2,5,3,1
+29,Male,Student,1963,4,3-4,Rarely,Yes,No,8.47,Can,Supermarket,Energy boost,5,BrandD,No artificial flavors,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,5,1,4,3,2
+22,Male,Working professional,4812,5,1-2,Monthly,No,Yes,9.03,Bottle,Online retailer,Weight management,3,BrandD,None,0,0,0,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1,2,3,4,5
+18,Female,Retired,4201,2,None,Daily,No,Yes,6.67,Bottle,Gym/Fitness centre,Weight management,3,BrandC,Gluten-free,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,2,3,1,4
+22,Female,Working professional,6020,5,3-4,Daily,Yes,Yes,12.15,Powder sachet,Gym/Fitness centre,Weight management,5,BrandA,Gluten-free,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,2,4,5,3
+22,Male,Working professional,3524,5,5+,Rarely,Yes,Yes,6.69,Jar,Online retailer,Weight management,4,BrandD,Gluten-free,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5,2,3,1,4
+33,Female,Student,4366,4,5+,Weekly,Yes,Yes,8.09,Tetra Pak,Pharmacy,Weight management,4,BrandC,Low sugar,0,1,0,1,0,1,0,0,0,0,0,1,1,0,0,0,0,3,1,2,5,4
+30,Male,Working professional,10337,2,3-4,Monthly,No,No,24.42,Powder sachet,Supermarket,Energy boost,4,BrandB,Organic,1,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,1,2,5,3,1,4
+44,Other,Self-employed,3317,3,None,Weekly,No,Yes,4.37,Jar,Online retailer,Energy boost,3,None,No artificial flavors,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,4,2,5,1,3
+25,Male,Working professional,1158,4,1-2,Rarely,No,No,2.39,Tetra Pak,Online retailer,Energy boost,5,None,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,3,5,1,4
+19,Female,Self-employed,23733,4,1-2,Never,No,Yes,45.34,Jar,Supermarket,Weight management,4,None,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,3,4,5,2,1
+32,Female,Other,17040,5,3-4,Never,Yes,No,33.0,Bottle,Online retailer,Energy boost,4,BrandB,Organic,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,3,2,4,5,1
+35,Female,Working professional,1536,4,5+,Daily,No,No,6.54,Can,Pharmacy,Energy boost,5,BrandC,None,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,2,3,5,1,4
+27,Female,Working professional,9143,2,1-2,Rarely,Yes,No,18.85,Jar,Convenience store,Energy boost,4,None,Eco packaging,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2,3,1,4,5
+35,Male,Working professional,3125,2,3-4,Weekly,Yes,No,6.79,Bottle,Online retailer,Digestive health,4,BrandB,No artificial flavors,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,5,3,4,2
+26,Male,Self-employed,6230,4,None,Monthly,Yes,Yes,10.58,Powder sachet,Convenience store,Digestive health,5,BrandD,Eco packaging,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,4,1,3,5,2
+26,Male,Working professional,6405,3,1-2,Monthly,No,Yes,11.96,Bottle,Supermarket,Weight management,3,None,Organic,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,4,5,3,1,2
+24,Male,Working professional,3980,3,3-4,Daily,No,Yes,11.61,Powder sachet,Convenience store,Digestive health,2,BrandC,Eco packaging,0,1,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,2,4,3,1,5
+18,Female,Self-employed,2427,4,1-2,Never,Yes,Yes,5.85,Bottle,Supermarket,Energy boost,3,None,Low sugar,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4,1,5,2,3
+19,Male,Working professional,2640,1,3-4,Daily,No,No,4.6,Bottle,Online retailer,Muscle recovery,5,BrandC,None,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,1,0,1,2,5,3,4
+18,Male,Retired,2155,3,5+,Monthly,No,Yes,17.57,Bottle,Supermarket,Energy boost,4,BrandA,Organic,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,2,3,5
+30,Other,Working professional,11796,4,3-4,Rarely,Yes,No,24.13,Powder sachet,Pharmacy,Digestive health,3,BrandA,None,0,0,1,0,0,1,0,0,1,0,0,1,0,1,0,0,0,1,3,5,4,2
+22,Female,Working professional,4626,3,None,Rarely,Yes,Yes,7.57,Bottle,Supermarket,Energy boost,3,BrandD,High protein,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,4,5,1,3
+26,Female,Working professional,2581,2,1-2,Daily,No,No,4.42,Tetra Pak,Supermarket,Energy boost,2,BrandA,Eco packaging,1,1,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,4,2,3,5,1
+46,Other,Self-employed,9080,4,3-4,Weekly,Yes,No,22.67,Tetra Pak,Online retailer,Energy boost,2,BrandC,None,0,0,0,0,0,1,0,1,1,1,0,0,1,0,0,0,0,4,3,1,2,5
+21,Male,Working professional,18742,5,1-2,Rarely,Yes,Yes,38.27,Bottle,Supermarket,Immune support,5,BrandA,Organic,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,4,1,2,3,5
+24,Male,Homemaker,2916,3,1-2,Weekly,No,Yes,2.69,Powder sachet,Supermarket,Energy boost,4,None,Low sugar,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,4,2,3,1,5
+34,Female,Retired,6096,5,3-4,Weekly,No,No,13.21,Bottle,Online retailer,Weight management,5,BrandA,No artificial flavors,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,4,1,3,5,2
+21,Female,Working professional,7706,4,3-4,Weekly,Yes,No,18.02,Tetra Pak,Supermarket,Weight management,4,BrandC,None,0,1,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,5,4,2,3
+18,Male,Other,7516,4,3-4,Weekly,No,Yes,13.22,Can,Supermarket,Digestive health,4,BrandC,Low sugar,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,5,2,4,3
+22,Female,Student,5262,5,1-2,Rarely,Yes,Yes,9.61,Bottle,Supermarket,Weight management,4,None,Organic,1,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,5,2,3,1,4
+20,Male,Working professional,9589,4,5+,Weekly,Yes,No,22.09,Bottle,Supermarket,Muscle recovery,5,BrandB,No artificial flavors,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,5,3,2,1,4
+49,Male,Working professional,7586,5,1-2,Monthly,Yes,No,15.24,Tetra Pak,Online retailer,Weight management,5,None,Gluten-free,1,1,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,4,5,1,3,2
+37,Female,Homemaker,1613,2,None,Weekly,Yes,Yes,2.94,Powder sachet,Online retailer,Muscle recovery,5,BrandB,Organic,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,2,3,4,1,5
+30,Female,Working professional,10745,2,3-4,Weekly,No,No,18.82,Bottle,Online retailer,Energy boost,4,BrandB,No artificial flavors,1,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,2,1,4,3,5
+42,Female,Working professional,10922,5,3-4,Daily,Yes,No,23.99,Bottle,Supermarket,Weight management,2,BrandC,No artificial flavors,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,2,3,5,4
+37,Male,Working professional,2473,4,5+,Weekly,Yes,No,4.57,Powder sachet,Online retailer,Digestive health,4,BrandC,Low sugar,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,2,1,3,4,5
+20,Female,Working professional,5085,3,3-4,Weekly,Yes,No,5.83,Bottle,Online retailer,Muscle recovery,2,BrandC,Gluten-free,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,3,4,5,2
+44,Male,Student,9091,4,5+,Monthly,No,No,15.04,Can,Supermarket,Immune support,2,BrandD,No artificial flavors,0,0,0,0,0,1,0,1,1,1,0,0,0,1,0,0,0,5,2,4,3,1
+27,Male,Homemaker,4071,5,5+,Weekly,Yes,Yes,7.02,Can,Supermarket,Digestive health,3,BrandB,None,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,2,4,5,3
+37,Female,Self-employed,12909,5,3-4,Weekly,Yes,No,23.67,Bottle,Supermarket,Weight management,4,BrandA,High protein,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,1,2,5,3,4
+45,Female,Working professional,41253,3,3-4,Weekly,Yes,Yes,80.67,Tetra Pak,Supermarket,Muscle recovery,4,BrandB,Low sugar,0,0,0,1,0,0,0,1,0,0,0,0,1,1,0,0,1,2,5,4,1,3
+22,Female,Other,2423,5,3-4,Weekly,No,No,9.54,Powder sachet,Supermarket,Digestive health,3,None,Eco packaging,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,2,1,5,4,3
+19,Female,Working professional,1418,1,5+,Never,Yes,Yes,4.25,Can,Supermarket,Energy boost,4,BrandD,None,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4,2,1,5,3
+21,Female,Other,6460,1,3-4,Monthly,Yes,No,7.77,Tetra Pak,Online retailer,Energy boost,1,BrandA,No artificial flavors,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,5,1,4,3,2
+24,Female,Working professional,9409,4,1-2,Daily,Yes,Yes,18.19,Tetra Pak,Online retailer,Weight management,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,5,1,3,4,2
+38,Male,Working professional,3993,2,3-4,Daily,No,No,7.81,Can,Convenience store,Energy boost,4,BrandB,High protein,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,4,5,3,2
+41,Male,Working professional,18177,3,1-2,Never,Yes,Yes,33.4,Bottle,Online retailer,Energy boost,2,None,Organic,0,1,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,5,2,1,3,4
+18,Male,Homemaker,1473,4,3-4,Weekly,Yes,No,4.01,Tetra Pak,Online retailer,Immune support,5,BrandA,Gluten-free,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,4,2,3,5
+26,Male,Working professional,9169,3,1-2,Rarely,Yes,No,14.26,Bottle,Supermarket,Digestive health,4,BrandC,High protein,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,2,1,5,4
+24,Female,Working professional,2849,3,3-4,Daily,Yes,No,7.89,Bottle,Supermarket,Muscle recovery,4,BrandB,No artificial flavors,0,0,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,2,5,4,1,3
+21,Female,Student,23097,3,5+,Never,No,No,49.08,Powder sachet,Online retailer,Weight management,4,BrandD,Organic,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,4,5,2,3,1
+19,Male,Working professional,29533,4,1-2,Rarely,Yes,Yes,63.77,Jar,Online retailer,Energy boost,4,BrandA,None,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,5,4,2,3
+22,Male,Working professional,2465,4,None,Monthly,No,No,1.78,Powder sachet,Gym/Fitness centre,Muscle recovery,2,BrandB,Low sugar,0,1,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,1,5,2,4,3
+52,Female,Self-employed,2997,5,1-2,Daily,No,No,3.25,Bottle,Pharmacy,Weight management,4,BrandC,No artificial flavors,1,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,2,3,4,5
+22,Male,Homemaker,10653,5,3-4,Weekly,Yes,No,22.69,Jar,Supermarket,Digestive health,4,BrandC,Gluten-free,0,0,1,0,0,0,1,0,1,1,0,0,0,0,0,0,0,5,3,2,4,1
+26,Female,Student,3469,4,1-2,Weekly,No,No,9.3,Tetra Pak,Supermarket,Immune support,3,BrandD,Low sugar,0,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,5,3,1,4,2
+32,Female,Self-employed,4718,5,1-2,Weekly,No,No,11.05,Powder sachet,Online retailer,Weight management,4,BrandA,None,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,2,4,3,5
+23,Female,Working professional,5028,2,1-2,Weekly,No,Yes,12.22,Powder sachet,Online retailer,Energy boost,4,BrandC,Eco packaging,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,2,3,1,4,5
+60,Female,Homemaker,873,3,3-4,Daily,Yes,No,9.58,Powder sachet,Supermarket,Weight management,3,BrandA,Eco packaging,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,0,3,1,2,5,4
+57,Female,Self-employed,4854,5,1-2,Monthly,Yes,No,10.11,Powder sachet,Online retailer,Weight management,5,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,2,1,5,4
+21,Male,Working professional,2642,4,3-4,Monthly,Yes,No,4.86,Bottle,Supermarket,Energy boost,4,BrandA,None,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,3,2,4,5,1
+26,Female,Self-employed,3153,5,None,Weekly,No,No,3.57,Tetra Pak,Online retailer,Digestive health,3,BrandA,None,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,2,5,1,4,3
+22,Female,Working professional,18021,4,3-4,Daily,Yes,Yes,35.45,Bottle,Supermarket,Immune support,4,BrandB,No artificial flavors,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,3,1,4,5,2
+22,Male,Working professional,9450,5,1-2,Never,Yes,Yes,18.61,Tetra Pak,Online retailer,Immune support,4,BrandB,Eco packaging,1,0,0,0,1,0,0,1,0,1,0,0,0,1,0,0,1,1,2,4,5,3
+18,Female,Self-employed,10218,4,3-4,Weekly,Yes,Yes,18.54,Powder sachet,Gym/Fitness centre,Digestive health,3,BrandB,No artificial flavors,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,4,5,1,3,2
+29,Female,Working professional,3824,4,1-2,Rarely,Yes,Yes,7.57,Bottle,Convenience store,Immune support,5,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,4,5,2,3,1
+26,Female,Working professional,3821,4,3-4,Weekly,Yes,No,5.52,Can,Convenience store,Immune support,5,BrandB,Low sugar,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,1,5,3,4
+18,Female,Working professional,10010,4,5+,Daily,Yes,No,22.25,Tetra Pak,Online retailer,Muscle recovery,5,BrandA,Gluten-free,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,3,4,5,2
+21,Female,Self-employed,6674,4,5+,Weekly,Yes,Yes,14.2,Bottle,Online retailer,Energy boost,4,BrandB,None,0,0,0,1,1,1,0,0,1,0,1,0,0,0,0,0,0,2,1,4,3,5
+46,Female,Working professional,8214,5,3-4,Weekly,No,Yes,15.51,Bottle,Online retailer,Energy boost,5,BrandA,Gluten-free,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,4,1,2,5,3
+21,Female,Working professional,11747,3,3-4,Rarely,Yes,No,23.87,Bottle,Supermarket,Energy boost,5,BrandA,Eco packaging,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,0,0,3,4,1,2,5
+19,Female,Self-employed,3648,2,5+,Monthly,No,No,5.09,Bottle,Supermarket,Weight management,5,BrandA,None,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,2,5,4,1,3
+26,Female,Self-employed,2833,4,3-4,Weekly,Yes,No,3.66,Tetra Pak,Supermarket,Digestive health,5,BrandA,None,0,0,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,2,5,1,3,4
+68,Female,Student,1851,4,1-2,Never,Yes,No,2.43,Can,Online retailer,Weight management,4,None,Eco packaging,0,0,0,0,1,0,0,0,1,0,1,1,0,0,0,0,0,3,4,1,2,5
+21,Female,Working professional,2338,5,5+,Weekly,No,No,4.29,Bottle,Online retailer,Weight management,3,BrandC,None,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,2,5,3,1,4
+31,Male,Student,69856,3,3-4,Never,No,Yes,139.99,Powder sachet,Supermarket,Energy boost,3,BrandC,Low sugar,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,1,0,5,1,3,4,2
+35,Female,Working professional,15066,4,1-2,Never,Yes,Yes,30.42,Tetra Pak,Online retailer,Energy boost,4,BrandD,Low sugar,0,1,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,4,1,3,2,5
+21,Female,Working professional,1457,4,1-2,Daily,No,Yes,1.0,Can,Online retailer,Weight management,5,None,Low sugar,0,0,0,0,1,1,0,1,0,0,0,0,1,0,0,0,0,5,1,3,2,4
+33,Male,Self-employed,1495,4,1-2,Weekly,No,Yes,2.83,Bottle,Gym/Fitness centre,Energy boost,4,BrandB,Low sugar,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,3,4,1,2,5
+23,Female,Working professional,7583,5,3-4,Weekly,No,No,13.53,Tetra Pak,Online retailer,Energy boost,5,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,5,1,3,2,4
+30,Male,Working professional,8043,3,1-2,Monthly,Yes,No,9.27,Bottle,Supermarket,Weight management,4,None,None,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,5,1,3,4,2
+30,Male,Working professional,8055,4,1-2,Monthly,Yes,Yes,22.26,Tetra Pak,Supermarket,Weight management,3,BrandD,High protein,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,3,2,5,4
+27,Female,Self-employed,3907,5,1-2,Never,Yes,Yes,6.22,Tetra Pak,Pharmacy,Energy boost,1,BrandD,High protein,0,1,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,2,4,3,5
+19,Male,Working professional,4390,5,3-4,Rarely,Yes,Yes,7.29,Bottle,Supermarket,Muscle recovery,4,BrandC,No artificial flavors,0,1,0,0,0,1,0,1,1,0,0,0,0,0,1,0,0,2,1,5,3,4
+39,Female,Other,6602,4,3-4,Weekly,Yes,No,10.51,Powder sachet,Online retailer,Weight management,5,BrandC,Eco packaging,0,0,0,0,0,1,1,0,0,1,0,0,1,0,0,0,0,2,5,4,3,1
+22,Female,Working professional,5310,4,1-2,Daily,No,No,8.51,Can,Online retailer,Energy boost,5,BrandC,No artificial flavors,1,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,4,5,2,3,1
+20,Female,Student,667,3,None,Monthly,Yes,Yes,1.0,Bottle,Convenience store,Muscle recovery,4,BrandC,Eco packaging,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,5,3,2,4,1
+18,Male,Working professional,3997,4,1-2,Daily,Yes,Yes,10.7,Powder sachet,Online retailer,Weight management,5,BrandB,Gluten-free,0,0,0,0,0,1,1,0,1,1,1,0,1,0,0,0,0,2,5,1,3,4
+28,Male,Working professional,2284,5,5+,Rarely,Yes,No,15.01,Can,Online retailer,Energy boost,3,BrandD,Eco packaging,0,0,0,1,0,0,1,1,0,1,0,0,0,0,1,0,0,5,2,1,4,3
+31,Female,Working professional,5754,4,3-4,Weekly,No,No,10.86,Tetra Pak,Supermarket,Immune support,4,None,No artificial flavors,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,2,4,3,5,1
+18,Other,Student,72167,3,3-4,Weekly,Yes,Yes,146.73,Tetra Pak,Convenience store,Muscle recovery,3,BrandC,None,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,2,1,4,5,3
+26,Female,Working professional,6841,3,None,Daily,No,No,12.63,Bottle,Online retailer,Weight management,3,BrandB,Organic,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4,5,3,1,2
+21,Male,Homemaker,3706,3,3-4,Rarely,Yes,No,7.45,Powder sachet,Supermarket,Digestive health,5,BrandC,No artificial flavors,0,1,0,1,0,1,0,0,1,0,0,0,0,1,1,0,0,2,3,4,5,1
+30,Female,Working professional,11267,3,3-4,Daily,No,Yes,20.69,Can,Online retailer,Immune support,5,BrandA,None,0,1,1,0,0,0,1,0,0,1,0,1,0,0,0,1,0,2,1,5,4,3
+20,Female,Self-employed,7589,2,1-2,Rarely,No,Yes,18.55,Bottle,Supermarket,Energy boost,1,None,None,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,5,3,4,2,1
+32,Female,Working professional,7173,4,1-2,Weekly,Yes,Yes,16.44,Powder sachet,Supermarket,Digestive health,3,BrandC,Low sugar,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,3,1,5,4,2
+23,Male,Working professional,8486,2,1-2,Rarely,No,No,16.67,Can,Online retailer,Digestive health,3,BrandA,Eco packaging,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,1,0,5,4,3,1,2
+51,Female,Working professional,31285,3,5+,Monthly,Yes,No,61.77,Tetra Pak,Gym/Fitness centre,Energy boost,2,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,5,4,3,2
+19,Female,Working professional,1776,4,5+,Daily,Yes,No,3.49,Jar,Online retailer,Muscle recovery,4,BrandD,Organic,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,3,5,1,4,2
+23,Other,Working professional,7527,3,3-4,Rarely,Yes,No,14.78,Bottle,Online retailer,Energy boost,4,BrandB,Eco packaging,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,3,4,5,2,1
+19,Male,Working professional,2135,2,3-4,Daily,Yes,No,1.18,Bottle,Online retailer,Muscle recovery,4,BrandA,No artificial flavors,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,5,3,4,1,2
+49,Female,Student,8103,3,1-2,Weekly,No,No,18.37,Bottle,Online retailer,Muscle recovery,3,BrandB,Gluten-free,0,0,1,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,5,2,4,3
+43,Female,Working professional,2150,3,3-4,Daily,Yes,No,3.85,Powder sachet,Supermarket,Weight management,3,None,Low sugar,1,1,0,0,0,0,0,1,0,1,0,0,0,1,1,0,0,1,3,2,4,5
+21,Male,Working professional,3376,4,3-4,Rarely,Yes,Yes,10.55,Bottle,Supermarket,Digestive health,4,BrandB,None,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,1,0,5,4,2,1,3
+30,Female,Retired,3768,2,1-2,Never,Yes,No,8.38,Bottle,Supermarket,Digestive health,5,BrandD,Eco packaging,1,1,0,0,0,0,1,0,1,1,0,0,1,0,0,0,0,2,1,5,4,3
+38,Female,Homemaker,11828,5,5+,Monthly,Yes,No,18.61,Bottle,Supermarket,Immune support,5,BrandB,High protein,1,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,3,4,5,2
+27,Male,Self-employed,11233,5,1-2,Monthly,Yes,No,19.9,Bottle,Convenience store,Weight management,3,BrandA,High protein,0,1,0,1,0,0,0,1,0,0,1,0,0,0,1,0,0,5,1,3,2,4
+27,Male,Self-employed,1602,4,1-2,Rarely,No,Yes,1.0,Tetra Pak,Pharmacy,Energy boost,3,BrandB,None,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,4,2,1,3
+21,Female,Working professional,5164,4,3-4,Daily,Yes,No,7.74,Powder sachet,Supermarket,Digestive health,3,BrandB,None,1,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,1,4,3,5,2
+19,Male,Working professional,2595,5,3-4,Never,Yes,No,1.92,Bottle,Online retailer,Energy boost,1,None,High protein,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,4,1,2,3,5
+45,Female,Retired,1583,4,3-4,Daily,Yes,Yes,3.67,Can,Convenience store,Weight management,3,None,High protein,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,4,5,3,2
+45,Male,Working professional,4043,1,1-2,Never,Yes,No,7.45,Jar,Supermarket,Digestive health,5,BrandA,High protein,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,2,3,5,4
+30,Female,Working professional,3723,4,5+,Rarely,Yes,Yes,8.93,Can,Online retailer,Energy boost,5,BrandB,No artificial flavors,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,3,1,2,4
+22,Male,Student,43654,5,3-4,Rarely,No,No,87.23,Powder sachet,Supermarket,Weight management,3,None,Organic,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,4,1,5,3,2
+23,Female,Working professional,7257,3,3-4,Monthly,Yes,No,14.03,Can,Online retailer,Weight management,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,1,0,1,0,0,0,2,5,1,3,4
+33,Other,Working professional,1422,1,5+,Weekly,Yes,No,6.85,Bottle,Convenience store,Energy boost,3,BrandB,High protein,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,2,4,3,5
+45,Other,Homemaker,2956,4,3-4,Monthly,Yes,Yes,6.36,Powder sachet,Pharmacy,Weight management,2,BrandA,Low sugar,0,1,0,0,0,0,0,1,0,1,1,0,1,1,0,0,0,1,3,2,5,4
+44,Female,Working professional,12323,5,1-2,Daily,Yes,Yes,24.48,Can,Online retailer,Energy boost,4,BrandD,Eco packaging,1,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,2,3,5,4
+36,Male,Working professional,32196,3,3-4,Monthly,No,No,62.69,Bottle,Online retailer,Energy boost,4,BrandB,No artificial flavors,0,1,0,0,0,0,0,1,1,0,1,0,1,0,0,0,0,5,2,1,3,4
+30,Female,Other,1179,4,None,Monthly,Yes,Yes,1.0,Bottle,Online retailer,Digestive health,4,BrandC,Eco packaging,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,4,3,2,1,5
+19,Male,Student,905,3,None,Rarely,Yes,No,3.35,Powder sachet,Supermarket,Weight management,5,BrandC,None,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,5,4,2,3,1
+20,Male,Working professional,26473,4,3-4,Monthly,No,Yes,54.37,Jar,Supermarket,Muscle recovery,4,BrandA,Low sugar,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,5,3,2,1,4
+45,Male,Student,40141,3,5+,Daily,Yes,No,83.43,Can,Convenience store,Energy boost,3,BrandA,Gluten-free,1,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0,0,3,5,2,4,1
+29,Female,Self-employed,2250,3,1-2,Weekly,Yes,No,5.46,Jar,Supermarket,Muscle recovery,4,None,High protein,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,5,2,4,1
+18,Female,Retired,7952,5,3-4,Monthly,Yes,Yes,15.12,Can,Supermarket,Immune support,3,None,Organic,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,3,2,5,4
+19,Female,Working professional,458,4,1-2,Weekly,Yes,No,1.94,Bottle,Online retailer,Muscle recovery,4,BrandC,Gluten-free,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,4,2,5,3
+31,Male,Homemaker,4930,4,3-4,Weekly,No,No,9.7,Tetra Pak,Convenience store,Muscle recovery,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,3,1,4,2,5
+18,Male,Working professional,6601,4,3-4,Rarely,Yes,No,14.93,Tetra Pak,Online retailer,Energy boost,5,BrandB,No artificial flavors,1,0,0,1,1,0,0,0,1,1,0,0,0,0,0,0,0,4,3,5,1,2
+20,Other,Retired,11292,3,3-4,Monthly,No,Yes,25.25,Can,Online retailer,Weight management,5,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,4,1,5,2,3
+27,Male,Self-employed,1973,4,1-2,Monthly,Yes,No,3.61,Bottle,Online retailer,Digestive health,5,BrandB,None,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,3,4,2,5
+32,Male,Self-employed,5309,3,3-4,Weekly,No,Yes,14.13,Bottle,Gym/Fitness centre,Digestive health,4,None,None,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,3,4,5,1
+30,Male,Student,2137,4,5+,Rarely,Yes,Yes,6.65,Jar,Online retailer,Weight management,4,BrandA,None,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,3,1,5,4,2
+21,Female,Other,6185,3,3-4,Weekly,Yes,Yes,12.41,Jar,Convenience store,Immune support,5,BrandC,None,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,5,3,2,4,1
+32,Female,Self-employed,2196,4,3-4,Rarely,Yes,No,5.73,Tetra Pak,Online retailer,Energy boost,2,BrandB,Low sugar,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,3,5,1,4,2
+21,Male,Working professional,3404,5,5+,Daily,Yes,Yes,7.42,Jar,Online retailer,Muscle recovery,3,BrandC,No artificial flavors,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,2,1,5,4,3
+22,Male,Self-employed,2006,5,None,Rarely,Yes,No,4.06,Tetra Pak,Pharmacy,Energy boost,3,BrandC,None,0,0,1,0,0,0,0,1,1,1,0,0,0,0,0,1,0,5,1,2,4,3
+34,Female,Working professional,8831,4,3-4,Weekly,No,Yes,21.49,Powder sachet,Gym/Fitness centre,Muscle recovery,4,BrandB,Gluten-free,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,5,3,1,4,2
+30,Female,Homemaker,10642,3,5+,Weekly,No,Yes,22.32,Bottle,Supermarket,Energy boost,5,BrandA,No artificial flavors,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5,2,3,4
+40,Male,Student,3979,4,None,Monthly,Yes,Yes,6.28,Bottle,Supermarket,Immune support,3,BrandC,Gluten-free,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,5,3,2,4,1
+30,Female,Self-employed,5087,5,3-4,Monthly,Yes,Yes,8.12,Can,Convenience store,Digestive health,4,None,Organic,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,4,2,5,3
+28,Male,Working professional,1334,3,1-2,Daily,No,No,1.0,Bottle,Online retailer,Energy boost,4,BrandC,Eco packaging,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4,2,1,5,3
+19,Male,Student,3753,5,3-4,Rarely,Yes,Yes,8.49,Tetra Pak,Online retailer,Muscle recovery,5,BrandA,Eco packaging,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,4,2,3,1,5
+23,Female,Working professional,4698,3,3-4,Weekly,No,Yes,8.71,Powder sachet,Supermarket,Digestive health,4,None,Eco packaging,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,1,3,4,2,5
+21,Male,Student,51985,5,1-2,Never,Yes,Yes,104.64,Can,Online retailer,Energy boost,5,BrandA,Gluten-free,0,0,0,1,1,0,0,1,0,0,1,0,1,0,0,0,0,5,3,2,4,1
+21,Female,Working professional,1807,5,3-4,Rarely,Yes,Yes,5.49,Powder sachet,Gym/Fitness centre,Energy boost,3,BrandB,None,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2,3,4,1,5
+61,Male,Working professional,18357,5,1-2,Weekly,Yes,Yes,40.77,Can,Online retailer,Weight management,5,BrandB,Organic,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,2,1,3,5,4
+23,Male,Working professional,12054,3,1-2,Rarely,Yes,No,23.47,Can,Supermarket,Energy boost,4,BrandB,Gluten-free,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,5,3,2,4,1
+44,Other,Working professional,6327,1,1-2,Weekly,Yes,No,9.84,Tetra Pak,Supermarket,Muscle recovery,4,BrandB,High protein,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,3,2,4,1,5
+29,Male,Working professional,23927,4,5+,Daily,No,No,51.44,Bottle,Convenience store,Weight management,3,BrandD,High protein,1,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,5,3,2,4,1
+37,Female,Self-employed,6870,3,None,Never,No,No,10.83,Bottle,Pharmacy,Weight management,5,BrandA,No artificial flavors,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,3,4,5,1,2
+26,Male,Student,6976,1,5+,Monthly,Yes,No,10.96,Can,Gym/Fitness centre,Weight management,5,BrandB,None,0,0,1,0,1,1,0,0,0,0,1,0,1,0,0,0,0,1,2,4,5,3
+28,Male,Retired,4685,4,3-4,Weekly,Yes,No,12.9,Powder sachet,Online retailer,Immune support,5,BrandA,No artificial flavors,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4,5,1,2,3
+26,Male,Homemaker,14783,4,1-2,Weekly,Yes,Yes,31.7,Tetra Pak,Online retailer,Digestive health,4,BrandC,Low sugar,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,5,3,4,2
+20,Female,Working professional,13185,4,3-4,Weekly,No,Yes,27.34,Bottle,Pharmacy,Muscle recovery,4,BrandA,High protein,1,1,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,3,5,2,4
+33,Male,Working professional,2799,4,3-4,Never,Yes,Yes,5.5,Bottle,Gym/Fitness centre,Weight management,3,BrandB,Low sugar,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,5,3,2,1,4
+21,Female,Homemaker,1499,2,3-4,Daily,Yes,Yes,2.52,Powder sachet,Pharmacy,Energy boost,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,1,4,5,1,3,2
+18,Male,Working professional,4094,5,1-2,Weekly,Yes,Yes,6.89,Can,Supermarket,Energy boost,3,BrandA,Organic,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5,4,2,1,3
+30,Other,Student,2392,3,1-2,Weekly,Yes,No,4.22,Powder sachet,Online retailer,Muscle recovery,5,BrandB,Eco packaging,1,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,2,3,1,4,5
+20,Male,Working professional,4642,4,1-2,Weekly,No,Yes,9.19,Can,Gym/Fitness centre,Weight management,5,BrandB,No artificial flavors,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,5,4,2,1
+51,Female,Self-employed,14968,4,None,Weekly,Yes,No,27.19,Tetra Pak,Supermarket,Weight management,5,BrandB,Organic,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,3,5,2,1,4
+54,Female,Student,3257,5,1-2,Daily,Yes,Yes,4.87,Tetra Pak,Online retailer,Digestive health,4,BrandB,Gluten-free,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,5,3,2,4,1
+47,Female,Working professional,4729,2,None,Daily,Yes,Yes,5.23,Bottle,Online retailer,Weight management,4,BrandB,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,1,0,1,0,1,4,3,5,1,2
+23,Female,Other,5178,4,1-2,Weekly,Yes,No,10.51,Tetra Pak,Online retailer,Digestive health,4,BrandC,No artificial flavors,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,4,3,5,2,1
+18,Female,Homemaker,10547,4,None,Never,Yes,No,21.25,Can,Gym/Fitness centre,Digestive health,4,BrandD,None,0,0,0,0,1,0,0,0,1,1,0,0,0,1,0,0,0,1,3,2,4,5
+49,Female,Working professional,651,3,1-2,Daily,Yes,Yes,4.86,Tetra Pak,Supermarket,Energy boost,1,BrandC,Eco packaging,1,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,5,4,3,2,1
+24,Male,Student,2847,4,1-2,Rarely,Yes,No,6.45,Jar,Gym/Fitness centre,Immune support,5,None,Gluten-free,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,1,2,5,4,3,1
+58,Male,Self-employed,5944,5,5+,Rarely,Yes,No,10.78,Bottle,Supermarket,Energy boost,3,None,No artificial flavors,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,5,4
+57,Female,Working professional,14473,5,None,Rarely,Yes,Yes,28.55,Tetra Pak,Convenience store,Immune support,4,BrandA,Eco packaging,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,2,5,4,3,1
+41,Female,Student,3157,1,3-4,Rarely,Yes,Yes,7.29,Bottle,Supermarket,Weight management,5,BrandB,Gluten-free,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,2,1,4,5,3
+22,Female,Student,908,3,1-2,Weekly,No,No,2.27,Bottle,Gym/Fitness centre,Digestive health,5,None,Organic,1,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,3,1,5,2,4
+23,Female,Retired,8585,3,5+,Weekly,Yes,No,18.33,Tetra Pak,Online retailer,Muscle recovery,5,BrandA,High protein,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,2,1,3
+40,Male,Working professional,2774,4,None,Weekly,Yes,Yes,6.3,Bottle,Supermarket,Weight management,1,BrandC,Eco packaging,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,3,5,1,2,4
+22,Male,Self-employed,1685,3,5+,Weekly,Yes,No,2.86,Can,Online retailer,Muscle recovery,4,None,No artificial flavors,1,1,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,4,2,5,1,3
+20,Female,Homemaker,2802,3,3-4,Rarely,Yes,Yes,4.53,Bottle,Convenience store,Immune support,3,BrandC,Gluten-free,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,4,3,1,5,2
+27,Male,Working professional,4163,5,None,Monthly,Yes,No,7.15,Bottle,Supermarket,Immune support,5,BrandA,No artificial flavors,1,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,4,1,2,3,5
+51,Male,Working professional,2852,5,5+,Rarely,No,Yes,3.85,Bottle,Supermarket,Muscle recovery,3,BrandD,Gluten-free,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,5,2,3,4,1
+32,Female,Working professional,675,1,3-4,Daily,Yes,No,1.0,Bottle,Online retailer,Muscle recovery,5,BrandB,Eco packaging,0,0,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,4,1,3,5,2
+28,Male,Working professional,11019,3,1-2,Never,Yes,No,25.71,Jar,Supermarket,Energy boost,5,None,Organic,0,1,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,2,1,5,4,3
+19,Female,Working professional,15481,4,3-4,Weekly,No,Yes,31.21,Tetra Pak,Convenience store,Digestive health,5,BrandB,High protein,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,5,4,3,2,1
+29,Male,Self-employed,8834,3,5+,Weekly,Yes,Yes,17.36,Powder sachet,Supermarket,Muscle recovery,2,BrandB,None,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,1,5,2,4
+73,Female,Working professional,1765,4,3-4,Weekly,No,No,2.54,Bottle,Online retailer,Digestive health,1,BrandD,No artificial flavors,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,2,4,3,5
+19,Male,Homemaker,4100,4,1-2,Rarely,Yes,No,9.06,Jar,Supermarket,Muscle recovery,5,BrandB,None,0,0,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,5,3,2,1,4
+26,Male,Working professional,4886,5,3-4,Weekly,No,Yes,12.18,Tetra Pak,Supermarket,Energy boost,5,BrandA,No artificial flavors,0,1,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,4,5,2,3,1
+43,Male,Working professional,8425,4,3-4,Never,No,Yes,18.3,Bottle,Supermarket,Energy boost,5,BrandA,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1,5,3,2
+34,Male,Working professional,8969,4,5+,Never,No,No,19.78,Tetra Pak,Online retailer,Energy boost,3,BrandB,Low sugar,1,1,1,0,0,0,0,0,1,1,0,1,0,1,0,0,0,2,1,5,4,3
+32,Male,Working professional,2538,4,3-4,Rarely,No,No,3.9,Tetra Pak,Online retailer,Muscle recovery,4,None,Low sugar,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,2,5,1,4,3
+32,Male,Self-employed,5291,3,1-2,Daily,No,Yes,10.57,Can,Supermarket,Energy boost,4,BrandB,Low sugar,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,5,2,1,4,3
+23,Female,Working professional,7417,4,5+,Rarely,No,No,13.69,Tetra Pak,Pharmacy,Muscle recovery,3,BrandA,None,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,3,4,2,5,1
+22,Male,Working professional,18219,4,1-2,Rarely,Yes,No,36.65,Can,Online retailer,Energy boost,4,BrandC,Eco packaging,0,0,1,0,1,0,0,0,0,0,0,0,1,1,0,0,0,2,5,3,1,4
+37,Female,Student,9266,2,1-2,Daily,Yes,Yes,21.08,Bottle,Supermarket,Weight management,4,BrandA,Eco packaging,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,1,0,5,3,2,4,1
+37,Female,Working professional,9998,3,3-4,Daily,Yes,Yes,20.87,Can,Supermarket,Energy boost,3,BrandC,None,0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0,4,2,5,3,1
+42,Female,Working professional,5300,3,3-4,Daily,No,Yes,13.85,Powder sachet,Supermarket,Weight management,3,BrandB,Low sugar,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,4,1,2,3,5
+47,Male,Working professional,17491,5,None,Daily,No,No,34.4,Bottle,Supermarket,Energy boost,4,BrandB,No artificial flavors,0,0,1,0,0,0,0,1,1,0,1,0,0,0,1,1,0,1,2,5,4,3
+26,Female,Other,7107,3,3-4,Monthly,No,No,12.6,Can,Online retailer,Muscle recovery,4,BrandA,High protein,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,3,4,5,1
+26,Male,Working professional,2264,3,1-2,Never,No,No,5.55,Tetra Pak,Pharmacy,Energy boost,3,BrandA,No artificial flavors,0,1,0,0,0,0,1,0,1,1,0,0,1,0,0,0,0,2,5,4,1,3
+37,Male,Self-employed,17379,4,3-4,Weekly,Yes,Yes,35.0,Jar,Convenience store,Energy boost,3,BrandD,Low sugar,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,4,5,3,2
+30,Other,Working professional,9211,4,5+,Monthly,Yes,Yes,19.07,Tetra Pak,Pharmacy,Immune support,5,BrandA,High protein,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,2,3,4,5,1
+32,Male,Working professional,3299,2,1-2,Never,Yes,No,6.94,Bottle,Supermarket,Energy boost,5,None,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,5,4,1,3
+37,Female,Student,3192,5,None,Weekly,Yes,Yes,5.42,Tetra Pak,Supermarket,Digestive health,5,BrandD,Low sugar,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,5,3,1,2,4
+44,Female,Working professional,28867,5,1-2,Rarely,Yes,No,58.13,Can,Convenience store,Immune support,3,BrandA,Organic,0,1,1,0,0,0,0,0,1,0,0,0,0,1,0,1,0,3,1,2,4,5
+22,Female,Working professional,7457,4,5+,Monthly,No,No,16.86,Can,Online retailer,Weight management,3,None,Organic,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,5,1,4,3,2
+23,Female,Working professional,5870,4,None,Monthly,No,Yes,13.89,Can,Supermarket,Weight management,5,BrandA,Eco packaging,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,4,2,3,5
+19,Male,Student,6504,1,1-2,Weekly,Yes,Yes,12.03,Tetra Pak,Supermarket,Weight management,3,BrandD,Organic,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,4,3,2,1,5
+28,Male,Student,22696,3,3-4,Monthly,Yes,Yes,45.85,Jar,Online retailer,Weight management,4,BrandB,No artificial flavors,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,4,5,3,2
+18,Female,Working professional,12892,5,3-4,Daily,Yes,Yes,28.74,Tetra Pak,Online retailer,Weight management,3,BrandA,Gluten-free,1,1,0,0,0,0,1,0,1,1,0,0,1,1,0,0,0,2,3,5,4,1
+25,Male,Other,5835,2,None,Rarely,Yes,No,10.73,Can,Pharmacy,Energy boost,4,None,None,1,0,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,3,2,1,4,5
+27,Male,Working professional,11466,3,3-4,Weekly,Yes,Yes,21.63,Bottle,Supermarket,Weight management,5,None,Gluten-free,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,1,5,3,4,2
+22,Male,Working professional,1941,4,1-2,Rarely,Yes,Yes,17.5,Bottle,Supermarket,Digestive health,5,BrandC,High protein,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,5,3,2,4,1
+28,Male,Working professional,7031,3,5+,Weekly,Yes,No,15.3,Powder sachet,Online retailer,Energy boost,5,BrandB,Eco packaging,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,3,2,4,1,5
+18,Male,Working professional,25044,5,1-2,Daily,Yes,Yes,48.41,Can,Supermarket,Muscle recovery,5,None,Eco packaging,1,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,2,1,5,3,4
+18,Male,Working professional,4039,2,1-2,Monthly,No,No,5.28,Can,Online retailer,Muscle recovery,4,BrandC,None,1,0,0,0,0,1,0,0,1,0,0,0,1,1,0,0,0,2,5,3,1,4
+38,Female,Working professional,2292,5,3-4,Daily,Yes,Yes,5.01,Jar,Online retailer,Energy boost,4,BrandB,None,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,2,4,3,1,5
+23,Female,Working professional,2733,4,1-2,Rarely,Yes,Yes,4.63,Bottle,Supermarket,Energy boost,2,BrandB,High protein,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,4,5,2,3,1
+19,Female,Student,1843,5,3-4,Never,Yes,Yes,1.0,Powder sachet,Online retailer,Weight management,4,None,No artificial flavors,0,0,1,0,0,0,0,0,1,0,1,0,0,1,0,0,0,3,2,4,1,5
+26,Male,Student,2425,3,1-2,Rarely,Yes,Yes,3.48,Jar,Supermarket,Muscle recovery,3,None,Gluten-free,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,2,3,5,1,4
+35,Male,Working professional,3521,4,1-2,Daily,Yes,No,8.25,Jar,Online retailer,Weight management,5,None,Low sugar,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,5,4,1,3,2
+20,Male,Student,1387,5,3-4,Monthly,No,No,2.47,Bottle,Online retailer,Muscle recovery,4,BrandB,None,1,0,0,0,0,0,0,1,1,0,0,0,1,1,0,0,0,3,5,2,4,1
+29,Female,Student,4984,4,3-4,Monthly,Yes,Yes,13.1,Can,Supermarket,Muscle recovery,4,BrandC,Eco packaging,1,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,2,1,4,3,5
+19,Female,Working professional,11071,4,3-4,Rarely,Yes,Yes,17.97,Bottle,Online retailer,Digestive health,4,BrandA,Eco packaging,1,0,0,0,0,1,0,0,0,0,1,0,0,1,1,0,0,1,5,4,2,3
+18,Male,Self-employed,2171,4,1-2,Daily,Yes,Yes,7.02,Can,Supermarket,Energy boost,3,BrandD,Organic,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,3,2,4,1,5
+27,Female,Working professional,19290,4,1-2,Weekly,Yes,Yes,37.89,Tetra Pak,Supermarket,Muscle recovery,5,BrandC,Low sugar,1,0,0,0,0,0,0,0,0,0,1,0,0,1,1,1,0,4,5,3,1,2
+27,Male,Working professional,7783,4,None,Monthly,Yes,Yes,14.59,Bottle,Supermarket,Energy boost,5,BrandA,Low sugar,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,3,1,2,5
+30,Female,Working professional,12426,5,None,Daily,Yes,No,71.54,Tetra Pak,Supermarket,Energy boost,4,BrandC,Organic,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,3,4,1,2
+33,Female,Retired,2719,3,3-4,Weekly,No,No,6.37,Can,Gym/Fitness centre,Weight management,5,BrandA,Eco packaging,0,0,1,1,0,0,0,1,0,1,0,0,0,1,0,0,0,4,3,2,5,1
+62,Female,Working professional,10605,4,5+,Weekly,No,Yes,17.56,Jar,Supermarket,Muscle recovery,4,BrandB,Low sugar,1,0,1,0,0,0,0,1,1,0,0,1,0,0,0,0,0,4,5,2,3,1
+26,Female,Student,1840,5,1-2,Rarely,No,No,5.32,Can,Online retailer,Immune support,5,BrandB,None,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,4,3,2,5,1
+22,Female,Working professional,10951,4,1-2,Never,Yes,No,18.88,Bottle,Convenience store,Weight management,4,BrandD,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,1,1,3,2,4,5
+37,Male,Student,5737,5,1-2,Monthly,Yes,Yes,8.76,Bottle,Supermarket,Weight management,5,BrandB,No artificial flavors,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,5,4,1,2,3
+21,Female,Working professional,8086,5,1-2,Weekly,No,No,13.79,Powder sachet,Supermarket,Energy boost,5,BrandA,Eco packaging,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,5,4,3,2
+24,Male,Working professional,1706,4,None,Weekly,Yes,No,1.98,Can,Supermarket,Muscle recovery,2,BrandA,Low sugar,0,1,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,3,5,2,1,4
+18,Female,Homemaker,2196,2,5+,Never,Yes,Yes,6.28,Can,Supermarket,Weight management,5,BrandC,None,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,4,5,2,3,1
+18,Female,Working professional,8413,1,3-4,Never,Yes,No,19.83,Bottle,Supermarket,Weight management,5,BrandA,No artificial flavors,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,3,5,2,4,1
+57,Female,Self-employed,2093,4,5+,Never,Yes,Yes,2.96,Bottle,Gym/Fitness centre,Muscle recovery,4,BrandD,Organic,0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,1,0,3,1,2,5,4
+39,Male,Other,7457,5,5+,Rarely,Yes,Yes,14.82,Jar,Supermarket,Muscle recovery,5,None,Organic,0,1,1,1,0,1,0,0,1,0,1,0,0,1,0,0,0,2,4,5,1,3
+32,Female,Student,1436,3,3-4,Weekly,Yes,No,3.85,Jar,Online retailer,Energy boost,5,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,3,5,2,1,4
+24,Female,Working professional,10544,3,3-4,Rarely,Yes,Yes,20.43,Bottle,Supermarket,Muscle recovery,1,BrandD,Eco packaging,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,3,5,1,4,2
+20,Female,Working professional,1621,2,1-2,Weekly,No,Yes,4.14,Can,Supermarket,Weight management,5,BrandB,No artificial flavors,0,0,0,0,1,0,0,1,1,0,0,0,0,1,0,0,0,1,5,3,2,4
+20,Male,Working professional,8079,5,3-4,Weekly,Yes,Yes,16.15,Bottle,Supermarket,Energy boost,4,BrandB,Eco packaging,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,3,4,5,2,1
+21,Male,Working professional,8631,3,5+,Rarely,Yes,No,16.76,Powder sachet,Supermarket,Energy boost,5,BrandA,Gluten-free,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,2,4,3,1,5
+27,Male,Retired,2625,4,None,Daily,Yes,No,2.41,Can,Supermarket,Digestive health,4,BrandC,Gluten-free,1,0,0,0,1,1,0,0,0,0,1,0,0,1,0,0,0,4,5,2,3,1
+33,Male,Self-employed,8298,4,5+,Daily,Yes,No,16.89,Jar,Online retailer,Digestive health,4,None,No artificial flavors,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,2,4,3,1,5
+30,Female,Working professional,6213,5,1-2,Weekly,Yes,No,14.34,Tetra Pak,Online retailer,Energy boost,5,None,Gluten-free,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,4,5,1,2,3
+21,Male,Working professional,3026,4,5+,Weekly,No,Yes,4.5,Powder sachet,Supermarket,Muscle recovery,4,None,Low sugar,0,0,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,3,2,4,1,5
+55,Other,Self-employed,1983,4,5+,Rarely,Yes,Yes,1.0,Powder sachet,Gym/Fitness centre,Muscle recovery,4,None,Eco packaging,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,3,4,1,2,5
+34,Male,Other,840,3,3-4,Daily,No,No,1.04,Bottle,Supermarket,Immune support,4,BrandA,Low sugar,0,0,0,1,0,0,0,0,1,1,0,1,0,1,0,0,0,2,4,5,1,3
+27,Male,Self-employed,6732,4,3-4,Daily,Yes,No,16.48,Powder sachet,Supermarket,Immune support,4,BrandA,Organic,0,0,0,1,0,0,0,0,1,0,0,0,1,1,1,0,0,3,1,5,2,4
+29,Female,Student,1202,4,3-4,Daily,Yes,Yes,4.83,Powder sachet,Pharmacy,Muscle recovery,4,BrandB,Eco packaging,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,5,3,2,4
+24,Female,Working professional,5355,5,5+,Daily,No,Yes,9.55,Bottle,Convenience store,Energy boost,3,BrandC,Gluten-free,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,1,0,1,4,2,3,5
+21,Female,Student,3877,3,5+,Daily,Yes,No,8.67,Jar,Pharmacy,Weight management,4,BrandB,Low sugar,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,1,4,5,3,1,2
+23,Female,Working professional,9056,1,3-4,Monthly,Yes,No,19.34,Tetra Pak,Supermarket,Muscle recovery,3,None,Organic,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,2,5,1,3,4
+35,Female,Student,3745,2,3-4,Weekly,Yes,No,10.47,Jar,Convenience store,Immune support,4,BrandD,None,0,1,0,1,1,0,1,1,1,1,0,0,0,0,0,0,0,1,5,3,4,2
+18,Male,Working professional,3654,4,3-4,Rarely,Yes,Yes,4.21,Bottle,Online retailer,Weight management,4,BrandC,No artificial flavors,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,3,1,2,5,4
+19,Other,Working professional,9497,5,5+,Never,Yes,No,16.86,Tetra Pak,Online retailer,Digestive health,4,BrandA,Organic,0,0,1,0,0,0,0,1,1,0,1,0,1,0,0,0,0,2,5,3,1,4
+18,Other,Student,6645,1,3-4,Monthly,Yes,No,9.27,Bottle,Convenience store,Muscle recovery,3,BrandA,Low sugar,0,0,1,1,0,0,0,0,1,0,0,0,1,0,0,0,0,1,3,4,5,2
+18,Female,Working professional,6532,4,5+,Daily,Yes,No,11.71,Jar,Pharmacy,Energy boost,2,BrandB,High protein,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,3,4,1,2,5
+41,Male,Working professional,7498,3,3-4,Daily,Yes,No,17.13,Powder sachet,Online retailer,Muscle recovery,4,None,Eco packaging,1,0,0,0,1,0,0,1,1,1,0,0,1,0,0,0,0,5,4,2,1,3
+32,Female,Working professional,1234,2,None,Rarely,No,No,1.35,Tetra Pak,Pharmacy,Energy boost,4,BrandB,Organic,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,1,0,4,5,2,3,1
+25,Male,Student,9712,4,1-2,Monthly,No,No,16.81,Can,Supermarket,Muscle recovery,4,BrandC,High protein,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,5,3,4,1,2
+19,Male,Working professional,8529,3,3-4,Rarely,No,No,17.51,Tetra Pak,Online retailer,Muscle recovery,2,None,Eco packaging,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,2,4,5,3,1
+26,Male,Self-employed,1968,4,1-2,Rarely,Yes,No,4.44,Bottle,Supermarket,Immune support,4,BrandB,Eco packaging,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,3,2,4,5,1
+25,Male,Student,3945,4,1-2,Never,No,No,5.86,Tetra Pak,Convenience store,Immune support,5,BrandA,None,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5,3,4,2
+20,Female,Student,4744,4,3-4,Never,Yes,Yes,8.48,Tetra Pak,Online retailer,Energy boost,4,BrandC,Low sugar,0,0,1,0,0,0,1,1,0,0,1,0,1,0,0,0,0,2,4,5,3,1
+24,Female,Working professional,4354,2,None,Monthly,No,No,9.01,Bottle,Pharmacy,Energy boost,2,BrandC,None,0,1,0,0,0,0,0,1,0,1,0,0,1,0,1,0,0,1,3,5,2,4
+24,Female,Retired,6637,5,1-2,Weekly,Yes,No,14.77,Bottle,Online retailer,Digestive health,3,None,None,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,5,1,4,2,3
+29,Male,Working professional,17823,4,3-4,Never,Yes,No,34.35,Tetra Pak,Gym/Fitness centre,Muscle recovery,5,BrandA,No artificial flavors,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,2,3,4,1
+30,Male,Working professional,13012,5,5+,Monthly,No,Yes,24.44,Can,Supermarket,Digestive health,4,BrandB,None,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,4,3,2
+18,Male,Working professional,1509,2,3-4,Daily,Yes,No,6.84,Powder sachet,Online retailer,Energy boost,3,BrandB,High protein,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,3,4,5,2
+23,Other,Working professional,8603,1,5+,Monthly,Yes,Yes,16.66,Bottle,Gym/Fitness centre,Digestive health,5,BrandC,None,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,3,1,4,5
+29,Male,Student,16253,1,3-4,Monthly,No,No,33.0,Bottle,Supermarket,Weight management,3,BrandA,Eco packaging,1,1,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,2,1,5,3,4
+26,Female,Working professional,6961,3,1-2,Rarely,No,No,15.22,Tetra Pak,Supermarket,Energy boost,4,BrandD,Organic,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,5,2,1,4
+41,Female,Retired,13120,4,3-4,Monthly,No,Yes,22.67,Tetra Pak,Online retailer,Energy boost,2,BrandB,Eco packaging,1,0,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,4,3,1,5,2
+30,Male,Working professional,30063,5,3-4,Weekly,Yes,No,60.09,Can,Supermarket,Digestive health,3,BrandD,Organic,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,2,3,4,1,5
+20,Female,Homemaker,12349,4,1-2,Never,Yes,Yes,21.41,Tetra Pak,Supermarket,Weight management,4,BrandB,Low sugar,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,2,5,4,3
+18,Female,Self-employed,6151,3,None,Rarely,Yes,Yes,12.04,Can,Supermarket,Immune support,3,BrandB,High protein,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,2,4,1,3,5
+30,Female,Student,12589,4,3-4,Monthly,Yes,No,82.69,Tetra Pak,Supermarket,Muscle recovery,1,None,None,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,5,2,1,4,3
+18,Female,Retired,5599,2,None,Weekly,Yes,Yes,9.2,Bottle,Pharmacy,Energy boost,5,BrandA,Eco packaging,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,4,5,1,3,2
+28,Male,Student,5022,4,3-4,Weekly,Yes,Yes,6.71,Bottle,Convenience store,Muscle recovery,2,BrandA,Gluten-free,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,5,4,2,1,3
+51,Male,Working professional,3582,4,1-2,Monthly,Yes,Yes,10.94,Bottle,Gym/Fitness centre,Energy boost,4,BrandC,Organic,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,4,2,5,3
+28,Female,Student,20072,5,3-4,Daily,Yes,Yes,37.85,Bottle,Supermarket,Muscle recovery,3,BrandC,High protein,1,0,0,0,0,0,1,0,1,0,0,1,0,1,0,0,0,2,3,1,4,5
+23,Female,Student,2353,5,3-4,Weekly,No,No,1.71,Bottle,Gym/Fitness centre,Weight management,5,BrandB,Gluten-free,0,1,0,0,0,1,0,1,1,0,0,0,0,0,1,0,0,5,3,2,1,4
+30,Male,Working professional,105185,3,None,Rarely,No,Yes,213.61,Bottle,Online retailer,Muscle recovery,5,BrandC,Low sugar,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,5,4,3,2,1
+25,Female,Working professional,7707,4,1-2,Weekly,No,No,13.04,Powder sachet,Gym/Fitness centre,Weight management,3,BrandA,Low sugar,0,0,0,0,0,0,0,1,0,0,1,1,1,0,0,0,0,5,3,2,4,1
+27,Female,Working professional,1395,5,3-4,Weekly,No,Yes,6.08,Bottle,Online retailer,Energy boost,4,BrandA,Gluten-free,1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,1,1,3,2,5,4
+52,Female,Working professional,29371,5,5+,Daily,Yes,Yes,59.29,Bottle,Supermarket,Energy boost,5,BrandA,No artificial flavors,1,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,1,3,2,4,5
+23,Male,Student,742,4,5+,Weekly,No,Yes,4.05,Jar,Online retailer,Weight management,2,None,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,0,0,2,3,1,5,4
+56,Female,Student,8630,5,3-4,Rarely,Yes,No,17.63,Can,Online retailer,Immune support,4,None,None,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,5,3,4,2
+46,Female,Working professional,10902,2,3-4,Weekly,No,No,23.96,Can,Pharmacy,Weight management,5,BrandA,None,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,4,5,3,2,1
+20,Male,Working professional,2884,5,1-2,Daily,No,No,3.93,Can,Gym/Fitness centre,Muscle recovery,3,BrandA,Gluten-free,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,5,4,2
+18,Male,Self-employed,5493,2,1-2,Monthly,No,No,9.76,Can,Supermarket,Energy boost,5,BrandA,Gluten-free,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,4,2,1,3,5
+19,Other,Working professional,28531,4,1-2,Never,Yes,Yes,52.83,Bottle,Gym/Fitness centre,Weight management,2,BrandB,Organic,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,5,2,1,4,3
+18,Male,Self-employed,3118,5,3-4,Monthly,Yes,No,8.18,Bottle,Online retailer,Muscle recovery,4,None,Organic,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,2,1,5,4,3
+19,Female,Working professional,1895,3,1-2,Daily,Yes,No,10.15,Powder sachet,Supermarket,Digestive health,3,BrandB,None,0,0,1,0,1,0,0,1,1,0,0,1,0,0,0,0,0,4,1,3,2,5
+31,Female,Working professional,18648,4,None,Weekly,Yes,Yes,35.28,Bottle,Online retailer,Weight management,4,BrandA,High protein,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,4,5,2,3
+18,Male,Working professional,28748,3,3-4,Rarely,Yes,Yes,54.0,Bottle,Supermarket,Weight management,3,BrandB,High protein,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4,3,2,1,5
+22,Female,Working professional,4931,5,3-4,Weekly,Yes,No,10.43,Can,Supermarket,Digestive health,3,BrandA,Organic,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,5,3,4,2,1
+40,Male,Working professional,12214,5,1-2,Monthly,Yes,Yes,27.78,Bottle,Supermarket,Weight management,4,BrandB,None,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,4,3,2,1,5
+18,Female,Self-employed,16438,4,None,Weekly,Yes,No,32.6,Can,Supermarket,Energy boost,3,BrandC,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5
+38,Male,Working professional,2519,4,3-4,Weekly,No,Yes,3.72,Jar,Supermarket,Weight management,4,BrandB,Organic,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5,4,2,3,1
+21,Female,Self-employed,3176,5,3-4,Rarely,Yes,Yes,4.48,Powder sachet,Gym/Fitness centre,Energy boost,3,BrandA,Organic,0,0,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,5,2,3,4,1
+19,Male,Self-employed,14880,4,3-4,Rarely,Yes,No,32.26,Jar,Supermarket,Immune support,3,BrandB,Gluten-free,0,0,0,1,0,1,0,0,0,0,1,0,1,0,0,0,0,2,5,3,4,1
+32,Male,Homemaker,22393,4,1-2,Monthly,No,No,43.23,Bottle,Online retailer,Muscle recovery,4,BrandD,Gluten-free,1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,3,4,1,2,5
+29,Other,Retired,8157,4,3-4,Weekly,Yes,Yes,15.57,Powder sachet,Online retailer,Weight management,1,BrandA,Eco packaging,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,2,1,3,5,4
+43,Male,Working professional,2226,4,5+,Daily,No,No,6.54,Bottle,Supermarket,Immune support,5,BrandA,Low sugar,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5,3,2,4,1
+33,Female,Working professional,29388,2,1-2,Monthly,Yes,Yes,60.05,Bottle,Convenience store,Immune support,4,BrandB,None,1,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0,3,5,1,4,2
+37,Male,Working professional,3048,2,5+,Monthly,Yes,Yes,5.43,Can,Online retailer,Weight management,5,BrandB,None,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2,3,5,1,4
+21,Female,Working professional,3635,2,1-2,Daily,Yes,No,5.87,Tetra Pak,Pharmacy,Digestive health,3,BrandA,Organic,1,0,0,0,1,0,1,0,1,0,0,0,1,0,0,1,0,4,5,2,3,1
+20,Male,Working professional,6688,5,1-2,Daily,Yes,No,16.31,Bottle,Online retailer,Energy boost,4,BrandA,None,1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,2,4,5,1,3
+34,Other,Self-employed,19905,4,3-4,Daily,Yes,Yes,37.58,Tetra Pak,Gym/Fitness centre,Digestive health,4,BrandA,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5,3,2,4
+37,Male,Working professional,10600,4,None,Never,Yes,Yes,20.78,Powder sachet,Convenience store,Weight management,2,BrandB,No artificial flavors,0,1,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,3,1,2,4,5
+73,Male,Working professional,7139,4,1-2,Rarely,Yes,No,11.27,Bottle,Supermarket,Muscle recovery,5,BrandA,Organic,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,4,5,2,1,3
+24,Male,Working professional,7457,3,3-4,Never,Yes,Yes,17.29,Tetra Pak,Online retailer,Energy boost,5,BrandD,None,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,4,2,1,3,5
+23,Male,Working professional,5111,3,3-4,Daily,Yes,No,9.27,Bottle,Online retailer,Immune support,3,BrandC,Low sugar,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,5,3,2,1,4
+35,Female,Student,8122,5,5+,Never,Yes,No,14.84,Can,Convenience store,Energy boost,5,BrandB,Organic,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,5,2,3,4,1
+23,Male,Homemaker,504,4,3-4,Daily,Yes,Yes,2.33,Bottle,Supermarket,Weight management,5,BrandC,Gluten-free,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,3,2,1,4,5
+50,Female,Working professional,3763,5,1-2,Monthly,Yes,No,4.67,Tetra Pak,Online retailer,Muscle recovery,3,BrandC,High protein,0,0,0,1,0,0,0,0,1,0,1,0,1,1,1,0,0,1,5,4,2,3
+41,Male,Working professional,6107,4,3-4,Rarely,Yes,No,13.48,Bottle,Supermarket,Muscle recovery,3,None,High protein,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,2,1,3,5,4
+24,Male,Student,1744,4,3-4,Weekly,Yes,Yes,2.77,Jar,Convenience store,Muscle recovery,4,BrandD,Gluten-free,1,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,5,4,3,2,1
+34,Female,Working professional,6958,4,5+,Weekly,Yes,Yes,11.51,Powder sachet,Online retailer,Muscle recovery,3,BrandC,High protein,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,3,1,5,2,4
+34,Female,Working professional,4089,5,5+,Daily,No,Yes,6.2,Powder sachet,Pharmacy,Digestive health,3,BrandD,No artificial flavors,0,0,0,0,0,0,0,1,1,1,0,0,0,0,1,0,0,3,4,2,1,5
+19,Male,Working professional,23859,5,5+,Daily,Yes,No,46.35,Bottle,Pharmacy,Energy boost,4,BrandB,No artificial flavors,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,1,4,2,3,1,5
+45,Male,Student,20246,1,3-4,Monthly,No,No,39.6,Bottle,Online retailer,Weight management,1,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,3,5,4,2,1
+26,Male,Working professional,3232,4,3-4,Monthly,No,Yes,4.07,Can,Online retailer,Weight management,4,BrandB,None,1,0,1,0,0,0,0,1,1,1,0,0,1,1,1,0,0,1,2,5,3,4
+39,Female,Working professional,4291,4,1-2,Rarely,Yes,Yes,9.17,Tetra Pak,Online retailer,Immune support,3,BrandB,None,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,4,1,5,3
+22,Female,Working professional,4598,4,5+,Monthly,Yes,Yes,6.75,Powder sachet,Online retailer,Weight management,3,BrandA,No artificial flavors,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,1,2,4,5
+45,Male,Working professional,3273,3,1-2,Monthly,No,No,1.82,Jar,Online retailer,Energy boost,2,BrandA,Low sugar,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,2,3,5,4,1
+23,Female,Working professional,5858,5,None,Daily,No,Yes,15.56,Can,Supermarket,Muscle recovery,4,BrandA,None,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,5,1,2,4,3
+18,Female,Working professional,2484,5,1-2,Daily,Yes,No,5.36,Bottle,Supermarket,Weight management,4,None,Low sugar,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,3,2,5,4
+46,Female,Other,1777,3,3-4,Never,No,Yes,7.57,Jar,Convenience store,Energy boost,5,BrandA,Organic,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,2,1,3,4,5
+19,Female,Working professional,8608,5,3-4,Daily,No,No,15.13,Bottle,Supermarket,Muscle recovery,5,BrandC,None,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,5,1,3,2,4
+22,Male,Working professional,8661,2,3-4,Monthly,Yes,No,18.28,Bottle,Gym/Fitness centre,Energy boost,2,None,Eco packaging,1,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,1,3,2,5,4
+53,Male,Student,2383,2,5+,Daily,No,No,6.56,Powder sachet,Supermarket,Muscle recovery,3,BrandC,No artificial flavors,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,3,2,4,1,5
+54,Male,Working professional,11002,2,5+,Rarely,Yes,Yes,21.63,Can,Online retailer,Weight management,4,BrandB,None,1,0,1,0,0,0,0,0,0,0,1,0,1,1,0,0,0,4,1,5,3,2
+28,Male,Student,2784,2,1-2,Rarely,Yes,No,2.68,Bottle,Supermarket,Weight management,3,BrandD,None,1,0,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,2,5,1,4,3
+29,Female,Working professional,6172,5,1-2,Weekly,No,Yes,11.82,Bottle,Online retailer,Immune support,1,BrandB,No artificial flavors,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,2,1,3,4,5
+25,Female,Other,10284,2,5+,Weekly,No,Yes,21.82,Bottle,Supermarket,Weight management,2,BrandA,None,0,0,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,1,4,3,2,5
+22,Male,Working professional,4768,3,5+,Monthly,Yes,No,10.71,Tetra Pak,Online retailer,Weight management,4,None,High protein,0,0,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,1,3,4,5,2
+22,Male,Student,7400,2,3-4,Weekly,Yes,No,14.8,Bottle,Online retailer,Digestive health,4,BrandA,Organic,0,0,0,0,0,1,0,0,1,1,0,0,0,0,1,0,0,4,3,1,2,5
+31,Male,Student,3088,3,3-4,Daily,Yes,Yes,7.97,Powder sachet,Gym/Fitness centre,Energy boost,5,None,None,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,3,4,5,2,1
+34,Female,Working professional,4118,2,1-2,Rarely,No,Yes,9.94,Bottle,Online retailer,Energy boost,4,BrandA,Low sugar,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,3,1,2,4
+36,Male,Working professional,4084,4,5+,Daily,Yes,No,7.12,Can,Convenience store,Energy boost,4,BrandC,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,3,1,5,4,2
+36,Female,Student,2510,2,3-4,Rarely,No,No,1.98,Bottle,Gym/Fitness centre,Muscle recovery,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,1,2,3,4,5,1
+19,Male,Self-employed,4192,5,3-4,Monthly,No,Yes,8.76,Bottle,Supermarket,Weight management,3,None,High protein,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,5,2,1,3,4
+26,Male,Working professional,1220,5,None,Daily,Yes,No,1.0,Tetra Pak,Supermarket,Muscle recovery,2,BrandB,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,3,2,4
+18,Other,Working professional,3159,1,5+,Monthly,Yes,Yes,6.61,Tetra Pak,Supermarket,Energy boost,5,None,None,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,5,3,4,2,1
+27,Other,Retired,3803,5,3-4,Monthly,Yes,No,10.3,Bottle,Supermarket,Energy boost,3,BrandB,High protein,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,5,4,3,2
+24,Male,Student,3903,1,1-2,Weekly,Yes,No,8.68,Can,Online retailer,Muscle recovery,2,BrandC,Organic,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,2,1,5,3,4
+44,Female,Other,3955,3,3-4,Weekly,Yes,Yes,10.5,Jar,Convenience store,Energy boost,3,BrandC,High protein,1,1,0,0,0,0,0,1,1,0,0,1,1,0,1,0,0,5,2,1,4,3
+23,Female,Working professional,4649,1,3-4,Weekly,Yes,No,7.28,Bottle,Online retailer,Weight management,1,BrandA,Eco packaging,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,5,1,3,2,4
+19,Female,Homemaker,7567,3,3-4,Weekly,Yes,Yes,17.31,Bottle,Gym/Fitness centre,Muscle recovery,2,BrandD,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,4,3,1,5,2
+19,Male,Working professional,10797,4,3-4,Daily,Yes,No,24.95,Can,Supermarket,Immune support,4,BrandA,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,4,1,5
+35,Female,Self-employed,2739,5,3-4,Weekly,Yes,No,5.61,Tetra Pak,Supermarket,Energy boost,3,BrandB,Eco packaging,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,5,3,1,4
+29,Female,Other,1664,3,5+,Weekly,Yes,No,7.97,Bottle,Pharmacy,Weight management,3,BrandD,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,4,2,5
+19,Female,Working professional,1924,4,None,Monthly,Yes,Yes,2.13,Bottle,Supermarket,Weight management,5,None,None,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,3,2,5,4
+19,Male,Other,3170,3,1-2,Monthly,Yes,Yes,5.06,Tetra Pak,Pharmacy,Digestive health,5,BrandC,Low sugar,1,1,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,4,3,2,1,5
+32,Male,Working professional,3581,5,1-2,Monthly,Yes,Yes,8.46,Powder sachet,Supermarket,Immune support,4,BrandC,No artificial flavors,1,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,4,3,5,1,2
+18,Male,Working professional,2458,3,3-4,Rarely,Yes,No,5.02,Can,Pharmacy,Immune support,4,BrandC,No artificial flavors,0,1,0,1,1,0,0,1,1,0,0,0,0,1,1,0,0,3,2,1,5,4
+38,Female,Working professional,1531,2,3-4,Rarely,Yes,No,1.58,Bottle,Gym/Fitness centre,Weight management,2,None,Eco packaging,0,0,0,0,0,0,0,0,1,0,1,0,1,1,0,0,0,4,1,2,3,5
+32,Male,Working professional,3260,3,5+,Monthly,No,No,7.76,Can,Online retailer,Weight management,5,None,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,2,5,1,3,4
+19,Female,Working professional,5787,3,3-4,Monthly,Yes,Yes,12.29,Bottle,Pharmacy,Weight management,4,BrandC,Organic,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5,2,3,4
+19,Other,Working professional,8396,4,3-4,Weekly,Yes,No,15.62,Bottle,Supermarket,Weight management,4,BrandB,Organic,0,0,1,0,0,0,0,0,0,0,1,0,1,1,0,1,1,3,1,2,5,4
+69,Male,Working professional,2976,5,5+,Rarely,No,No,6.33,Can,Supermarket,Muscle recovery,4,BrandA,Eco packaging,1,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,2,1,4,3,5
+23,Female,Self-employed,3389,2,1-2,Daily,Yes,No,8.3,Powder sachet,Supermarket,Energy boost,4,BrandA,Organic,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5
+23,Male,Self-employed,2134,4,5+,Weekly,Yes,Yes,3.05,Jar,Supermarket,Muscle recovery,4,None,Low sugar,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,4,2,3,1,5
+38,Female,Working professional,4778,4,3-4,Rarely,No,Yes,10.59,Bottle,Online retailer,Immune support,4,None,Low sugar,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,5,3,4,2,1
+53,Male,Working professional,2290,5,3-4,Daily,No,No,2.85,Jar,Pharmacy,Energy boost,4,BrandC,None,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,3,5,2,4,1
+69,Female,Working professional,8232,3,3-4,Daily,No,No,15.12,Bottle,Supermarket,Muscle recovery,5,None,None,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,4,3,2,5,1
+34,Female,Working professional,985,4,3-4,Monthly,No,Yes,4.19,Bottle,Convenience store,Energy boost,4,BrandB,Gluten-free,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,4,3,2,5,1
+23,Female,Student,3556,5,1-2,Monthly,Yes,No,8.34,Powder sachet,Convenience store,Energy boost,1,BrandC,No artificial flavors,0,0,0,0,0,1,1,0,1,0,1,1,1,1,1,0,0,2,4,3,5,1
+19,Female,Working professional,6445,4,3-4,Rarely,Yes,Yes,9.12,Powder sachet,Gym/Fitness centre,Energy boost,4,BrandC,Low sugar,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,2,3,5,1,4
+36,Female,Working professional,5799,4,3-4,Rarely,Yes,No,10.85,Bottle,Convenience store,Energy boost,5,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,2,1,4,3,5
+27,Female,Other,55477,2,5+,Daily,Yes,No,111.93,Bottle,Gym/Fitness centre,Energy boost,3,BrandC,No artificial flavors,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,1,3,5
+24,Female,Working professional,6733,3,3-4,Daily,Yes,Yes,13.74,Bottle,Online retailer,Muscle recovery,5,BrandB,No artificial flavors,0,0,1,0,0,0,0,0,0,1,0,0,0,1,1,0,0,2,5,3,1,4
+46,Female,Working professional,1991,4,5+,Monthly,No,No,5.22,Can,Online retailer,Digestive health,4,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,2,3,1,4
+19,Male,Working professional,4510,4,3-4,Weekly,Yes,Yes,9.25,Powder sachet,Online retailer,Energy boost,4,BrandC,No artificial flavors,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,5,3,1,4,2
+26,Female,Student,994,2,3-4,Monthly,Yes,Yes,1.72,Bottle,Supermarket,Digestive health,5,None,Low sugar,0,0,1,1,0,0,0,0,1,0,0,0,1,0,0,0,0,4,2,5,3,1
+18,Female,Working professional,4571,4,3-4,Daily,No,No,8.82,Can,Supermarket,Digestive health,5,BrandD,Low sugar,0,1,0,0,1,0,0,1,0,0,0,1,0,1,0,0,0,4,2,5,1,3
+25,Female,Working professional,2322,4,3-4,Weekly,No,Yes,6.83,Bottle,Online retailer,Muscle recovery,5,BrandB,Low sugar,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,5,2,4,3
+18,Male,Working professional,11202,4,5+,Monthly,Yes,Yes,23.79,Bottle,Supermarket,Weight management,1,BrandB,Organic,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,2,1,3,4,5
+19,Female,Working professional,2997,4,3-4,Monthly,No,Yes,6.8,Jar,Convenience store,Energy boost,3,BrandA,Organic,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,3,5,4,2,1
+19,Male,Other,4424,5,3-4,Monthly,No,Yes,9.03,Jar,Online retailer,Muscle recovery,4,BrandB,Organic,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5,4,2,3,1
+30,Female,Homemaker,2774,3,None,Weekly,Yes,Yes,4.45,Bottle,Supermarket,Digestive health,5,BrandC,Organic,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4,5,3,1,2
+34,Male,Working professional,23505,5,3-4,Weekly,Yes,Yes,46.4,Bottle,Supermarket,Weight management,5,BrandA,Organic,1,0,1,0,0,0,0,0,1,0,1,1,0,0,0,0,0,2,5,1,3,4
+28,Female,Working professional,3681,3,1-2,Daily,Yes,No,9.49,Bottle,Online retailer,Muscle recovery,3,BrandC,Organic,1,1,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,4,3,5,2,1
+57,Other,Working professional,25573,3,3-4,Daily,Yes,Yes,53.09,Can,Supermarket,Energy boost,2,BrandB,Organic,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,1,3,2,5,4
+23,Male,Working professional,10226,3,1-2,Weekly,Yes,No,19.15,Bottle,Supermarket,Muscle recovery,5,BrandA,No artificial flavors,0,1,1,0,0,1,0,1,0,0,0,1,1,0,0,1,0,4,3,2,5,1
+22,Other,Working professional,7584,2,1-2,Weekly,No,Yes,15.37,Can,Convenience store,Energy boost,4,BrandB,Gluten-free,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,2,4,3,1,5
+42,Male,Student,6849,3,1-2,Monthly,No,Yes,14.69,Bottle,Supermarket,Muscle recovery,4,BrandB,None,1,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,4,3,2,1,5
+21,Female,Working professional,7005,2,1-2,Weekly,No,Yes,14.88,Bottle,Online retailer,Muscle recovery,5,BrandA,None,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,3,2,4,5
+57,Female,Working professional,867,5,1-2,Monthly,No,No,2.58,Jar,Supermarket,Weight management,3,BrandB,No artificial flavors,0,1,0,1,1,0,0,0,0,1,1,0,1,0,0,0,0,2,3,1,4,5
+18,Female,Working professional,3824,2,5+,Rarely,No,No,5.42,Bottle,Convenience store,Energy boost,2,BrandB,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,2,3,4,5,1
+60,Female,Other,10516,4,3-4,Weekly,Yes,No,18.69,Jar,Online retailer,Immune support,5,BrandB,Low sugar,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,4,5,1,2,3
+18,Female,Retired,4703,1,3-4,Daily,Yes,Yes,11.75,Can,Online retailer,Weight management,2,BrandB,None,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,2,5,1,4,3
+44,Male,Self-employed,1388,5,3-4,Daily,No,No,5.79,Jar,Gym/Fitness centre,Muscle recovery,2,BrandB,Gluten-free,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,5,1,4,3,2
+27,Male,Working professional,4688,4,1-2,Monthly,Yes,Yes,6.41,Bottle,Online retailer,Muscle recovery,3,BrandA,None,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,5,4,3,1
+77,Female,Homemaker,22781,1,5+,Weekly,Yes,Yes,45.51,Tetra Pak,Supermarket,Digestive health,3,BrandA,Organic,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,4,3,2,1,5
+18,Female,Student,59428,5,1-2,Daily,Yes,No,120.48,Bottle,Online retailer,Energy boost,3,BrandD,No artificial flavors,0,0,0,1,0,0,0,0,0,1,1,0,1,0,1,0,0,4,1,3,2,5
+27,Female,Self-employed,4648,4,1-2,Monthly,No,Yes,4.89,Powder sachet,Supermarket,Digestive health,4,BrandB,Low sugar,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,5,4,3,1
+59,Female,Student,11572,5,3-4,Daily,Yes,No,21.0,Tetra Pak,Online retailer,Energy boost,5,BrandC,None,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,2,5,3,4
+26,Male,Self-employed,3534,4,1-2,Monthly,No,Yes,6.88,Bottle,Online retailer,Energy boost,3,BrandB,Organic,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,5,4,2
+29,Female,Working professional,1061,4,3-4,Monthly,Yes,No,1.0,Bottle,Pharmacy,Muscle recovery,5,None,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,2,3,5
+32,Male,Homemaker,2139,5,1-2,Rarely,Yes,No,4.7,Powder sachet,Supermarket,Immune support,1,BrandB,Organic,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,4,3,5,2
+25,Female,Retired,20062,4,3-4,Daily,Yes,No,43.06,Powder sachet,Supermarket,Energy boost,2,BrandC,None,1,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,2,3,5,1,4
+29,Male,Student,3841,1,3-4,Rarely,No,Yes,5.98,Powder sachet,Convenience store,Weight management,4,BrandA,Organic,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,3,2,1,5,4
+28,Male,Working professional,3948,5,1-2,Rarely,Yes,Yes,8.0,Jar,Convenience store,Weight management,5,BrandC,None,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,4,1,3,2
+45,Male,Other,3752,4,3-4,Weekly,No,No,6.81,Jar,Convenience store,Energy boost,5,BrandC,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,5,2,4,1
+18,Male,Working professional,27275,4,1-2,Daily,Yes,Yes,54.82,Can,Online retailer,Immune support,2,BrandA,Eco packaging,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,1,0,2,3,5,4,1
+21,Female,Homemaker,21234,1,3-4,Weekly,Yes,No,42.48,Bottle,Supermarket,Muscle recovery,3,BrandA,Organic,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,2,1,3,5,4
+54,Male,Working professional,36203,4,None,Rarely,Yes,No,77.68,Bottle,Pharmacy,Digestive health,5,None,None,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,1,3,2,4
+44,Male,Working professional,4259,5,3-4,Rarely,Yes,Yes,11.5,Tetra Pak,Supermarket,Weight management,3,None,Gluten-free,0,0,1,0,1,0,0,0,1,0,1,0,1,1,0,0,0,4,5,2,3,1
+25,Male,Working professional,6413,3,3-4,Monthly,Yes,No,9.66,Can,Supermarket,Weight management,4,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,0,1,1,0,1,0,1,0,0,5,1,2,4,3
+29,Male,Working professional,1255,4,1-2,Rarely,Yes,No,1.0,Can,Supermarket,Muscle recovery,1,None,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,4,2,5
+21,Male,Self-employed,18569,4,5+,Daily,No,Yes,35.58,Bottle,Online retailer,Weight management,4,BrandA,Low sugar,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,2,1,3,5,4
+20,Male,Working professional,1718,5,5+,Daily,Yes,Yes,1.0,Tetra Pak,Supermarket,Muscle recovery,4,BrandD,Organic,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4,1,2,3,5
+25,Female,Working professional,5974,4,3-4,Never,Yes,Yes,9.21,Bottle,Gym/Fitness centre,Energy boost,4,BrandB,Eco packaging,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,5,2,4,3,1
+23,Female,Working professional,1831,3,3-4,Rarely,No,Yes,3.31,Can,Supermarket,Weight management,5,BrandC,High protein,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,2,5,1,3,4
+28,Female,Working professional,2893,5,1-2,Weekly,Yes,No,4.31,Can,Supermarket,Digestive health,2,BrandD,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,4,5,2,3
+18,Male,Homemaker,2313,4,3-4,Rarely,Yes,Yes,2.84,Bottle,Online retailer,Digestive health,4,BrandA,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,5,3,2
+61,Male,Other,2844,2,1-2,Never,Yes,No,9.73,Powder sachet,Supermarket,Energy boost,4,BrandC,Gluten-free,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,5,1,4,3,2
+69,Female,Working professional,3025,2,1-2,Rarely,Yes,Yes,4.71,Can,Convenience store,Digestive health,2,BrandB,None,0,1,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,3,5,4,2,1
+32,Female,Self-employed,3001,4,5+,Rarely,Yes,No,5.12,Powder sachet,Convenience store,Muscle recovery,2,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,2,4,3,1,5
+27,Male,Self-employed,10405,3,3-4,Rarely,No,No,22.29,Bottle,Supermarket,Muscle recovery,3,None,Eco packaging,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,2,4,1,5,3
+22,Male,Working professional,1818,3,3-4,Daily,Yes,Yes,2.74,Bottle,Convenience store,Energy boost,3,None,None,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,2,3,4,5
+38,Male,Other,5994,5,1-2,Rarely,Yes,Yes,9.66,Bottle,Online retailer,Weight management,5,BrandA,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,3,1,4,5
+31,Male,Working professional,14708,2,3-4,Daily,Yes,No,28.9,Bottle,Online retailer,Digestive health,4,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,5,2,3,4
+20,Male,Student,3097,4,None,Rarely,No,No,10.21,Bottle,Gym/Fitness centre,Weight management,4,BrandB,Gluten-free,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,3,2,5,4,1
+47,Female,Homemaker,2576,3,None,Weekly,Yes,Yes,4.19,Bottle,Convenience store,Energy boost,4,BrandA,None,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,4,5,3,2,1
+38,Female,Working professional,3994,5,None,Monthly,No,Yes,6.16,Powder sachet,Supermarket,Weight management,4,None,Gluten-free,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,4,1,3,5
+53,Female,Self-employed,14211,4,3-4,Weekly,No,Yes,29.26,Powder sachet,Supermarket,Energy boost,4,BrandA,Low sugar,1,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,4,3,2,1,5
+33,Female,Homemaker,5853,1,3-4,Daily,No,Yes,11.09,Powder sachet,Online retailer,Muscle recovery,3,BrandA,No artificial flavors,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,3,5,1,2,4
+29,Female,Student,3047,4,None,Weekly,No,No,11.57,Powder sachet,Supermarket,Energy boost,3,BrandA,Organic,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,4,3,1,5,2
+24,Female,Homemaker,7597,2,3-4,Never,Yes,No,13.62,Can,Supermarket,Energy boost,2,BrandB,No artificial flavors,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,3,4,1,5,2
+50,Female,Working professional,1822,5,1-2,Never,No,Yes,7.11,Can,Online retailer,Digestive health,5,BrandA,No artificial flavors,1,0,0,0,1,0,0,1,0,0,1,1,1,1,0,1,0,5,3,2,1,4
+42,Male,Working professional,9074,5,3-4,Weekly,Yes,No,20.47,Bottle,Pharmacy,Weight management,5,BrandC,Organic,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,3,5,1,2,4
+18,Male,Working professional,7099,4,5+,Never,No,Yes,36.28,Bottle,Supermarket,Weight management,4,BrandB,Eco packaging,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,5,2,3,1,4
+18,Male,Retired,3726,4,3-4,Rarely,Yes,No,7.44,Jar,Supermarket,Weight management,4,BrandB,High protein,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,4,2,5,1,3
+23,Female,Student,2311,3,5+,Monthly,No,Yes,2.56,Powder sachet,Gym/Fitness centre,Energy boost,4,BrandA,None,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,5,4,3,2
+37,Female,Working professional,2213,4,5+,Daily,Yes,Yes,3.35,Jar,Supermarket,Energy boost,4,BrandB,Organic,0,1,0,0,0,0,1,1,0,0,1,0,1,0,0,0,0,5,2,1,3,4
+70,Male,Working professional,7953,4,3-4,Never,Yes,Yes,15.13,Jar,Pharmacy,Muscle recovery,3,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,2,4,3,5
+19,Female,Self-employed,14855,3,3-4,Monthly,No,Yes,30.03,Bottle,Convenience store,Muscle recovery,3,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,4,2,3,1,5
+28,Male,Working professional,2770,4,5+,Rarely,Yes,No,2.71,Can,Convenience store,Digestive health,5,BrandA,Organic,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,2,1,3,4,5
+23,Female,Student,7425,2,1-2,Rarely,Yes,No,15.47,Can,Online retailer,Digestive health,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,1,1,0,1,0,0,1,0,0,0,2,5,3,4,1
+60,Male,Working professional,751,4,1-2,Rarely,Yes,Yes,1.21,Powder sachet,Supermarket,Immune support,1,BrandB,None,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,1,2,5,3,4
+40,Male,Working professional,2904,1,5+,Monthly,No,No,6.6,Powder sachet,Supermarket,Immune support,3,BrandC,Low sugar,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,1,3,5
+39,Female,Self-employed,4779,4,3-4,Weekly,Yes,Yes,10.65,Can,Gym/Fitness centre,Muscle recovery,3,BrandA,No artificial flavors,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4,3,1,2,5
+25,Male,Working professional,8204,3,1-2,Weekly,Yes,No,15.96,Bottle,Convenience store,Digestive health,4,BrandB,No artificial flavors,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,2,4,5,1,3
+24,Male,Working professional,2116,3,3-4,Weekly,Yes,Yes,5.21,Bottle,Supermarket,Muscle recovery,4,BrandC,Low sugar,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4,2,5,3,1
+21,Male,Other,2695,4,3-4,Daily,Yes,Yes,5.22,Bottle,Supermarket,Energy boost,4,None,Low sugar,0,0,0,0,1,1,0,0,1,0,1,0,0,0,0,0,0,1,2,5,4,3
+18,Female,Student,6393,5,3-4,Monthly,No,Yes,14.27,Powder sachet,Pharmacy,Energy boost,5,None,Gluten-free,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5
+42,Female,Other,4152,5,3-4,Monthly,No,No,8.94,Bottle,Supermarket,Energy boost,5,None,None,1,0,0,1,1,0,0,0,1,0,1,0,0,0,0,0,0,2,4,5,1,3
+38,Male,Working professional,656,3,3-4,Rarely,Yes,No,1.67,Bottle,Supermarket,Immune support,5,None,Gluten-free,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,1,2,5,4,3
+80,Female,Self-employed,729,3,3-4,Daily,Yes,Yes,1.25,Bottle,Convenience store,Muscle recovery,3,BrandC,Eco packaging,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,5,3,1,2,4
+80,Female,Working professional,2846,5,3-4,Monthly,No,Yes,8.28,Powder sachet,Supermarket,Digestive health,4,None,Gluten-free,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,3,2,4,5,1
+27,Male,Student,7420,4,3-4,Daily,Yes,Yes,15.65,Can,Supermarket,Weight management,4,BrandC,Organic,0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,0,0,3,2,4,1,5
+35,Male,Self-employed,415,2,3-4,Daily,Yes,No,1.0,Tetra Pak,Online retailer,Weight management,4,BrandB,Gluten-free,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,5,3,4,2
+52,Male,Self-employed,3135,5,3-4,Daily,Yes,No,5.33,Bottle,Gym/Fitness centre,Energy boost,5,BrandB,No artificial flavors,0,0,0,0,0,0,1,1,0,0,1,0,1,0,1,0,0,1,3,5,2,4
+40,Male,Self-employed,3061,5,1-2,Rarely,Yes,Yes,5.66,Bottle,Supermarket,Digestive health,3,BrandC,Gluten-free,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,5,3,1,4,2
+21,Female,Student,17146,5,3-4,Daily,Yes,Yes,34.29,Bottle,Online retailer,Digestive health,5,None,Organic,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,4,3,5,2
+25,Male,Self-employed,19074,5,5+,Rarely,Yes,No,38.5,Jar,Online retailer,Digestive health,4,BrandA,None,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,4,1,3,2,5
+19,Female,Self-employed,6937,5,1-2,Weekly,Yes,Yes,11.99,Powder sachet,Online retailer,Energy boost,3,BrandA,Eco packaging,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,2,5,4,3,1
+54,Female,Working professional,5581,2,1-2,Rarely,Yes,Yes,11.03,Can,Supermarket,Energy boost,4,BrandD,Low sugar,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,4,1,3,2
+29,Male,Self-employed,722,2,3-4,Rarely,No,Yes,1.0,Bottle,Supermarket,Weight management,3,BrandC,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,3,5,1,2
+21,Female,Self-employed,9812,4,5+,Never,Yes,Yes,21.79,Jar,Online retailer,Energy boost,2,None,No artificial flavors,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,5,1,3,2,4
+31,Male,Working professional,5966,4,1-2,Rarely,No,No,9.94,Tetra Pak,Gym/Fitness centre,Digestive health,5,None,Low sugar,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,3,2,5,4,1
+29,Other,Student,7765,4,1-2,Never,Yes,No,15.5,Bottle,Gym/Fitness centre,Energy boost,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,5,4,1,3,2
+23,Female,Working professional,168319,4,None,Rarely,No,Yes,335.27,Bottle,Gym/Fitness centre,Weight management,3,BrandA,No artificial flavors,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,4,3,5,2,1
+19,Female,Student,753,4,3-4,Monthly,No,No,5.23,Tetra Pak,Gym/Fitness centre,Muscle recovery,5,BrandB,Organic,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,3,2,5,4
+31,Female,Working professional,23207,4,1-2,Daily,No,Yes,48.93,Can,Supermarket,Weight management,1,None,No artificial flavors,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,4,1,2,3,5
+26,Male,Working professional,3794,1,1-2,Weekly,No,No,4.3,Powder sachet,Pharmacy,Energy boost,3,BrandA,Organic,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,5,4,1,3,2
+35,Female,Student,6365,3,3-4,Weekly,Yes,No,11.14,Powder sachet,Pharmacy,Immune support,1,BrandA,Organic,1,0,0,0,0,1,1,1,1,0,0,0,1,0,0,0,0,2,5,1,4,3
+26,Female,Working professional,4718,4,5+,Monthly,Yes,No,11.18,Bottle,Online retailer,Weight management,2,BrandA,Low sugar,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,4,5,2,1,3
+40,Female,Student,3355,4,3-4,Monthly,Yes,Yes,7.62,Tetra Pak,Supermarket,Muscle recovery,3,BrandB,Low sugar,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5,4,2,3
+27,Female,Self-employed,2943,3,1-2,Rarely,Yes,Yes,6.74,Bottle,Online retailer,Energy boost,5,BrandB,None,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,2,5,4,1,3
+27,Female,Retired,6611,4,3-4,Never,Yes,Yes,13.6,Tetra Pak,Online retailer,Digestive health,5,None,None,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,2,3,5,1,4
+43,Male,Student,1255,4,5+,Weekly,No,No,4.41,Tetra Pak,Supermarket,Energy boost,5,BrandC,None,0,0,1,1,0,0,1,0,1,1,0,0,0,0,0,0,0,4,1,3,5,2
+24,Male,Other,9658,4,3-4,Monthly,Yes,Yes,20.88,Can,Online retailer,Muscle recovery,4,None,Organic,1,0,1,0,0,0,0,0,0,0,1,0,0,1,1,0,0,5,4,2,1,3
+19,Female,Working professional,3379,1,5+,Never,Yes,No,6.18,Powder sachet,Gym/Fitness centre,Weight management,4,BrandB,Gluten-free,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,3,4,5,1,2
+18,Male,Working professional,1777,4,5+,Weekly,No,No,1.16,Tetra Pak,Pharmacy,Energy boost,4,BrandC,Eco packaging,0,0,1,1,0,0,1,0,1,1,1,0,0,0,0,0,0,5,2,4,1,3
+34,Female,Student,3278,3,None,Rarely,Yes,No,3.18,Powder sachet,Supermarket,Energy boost,4,BrandC,Low sugar,0,0,0,0,0,1,1,1,0,0,0,0,1,0,1,0,1,5,4,3,1,2
+29,Female,Working professional,15236,5,3-4,Weekly,Yes,No,30.26,Bottle,Supermarket,Immune support,4,BrandB,None,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,4,5,3,2,1
+32,Male,Self-employed,13546,2,1-2,Monthly,No,Yes,23.41,Bottle,Online retailer,Energy boost,5,BrandB,None,1,0,0,1,0,1,0,1,0,0,0,0,1,0,1,0,0,2,4,3,5,1
+20,Male,Self-employed,6786,4,3-4,Weekly,Yes,Yes,14.07,Tetra Pak,Pharmacy,Muscle recovery,1,BrandD,Gluten-free,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,5,2,3,1,4
+19,Female,Student,2546,2,1-2,Rarely,Yes,Yes,11.11,Powder sachet,Online retailer,Muscle recovery,3,BrandC,Organic,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,2,4,5,1,3
+18,Male,Student,9722,4,1-2,Monthly,No,No,23.33,Bottle,Gym/Fitness centre,Weight management,3,BrandA,Eco packaging,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,1,3,4,2,5
+23,Female,Working professional,9108,4,5+,Daily,No,Yes,18.9,Bottle,Supermarket,Energy boost,4,BrandA,Low sugar,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,1,0,2,5,3,4,1
+28,Male,Working professional,25945,3,1-2,Weekly,No,No,51.83,Can,Online retailer,Energy boost,4,BrandA,Organic,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,5,2,1,4,3
+23,Female,Working professional,4196,4,5+,Weekly,Yes,Yes,5.16,Can,Convenience store,Muscle recovery,4,BrandA,Gluten-free,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0,3,1,4,2,5
+24,Male,Working professional,8971,3,None,Never,No,Yes,15.42,Jar,Online retailer,Weight management,1,BrandB,No artificial flavors,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,5,3,2,1,4
+46,Female,Self-employed,5368,3,None,Rarely,Yes,No,12.1,Tetra Pak,Convenience store,Digestive health,4,BrandB,Low sugar,0,1,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,1,4,5,3,2
+23,Male,Retired,15777,4,5+,Weekly,Yes,Yes,30.93,Powder sachet,Online retailer,Muscle recovery,4,BrandA,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,4,5,2,1,3
+26,Female,Working professional,2574,3,3-4,Weekly,Yes,Yes,10.22,Jar,Pharmacy,Digestive health,4,BrandC,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,3,4,5,1,2
+36,Male,Retired,9609,5,3-4,Monthly,Yes,No,19.05,Bottle,Supermarket,Energy boost,5,None,None,1,1,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,5,2,3,4
+24,Female,Working professional,4125,4,1-2,Rarely,Yes,Yes,8.59,Tetra Pak,Supermarket,Muscle recovery,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,3,2,1,4,5
+29,Female,Working professional,4639,4,3-4,Rarely,Yes,Yes,6.64,Tetra Pak,Supermarket,Energy boost,1,BrandB,Organic,0,1,0,0,0,1,1,0,1,1,0,1,1,1,0,0,0,5,2,3,1,4
+41,Male,Working professional,5338,1,3-4,Weekly,Yes,Yes,12.57,Powder sachet,Online retailer,Energy boost,3,BrandB,No artificial flavors,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,2,4,1,3,5
+53,Male,Working professional,6167,4,3-4,Rarely,Yes,Yes,10.48,Bottle,Supermarket,Muscle recovery,2,BrandC,High protein,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,4,2,3,1,5
+19,Male,Other,4427,5,3-4,Monthly,No,No,9.9,Bottle,Gym/Fitness centre,Digestive health,3,BrandC,None,0,0,1,0,0,1,0,1,0,0,0,0,0,0,1,1,0,3,1,2,5,4
+49,Female,Working professional,5962,3,5+,Never,Yes,No,13.55,Bottle,Convenience store,Weight management,4,BrandC,No artificial flavors,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,4,3,1,2,5
+26,Female,Working professional,20339,5,3-4,Never,Yes,Yes,40.87,Can,Online retailer,Digestive health,4,BrandD,Organic,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,4,3,2,1,5
+21,Female,Working professional,11931,3,5+,Rarely,Yes,Yes,27.38,Bottle,Supermarket,Weight management,3,None,Organic,1,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,5,4,2,1,3
+25,Male,Student,10745,5,3-4,Rarely,Yes,Yes,20.27,Tetra Pak,Convenience store,Digestive health,5,None,None,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,5,3,1,2,4
+64,Male,Homemaker,3262,2,3-4,Weekly,Yes,No,9.88,Jar,Online retailer,Energy boost,3,BrandB,Organic,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,1,5,2,4
+26,Female,Working professional,2208,5,None,Rarely,Yes,Yes,1.87,Can,Gym/Fitness centre,Energy boost,2,None,Gluten-free,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,1,0,1,5,3,2,4
+22,Female,Working professional,11612,4,1-2,Weekly,Yes,Yes,24.82,Can,Pharmacy,Digestive health,3,BrandD,Organic,0,0,0,0,1,0,0,0,1,1,0,0,1,0,0,0,0,3,1,5,4,2
+30,Other,Working professional,10812,3,5+,Weekly,No,No,21.34,Powder sachet,Convenience store,Muscle recovery,5,BrandC,Gluten-free,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,4,2,3,1,5
+21,Male,Working professional,18498,3,1-2,Weekly,Yes,No,111.06,Can,Online retailer,Muscle recovery,4,BrandC,Low sugar,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,3,2,1,5
+18,Female,Student,2854,4,1-2,Rarely,Yes,Yes,2.39,Bottle,Pharmacy,Muscle recovery,4,None,Organic,1,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,4,5,1,3,2
+19,Male,Working professional,3997,5,1-2,Daily,Yes,Yes,7.47,Bottle,Online retailer,Immune support,2,None,No artificial flavors,0,0,0,0,0,1,0,1,1,0,0,0,0,1,1,0,0,1,5,3,4,2
+19,Male,Working professional,1124,3,1-2,Weekly,Yes,Yes,1.6,Can,Online retailer,Muscle recovery,4,BrandA,Eco packaging,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,3,5,1,4,2
+19,Female,Self-employed,3452,2,5+,Weekly,Yes,Yes,7.25,Bottle,Online retailer,Muscle recovery,4,BrandB,No artificial flavors,1,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,3,1,5,2,4
+19,Female,Self-employed,12051,4,5+,Daily,Yes,No,25.55,Tetra Pak,Online retailer,Digestive health,4,None,Eco packaging,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,5,3,1,4,2
+30,Other,Self-employed,3230,4,3-4,Daily,Yes,No,4.84,Powder sachet,Online retailer,Digestive health,4,BrandB,No artificial flavors,1,0,0,1,0,1,0,0,1,0,1,0,0,1,0,0,0,5,2,4,3,1
+20,Male,Working professional,8747,4,None,Rarely,No,No,21.01,Tetra Pak,Gym/Fitness centre,Energy boost,4,BrandA,High protein,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1,0,0,4,5,2,3,1
+23,Male,Working professional,4140,4,3-4,Rarely,No,Yes,7.2,Bottle,Supermarket,Muscle recovery,2,BrandA,Eco packaging,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,4,3,1,2,5
+45,Female,Student,6579,3,3-4,Weekly,Yes,Yes,14.36,Bottle,Online retailer,Muscle recovery,4,BrandC,Gluten-free,0,0,0,0,0,1,0,0,1,0,0,0,0,1,1,0,0,1,5,3,2,4
+25,Female,Self-employed,1749,5,5+,Rarely,No,Yes,3.68,Powder sachet,Gym/Fitness centre,Energy boost,5,BrandD,No artificial flavors,1,0,0,1,0,0,0,1,1,0,0,1,1,0,1,0,0,5,1,3,2,4
+31,Male,Working professional,5307,4,3-4,Rarely,Yes,Yes,10.22,Powder sachet,Pharmacy,Weight management,4,BrandA,None,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,3,4,2,1,5
+20,Male,Working professional,333,2,1-2,Weekly,No,No,1.0,Can,Supermarket,Energy boost,3,BrandC,No artificial flavors,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4,1,3,2,5
+20,Male,Working professional,4154,4,3-4,Rarely,Yes,Yes,6.43,Bottle,Pharmacy,Energy boost,3,None,No artificial flavors,0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,5,4,3,2,1
+18,Female,Student,1133,4,5+,Never,Yes,Yes,1.49,Tetra Pak,Convenience store,Immune support,5,BrandA,Eco packaging,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,3,1,4,2,5
+20,Male,Working professional,14551,3,3-4,Weekly,No,Yes,26.42,Bottle,Online retailer,Energy boost,3,BrandA,Eco packaging,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,2,5,4,3,1
+21,Male,Student,9894,4,3-4,Weekly,No,Yes,18.69,Bottle,Gym/Fitness centre,Muscle recovery,5,None,Eco packaging,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,1,2,3,4,5
+20,Male,Self-employed,7480,3,1-2,Never,No,Yes,14.03,Bottle,Online retailer,Weight management,4,None,Gluten-free,0,1,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,3,4,2,1,5
+19,Male,Working professional,19320,4,3-4,Monthly,Yes,No,40.33,Can,Convenience store,Muscle recovery,4,BrandA,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5,1,2,3,4
+19,Male,Student,2092,5,3-4,Daily,No,Yes,3.52,Bottle,Online retailer,Energy boost,3,BrandD,None,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4,5,3,1,2
+25,Female,Working professional,23686,2,1-2,Monthly,No,No,46.48,Bottle,Supermarket,Weight management,1,BrandC,High protein,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,2,3,4,1,5
+20,Male,Student,11373,4,3-4,Monthly,Yes,Yes,23.19,Bottle,Online retailer,Digestive health,4,BrandA,Low sugar,1,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,5,4,2,3,1
+23,Female,Working professional,3972,5,1-2,Rarely,Yes,Yes,8.31,Tetra Pak,Online retailer,Weight management,5,None,None,1,0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,0,4,3,1,2,5
+26,Male,Self-employed,13658,5,1-2,Monthly,Yes,No,26.13,Tetra Pak,Supermarket,Weight management,3,BrandB,None,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2,5,1,4,3
+32,Female,Student,1816,4,None,Weekly,No,Yes,4.42,Bottle,Gym/Fitness centre,Weight management,4,BrandD,Low sugar,1,1,1,0,0,0,0,0,1,1,1,0,1,0,0,0,0,3,5,2,4,1
+18,Female,Self-employed,2340,4,1-2,Monthly,Yes,No,4.32,Powder sachet,Supermarket,Energy boost,4,BrandB,Low sugar,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,4,2,3,1,5
+37,Female,Student,2842,4,3-4,Monthly,Yes,Yes,4.5,Can,Online retailer,Weight management,4,None,Eco packaging,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,3,2,4,5,1
+29,Female,Working professional,3053,5,None,Weekly,Yes,No,5.12,Bottle,Online retailer,Energy boost,4,BrandB,Low sugar,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,2,4,3,5
+19,Male,Self-employed,1899,5,1-2,Monthly,Yes,No,5.7,Bottle,Pharmacy,Weight management,4,BrandB,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,1,1,1,0,0,0,2,3,4,1,5
+42,Male,Working professional,14776,3,5+,Rarely,Yes,No,28.62,Tetra Pak,Gym/Fitness centre,Digestive health,5,BrandB,None,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,3,4,1,5,2
+48,Female,Student,3893,4,3-4,Daily,Yes,No,8.31,Bottle,Gym/Fitness centre,Muscle recovery,3,BrandA,Organic,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,5,2,1,3,4
+18,Other,Working professional,6750,4,3-4,Monthly,No,No,10.94,Bottle,Convenience store,Muscle recovery,5,None,Organic,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,2,4,3,1,5
+21,Female,Working professional,2942,5,3-4,Weekly,Yes,Yes,8.11,Tetra Pak,Online retailer,Energy boost,4,BrandA,High protein,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,2,3,1,4
+37,Female,Self-employed,955,4,3-4,Weekly,No,No,1.0,Can,Pharmacy,Digestive health,4,BrandC,Low sugar,1,1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,4,1,3,5,2
+34,Female,Working professional,6267,4,1-2,Weekly,Yes,No,13.33,Jar,Supermarket,Weight management,2,None,None,0,0,0,0,1,1,0,1,1,0,0,1,1,0,0,0,0,1,2,4,5,3
+20,Male,Self-employed,879,5,5+,Weekly,Yes,Yes,1.25,Jar,Pharmacy,Immune support,4,BrandC,Organic,0,0,0,1,1,1,0,0,0,0,0,0,1,0,0,0,1,1,3,5,2,4
+20,Male,Homemaker,4620,2,1-2,Rarely,Yes,Yes,10.02,Powder sachet,Supermarket,Energy boost,1,BrandB,Eco packaging,0,1,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,4,3,5,2,1
+23,Female,Working professional,1434,3,3-4,Weekly,Yes,No,3.75,Bottle,Convenience store,Immune support,4,BrandD,Organic,1,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,4,3,2,5,1
+25,Female,Retired,29394,4,1-2,Rarely,Yes,Yes,58.5,Bottle,Supermarket,Muscle recovery,2,BrandB,High protein,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,5,4,1,2,3
+29,Male,Working professional,11162,3,3-4,Daily,No,Yes,18.59,Powder sachet,Supermarket,Energy boost,5,BrandA,Eco packaging,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,3,4,5,2,1
+23,Female,Other,5406,1,3-4,Never,Yes,No,12.99,Tetra Pak,Supermarket,Immune support,4,BrandB,None,0,1,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,1,2,5,4,3
+25,Male,Student,15326,2,3-4,Monthly,Yes,Yes,30.37,Tetra Pak,Supermarket,Energy boost,5,BrandC,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,4,2,5,3,1
+34,Female,Working professional,2295,4,1-2,Rarely,Yes,Yes,5.33,Bottle,Online retailer,Muscle recovery,4,BrandC,None,0,1,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,2,4,1,5,3
+18,Male,Working professional,8015,5,3-4,Weekly,Yes,No,17.41,Bottle,Online retailer,Digestive health,5,BrandC,Eco packaging,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,3,4,2,1,5
+21,Male,Working professional,5883,4,5+,Weekly,No,Yes,10.85,Bottle,Convenience store,Energy boost,5,BrandB,None,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,4,2,1,3,5
+32,Female,Working professional,6233,4,5+,Weekly,Yes,No,13.5,Can,Supermarket,Weight management,4,BrandC,Organic,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,3,2,4,5,1
+45,Male,Self-employed,15446,3,None,Never,Yes,Yes,29.4,Bottle,Supermarket,Muscle recovery,4,BrandB,Eco packaging,1,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,2,3,5,1,4
+26,Female,Student,9502,5,1-2,Weekly,Yes,Yes,19.78,Can,Gym/Fitness centre,Muscle recovery,4,BrandA,No artificial flavors,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,3,5,4,2
+27,Female,Working professional,6373,5,5+,Monthly,Yes,Yes,12.79,Can,Supermarket,Digestive health,1,None,Low sugar,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,2,1,4,5
+19,Female,Self-employed,1108,4,3-4,Rarely,Yes,No,1.37,Bottle,Pharmacy,Digestive health,5,BrandB,Eco packaging,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,2,1,4,3
+25,Male,Working professional,2071,3,3-4,Weekly,Yes,Yes,4.24,Bottle,Online retailer,Weight management,4,BrandB,Gluten-free,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,0,0,4,5,1,2,3
+27,Male,Other,4401,2,5+,Rarely,Yes,Yes,6.69,Bottle,Online retailer,Digestive health,4,None,Eco packaging,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,1,3,5,2,4
+21,Male,Self-employed,5346,2,5+,Monthly,Yes,Yes,11.31,Bottle,Supermarket,Immune support,5,BrandA,Organic,1,0,0,1,0,0,1,1,0,1,0,0,0,0,0,0,0,2,3,5,4,1
+21,Other,Other,1777,4,3-4,Rarely,Yes,Yes,17.48,Bottle,Supermarket,Energy boost,3,BrandC,Organic,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,3,5,2,1,4
+23,Female,Self-employed,43067,5,3-4,Weekly,No,Yes,86.83,Bottle,Gym/Fitness centre,Energy boost,3,BrandD,Organic,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,4,5,2,3,1
+18,Female,Working professional,19240,5,1-2,Weekly,Yes,Yes,41.48,Can,Online retailer,Weight management,2,BrandB,None,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,3,5,1,2,4
+22,Female,Student,8450,4,3-4,Weekly,No,No,16.71,Tetra Pak,Convenience store,Digestive health,4,None,No artificial flavors,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,5,4,2,3,1
+20,Female,Self-employed,5244,5,1-2,Rarely,No,Yes,10.44,Bottle,Online retailer,Energy boost,1,BrandD,No artificial flavors,0,0,1,0,0,0,0,0,0,1,0,1,0,0,1,0,0,4,1,3,5,2
+22,Female,Working professional,4060,5,1-2,Monthly,Yes,No,5.78,Tetra Pak,Pharmacy,Digestive health,4,BrandB,No artificial flavors,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,3,1,5,4,2
+19,Male,Student,2087,3,1-2,Weekly,Yes,No,7.32,Powder sachet,Convenience store,Immune support,4,BrandA,Low sugar,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,2,5,3,4,1
+44,Female,Working professional,5270,4,1-2,Never,Yes,Yes,7.54,Tetra Pak,Supermarket,Energy boost,4,None,Organic,1,1,1,0,1,0,0,0,1,1,0,1,0,0,0,0,0,5,3,4,1,2
+28,Male,Other,6198,5,3-4,Daily,No,Yes,12.85,Bottle,Pharmacy,Weight management,3,BrandC,Eco packaging,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,4,5,3,1
+31,Female,Working professional,1607,3,3-4,Rarely,Yes,No,1.98,Can,Supermarket,Weight management,3,BrandC,Gluten-free,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,3,2,5,1
+36,Female,Working professional,6639,5,3-4,Never,Yes,No,13.4,Tetra Pak,Online retailer,Weight management,4,None,None,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,4,5,3,1,2
+26,Female,Working professional,4274,5,1-2,Rarely,Yes,Yes,5.93,Powder sachet,Gym/Fitness centre,Weight management,3,BrandB,None,1,0,0,0,0,1,1,1,1,0,0,1,0,0,0,0,0,4,5,3,2,1
+19,Male,Working professional,883,4,5+,Rarely,No,No,3.55,Powder sachet,Online retailer,Muscle recovery,5,BrandC,None,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,1,2,4,3,5
+27,Male,Working professional,2266,5,None,Weekly,Yes,Yes,2.62,Bottle,Supermarket,Muscle recovery,3,None,Low sugar,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,2,4,5,3
+28,Male,Working professional,3387,4,3-4,Weekly,Yes,Yes,9.11,Tetra Pak,Online retailer,Immune support,4,BrandB,Low sugar,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,3,4,2,5,1
+34,Male,Student,26874,4,5+,Rarely,Yes,Yes,51.89,Powder sachet,Pharmacy,Weight management,4,BrandD,Low sugar,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,2,5,3,4,1
+24,Male,Self-employed,8110,3,3-4,Weekly,Yes,No,18.17,Jar,Convenience store,Weight management,4,BrandB,High protein,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,1,0,2,3,1,5,4
+19,Female,Working professional,1477,2,3-4,Daily,Yes,No,1.29,Can,Gym/Fitness centre,Digestive health,5,BrandD,Eco packaging,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,3,2,1,4,5
+22,Female,Self-employed,7612,3,5+,Rarely,No,No,13.99,Bottle,Supermarket,Weight management,4,BrandC,High protein,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,3,1,2,4,5
+23,Male,Homemaker,1221,4,1-2,Weekly,No,Yes,2.44,Bottle,Pharmacy,Weight management,5,BrandA,No artificial flavors,1,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,5,2,3,4
+30,Male,Working professional,13022,2,3-4,Never,No,Yes,24.35,Can,Pharmacy,Muscle recovery,3,BrandA,No artificial flavors,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,4,2,5,1,3
+28,Male,Working professional,3216,1,3-4,Rarely,Yes,Yes,4.68,Tetra Pak,Supermarket,Digestive health,3,BrandB,Eco packaging,1,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,1,3,1,2,4,5
+23,Female,Working professional,4518,2,1-2,Rarely,Yes,No,7.36,Powder sachet,Supermarket,Weight management,2,BrandD,Low sugar,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,2,5,1,4,3
+69,Female,Homemaker,16207,4,5+,Rarely,Yes,Yes,33.05,Powder sachet,Pharmacy,Weight management,4,BrandC,Gluten-free,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,4,3,5,2,1
+29,Female,Working professional,1543,5,5+,Rarely,Yes,Yes,3.09,Bottle,Pharmacy,Immune support,4,None,None,0,0,0,0,0,1,0,0,1,0,0,1,1,0,0,0,0,2,1,5,4,3
+21,Female,Working professional,1398,5,3-4,Rarely,Yes,Yes,2.9,Tetra Pak,Supermarket,Energy boost,4,BrandB,No artificial flavors,0,0,1,1,1,0,0,0,0,0,1,0,1,1,0,0,0,5,1,2,4,3
+19,Other,Working professional,2907,4,1-2,Monthly,Yes,No,5.16,Bottle,Convenience store,Weight management,4,None,Gluten-free,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,5,2,3,1,4
+19,Female,Working professional,12513,5,None,Weekly,Yes,Yes,26.12,Tetra Pak,Online retailer,Muscle recovery,5,BrandA,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,4,2,3,1,5
+21,Male,Student,1252,4,3-4,Rarely,Yes,Yes,4.6,Tetra Pak,Convenience store,Energy boost,5,BrandB,Organic,0,0,0,1,0,0,0,0,0,0,0,1,1,1,1,0,1,5,4,1,3,2
+20,Female,Working professional,384,4,None,Rarely,Yes,Yes,1.92,Bottle,Online retailer,Muscle recovery,3,BrandA,Low sugar,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,2,4,5,1
+20,Male,Self-employed,3275,4,3-4,Weekly,No,No,17.71,Bottle,Online retailer,Energy boost,3,None,Organic,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,1,5,3,4,2
+22,Female,Working professional,8075,2,3-4,Daily,Yes,No,13.71,Bottle,Supermarket,Digestive health,4,BrandB,High protein,0,1,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,2,3,1,4,5
+20,Male,Working professional,14476,5,3-4,Monthly,No,No,25.0,Bottle,Pharmacy,Digestive health,3,BrandB,Low sugar,0,0,0,0,0,1,0,1,1,1,1,0,0,0,0,1,0,2,1,4,3,5
+45,Female,Working professional,3239,4,3-4,Daily,No,Yes,6.35,Powder sachet,Online retailer,Energy boost,4,BrandB,None,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,5,3,1,4,2
+19,Female,Self-employed,3394,4,3-4,Never,Yes,Yes,8.55,Bottle,Pharmacy,Energy boost,3,BrandC,None,0,1,0,1,0,0,0,0,1,1,1,0,0,0,0,0,1,4,1,5,2,3
+26,Female,Working professional,13884,4,1-2,Never,Yes,No,27.37,Bottle,Supermarket,Digestive health,5,None,Low sugar,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,2,4,5,3,1
+24,Female,Homemaker,913,3,1-2,Daily,Yes,Yes,4.63,Bottle,Gym/Fitness centre,Weight management,5,BrandC,Organic,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1,4,3,2,5
+66,Male,Working professional,3465,3,3-4,Monthly,No,Yes,4.62,Powder sachet,Online retailer,Muscle recovery,5,BrandB,High protein,1,1,1,1,0,0,0,0,0,0,1,0,1,0,0,0,0,5,4,1,3,2
+19,Male,Working professional,5834,4,3-4,Daily,Yes,Yes,9.1,Bottle,Supermarket,Energy boost,5,None,None,0,0,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,2,1,3,4,5
+24,Male,Student,7364,1,3-4,Rarely,No,No,16.0,Bottle,Supermarket,Energy boost,4,None,No artificial flavors,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,2,3,1,4,5
+59,Male,Student,3106,4,3-4,Weekly,Yes,Yes,1.0,Tetra Pak,Supermarket,Energy boost,3,BrandA,Eco packaging,0,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,5,3,4,2,1
+42,Female,Working professional,5069,4,5+,Monthly,No,No,10.9,Bottle,Gym/Fitness centre,Energy boost,5,BrandD,None,0,0,1,0,0,1,0,1,0,0,0,0,1,0,0,0,0,5,1,2,3,4
+38,Male,Working professional,523,4,1-2,Weekly,No,No,3.98,Bottle,Online retailer,Weight management,1,BrandB,No artificial flavors,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,5,3,1,2,4
+21,Other,Self-employed,2718,4,None,Daily,Yes,Yes,3.69,Tetra Pak,Supermarket,Muscle recovery,2,BrandC,Low sugar,0,1,1,0,0,1,0,0,1,0,0,0,0,0,1,0,0,5,2,1,3,4
+20,Female,Student,7392,4,1-2,Weekly,Yes,Yes,12.7,Bottle,Supermarket,Muscle recovery,1,BrandC,None,0,1,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,3,4,1,5,2
+31,Female,Working professional,2030,4,3-4,Daily,Yes,No,5.24,Powder sachet,Online retailer,Muscle recovery,2,BrandB,Organic,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,5,3,2,4
+49,Male,Working professional,5183,4,3-4,Monthly,Yes,No,8.02,Can,Supermarket,Weight management,5,None,Low sugar,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,1,0,5,4,3,2,1
+27,Female,Student,7348,5,5+,Daily,Yes,No,63.88,Can,Online retailer,Weight management,5,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,5,4,3,2
+28,Female,Student,3611,4,3-4,Monthly,No,No,5.04,Bottle,Online retailer,Energy boost,3,BrandC,Low sugar,0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,0,0,4,3,2,5,1
+21,Female,Working professional,5730,5,5+,Rarely,Yes,Yes,15.0,Jar,Online retailer,Weight management,2,None,None,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,3,4,5,2
+35,Female,Working professional,2066,3,5+,Rarely,No,No,5.46,Can,Online retailer,Muscle recovery,3,BrandA,No artificial flavors,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,2,5,3,1,4
+20,Female,Working professional,4081,4,None,Rarely,No,Yes,8.24,Bottle,Supermarket,Muscle recovery,4,BrandB,None,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,2,4,3,1,5
+22,Male,Working professional,8512,5,3-4,Never,Yes,No,20.45,Bottle,Supermarket,Weight management,4,BrandA,Organic,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,5,3,4,1,2
+24,Female,Working professional,5661,4,3-4,Daily,No,No,13.39,Can,Pharmacy,Muscle recovery,5,BrandD,Low sugar,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,2,1,4,3,5
+26,Male,Student,2899,2,1-2,Daily,Yes,No,6.54,Jar,Convenience store,Energy boost,2,None,High protein,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,5,2,3,4
+21,Male,Working professional,6014,4,3-4,Monthly,No,No,8.3,Powder sachet,Online retailer,Digestive health,5,BrandB,None,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,1,0,2,1,4,5,3
+19,Male,Other,9350,2,3-4,Rarely,Yes,No,17.3,Tetra Pak,Supermarket,Digestive health,1,BrandA,Low sugar,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,5,3,4,1,2
+29,Male,Working professional,777,3,1-2,Never,Yes,Yes,3.72,Can,Online retailer,Weight management,4,BrandB,Eco packaging,0,0,0,0,0,0,0,1,1,0,1,0,1,0,0,0,0,2,3,4,5,1
+22,Male,Working professional,13949,5,3-4,Daily,Yes,No,25.3,Bottle,Pharmacy,Weight management,3,BrandC,Low sugar,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,1,4,2,3,5
+28,Male,Working professional,3631,4,3-4,Weekly,Yes,Yes,5.73,Tetra Pak,Online retailer,Muscle recovery,4,BrandC,None,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,1,3,4,2
+20,Other,Self-employed,7208,3,None,Weekly,Yes,No,12.37,Powder sachet,Pharmacy,Weight management,2,BrandB,None,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,2,3,4,5
+25,Female,Self-employed,14437,5,3-4,Rarely,Yes,Yes,29.68,Can,Supermarket,Immune support,5,BrandB,High protein,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,3,2,5,4,1
+27,Other,Working professional,1430,5,1-2,Monthly,Yes,Yes,4.79,Bottle,Gym/Fitness centre,Muscle recovery,2,BrandB,High protein,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,5,4,2,3,1
+18,Male,Other,2595,4,3-4,Daily,No,No,7.12,Bottle,Online retailer,Muscle recovery,4,BrandA,Low sugar,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,5,1,4,3,2
+22,Male,Student,3791,3,1-2,Weekly,Yes,No,5.88,Bottle,Online retailer,Weight management,1,BrandA,Low sugar,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,4,2,1,5
+19,Female,Student,2428,5,5+,Monthly,Yes,Yes,5.63,Can,Online retailer,Energy boost,3,BrandA,Organic,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,4,5,3,1,2
+18,Male,Self-employed,23422,4,3-4,Rarely,Yes,No,45.04,Powder sachet,Online retailer,Energy boost,2,BrandC,Organic,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2,5,3,1,4
+73,Male,Self-employed,2273,4,1-2,Daily,No,No,4.12,Bottle,Pharmacy,Energy boost,5,BrandA,Gluten-free,1,1,0,1,0,0,0,0,0,1,0,0,1,1,0,0,0,1,3,4,5,2
+22,Female,Student,2981,5,3-4,Rarely,No,No,7.0,Bottle,Convenience store,Energy boost,1,BrandB,No artificial flavors,1,0,0,1,0,0,0,0,1,0,0,1,1,0,1,0,0,3,2,1,5,4
+37,Male,Working professional,5907,4,3-4,Monthly,Yes,Yes,13.94,Can,Supermarket,Immune support,4,BrandC,Low sugar,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5,4,1,3,2
+21,Female,Student,1666,3,3-4,Rarely,Yes,No,1.0,Powder sachet,Online retailer,Weight management,3,None,None,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,5,2,3,4
+31,Female,Working professional,11226,4,3-4,Rarely,Yes,No,22.65,Can,Convenience store,Digestive health,4,BrandC,None,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,3,4,2,1,5
+35,Male,Self-employed,6540,3,3-4,Daily,Yes,Yes,15.89,Bottle,Supermarket,Digestive health,2,BrandA,No artificial flavors,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4,3,1,5,2
+28,Male,Working professional,3643,5,1-2,Daily,No,No,7.75,Bottle,Online retailer,Digestive health,5,None,Eco packaging,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,3,2,5,4
+25,Female,Working professional,4519,4,None,Rarely,Yes,No,9.2,Can,Supermarket,Energy boost,4,BrandA,Low sugar,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,4,2,3,5,1
+24,Male,Working professional,3052,2,3-4,Daily,No,No,4.98,Jar,Supermarket,Weight management,4,BrandB,No artificial flavors,0,1,0,1,0,1,0,0,1,0,0,0,1,0,0,0,0,5,1,4,3,2
+23,Male,Student,1258,4,3-4,Rarely,Yes,Yes,5.28,Bottle,Convenience store,Weight management,3,None,No artificial flavors,1,0,0,0,0,1,0,1,1,1,0,0,0,0,0,1,0,2,3,1,5,4
+49,Other,Working professional,6565,3,1-2,Rarely,No,Yes,12.1,Can,Online retailer,Immune support,4,BrandC,None,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,2,3,5,4,1
+39,Male,Working professional,23848,3,5+,Rarely,Yes,No,47.5,Tetra Pak,Online retailer,Digestive health,4,BrandC,High protein,0,1,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,5,2,1,3,4
+58,Female,Other,23289,4,1-2,Weekly,No,Yes,45.64,Can,Supermarket,Energy boost,3,BrandB,Gluten-free,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,5,3,1,2,4
+19,Other,Self-employed,6019,3,3-4,Weekly,No,No,12.25,Bottle,Supermarket,Weight management,3,BrandA,Low sugar,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,0,0,4,3,5,2,1
+33,Male,Student,9168,5,1-2,Monthly,No,Yes,21.19,Powder sachet,Pharmacy,Weight management,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2,3,5,4,1
+51,Male,Homemaker,1568,2,None,Daily,Yes,Yes,1.32,Can,Online retailer,Energy boost,2,BrandB,Organic,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,3,4,1,5
+20,Male,Self-employed,22749,4,5+,Rarely,Yes,Yes,45.72,Tetra Pak,Supermarket,Digestive health,3,BrandB,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,5,4
+18,Male,Self-employed,5896,5,1-2,Rarely,Yes,No,12.57,Tetra Pak,Convenience store,Digestive health,4,BrandA,Organic,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,4,5,3,1,2
+34,Male,Working professional,21347,4,3-4,Weekly,Yes,Yes,41.07,Powder sachet,Online retailer,Muscle recovery,3,BrandB,No artificial flavors,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,0,3,4,5,2,1
+28,Female,Working professional,2541,4,1-2,Rarely,Yes,No,4.96,Can,Online retailer,Muscle recovery,4,BrandC,Low sugar,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,5,3,4,2
+40,Male,Working professional,25242,5,3-4,Daily,Yes,No,54.19,Can,Online retailer,Weight management,4,None,High protein,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,5,4,1,2,3
+19,Female,Student,9874,3,5+,Weekly,Yes,No,16.21,Bottle,Supermarket,Weight management,3,BrandD,No artificial flavors,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,3,2,5,4,1
+37,Other,Working professional,8085,1,None,Never,Yes,No,15.33,Bottle,Online retailer,Digestive health,3,BrandD,No artificial flavors,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,2,3,5,1,4
+20,Female,Working professional,6067,4,5+,Never,Yes,Yes,12.64,Bottle,Online retailer,Digestive health,3,BrandB,Low sugar,1,0,1,0,0,0,0,0,0,1,0,0,1,0,1,0,0,5,1,3,2,4
+20,Female,Working professional,3930,1,3-4,Monthly,Yes,Yes,7.11,Powder sachet,Supermarket,Energy boost,4,BrandA,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,4,2,5,1
+20,Male,Self-employed,14479,5,3-4,Never,Yes,Yes,34.73,Powder sachet,Gym/Fitness centre,Weight management,5,BrandB,Eco packaging,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,2,5,1,4,3
+38,Female,Working professional,5577,3,3-4,Monthly,Yes,No,12.25,Bottle,Supermarket,Energy boost,4,BrandB,None,0,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,2,4,3,1,5
+31,Female,Student,837,5,5+,Weekly,Yes,No,1.0,Bottle,Gym/Fitness centre,Digestive health,4,BrandC,Low sugar,1,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,2,3,4,1,5
+26,Male,Other,1798,5,None,Weekly,Yes,Yes,1.0,Bottle,Supermarket,Energy boost,4,None,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2,3,4,1,5
+23,Male,Retired,4158,3,1-2,Never,No,Yes,9.0,Powder sachet,Convenience store,Muscle recovery,5,None,No artificial flavors,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,3,2,1,5,4
+43,Female,Self-employed,6496,4,5+,Daily,No,No,11.48,Bottle,Pharmacy,Weight management,4,BrandB,Organic,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,4,2,5,1,3
+23,Male,Other,4671,1,3-4,Monthly,No,Yes,11.92,Can,Supermarket,Digestive health,1,None,High protein,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,4,3,5,2,1
+38,Male,Working professional,14722,4,None,Monthly,No,No,28.89,Powder sachet,Convenience store,Weight management,3,BrandB,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2,5,1,3,4
+24,Male,Other,3032,1,3-4,Rarely,Yes,Yes,4.93,Can,Online retailer,Weight management,5,BrandA,Organic,0,0,0,0,0,1,0,1,1,0,1,0,0,0,0,0,0,3,5,1,2,4
+23,Male,Student,5593,5,3-4,Weekly,Yes,No,10.02,Jar,Gym/Fitness centre,Weight management,4,BrandB,High protein,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,4,2,5
+25,Female,Working professional,957,5,3-4,Weekly,Yes,Yes,3.89,Can,Pharmacy,Weight management,2,BrandC,No artificial flavors,1,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,3,2,5,4,1
+22,Female,Working professional,9738,3,1-2,Daily,Yes,Yes,20.31,Tetra Pak,Supermarket,Digestive health,3,BrandD,High protein,0,1,0,0,0,1,0,0,0,1,1,0,0,0,0,1,0,3,1,4,5,2
+34,Female,Working professional,4514,3,3-4,Monthly,Yes,Yes,12.54,Can,Supermarket,Muscle recovery,3,BrandB,High protein,0,0,1,0,1,0,0,0,0,0,1,0,1,1,0,0,0,3,2,5,1,4
+26,Male,Student,7170,5,1-2,Rarely,Yes,Yes,13.91,Bottle,Supermarket,Weight management,5,BrandA,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,2,4,5,3,1
+21,Male,Working professional,2259,3,3-4,Monthly,Yes,Yes,6.24,Powder sachet,Online retailer,Weight management,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,4,1,3,2
+45,Female,Self-employed,15545,5,5+,Rarely,Yes,Yes,32.85,Tetra Pak,Supermarket,Energy boost,4,BrandA,Low sugar,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,4,5,3,2,1
+23,Male,Working professional,12551,4,3-4,Daily,No,No,26.45,Bottle,Online retailer,Digestive health,4,None,No artificial flavors,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,2,3,4,5,1
+27,Male,Student,8310,4,1-2,Rarely,Yes,Yes,15.6,Bottle,Supermarket,Energy boost,2,None,Organic,1,0,0,0,0,1,0,1,0,1,1,1,0,1,0,0,0,4,5,1,2,3
+46,Female,Self-employed,4374,5,1-2,Monthly,Yes,No,9.69,Bottle,Online retailer,Digestive health,2,None,Low sugar,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,3,5,1
+29,Male,Working professional,8282,4,3-4,Daily,Yes,Yes,16.37,Tetra Pak,Supermarket,Muscle recovery,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,3,4,1,5,2
+19,Female,Working professional,2601,5,3-4,Weekly,Yes,No,4.95,Bottle,Supermarket,Muscle recovery,3,BrandA,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,5,2,3,4
+51,Male,Working professional,10615,5,1-2,Rarely,Yes,No,19.62,Jar,Supermarket,Energy boost,2,None,Eco packaging,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,4,3,5,2,1
+29,Male,Working professional,21688,3,3-4,Rarely,No,Yes,39.14,Bottle,Gym/Fitness centre,Energy boost,3,None,Eco packaging,1,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,3,1,2,4,5
+22,Male,Working professional,12882,1,1-2,Weekly,Yes,Yes,28.26,Bottle,Pharmacy,Muscle recovery,4,BrandA,Gluten-free,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,3,4,1,5
+19,Other,Retired,2549,5,1-2,Rarely,Yes,Yes,5.96,Jar,Supermarket,Weight management,2,BrandD,Organic,0,0,0,0,0,1,0,1,0,0,0,0,1,0,1,0,1,3,4,5,2,1
+36,Female,Working professional,6804,5,None,Daily,Yes,Yes,10.92,Can,Gym/Fitness centre,Energy boost,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,4,2,5,3,1
+29,Female,Working professional,1535,2,None,Daily,Yes,No,4.51,Powder sachet,Pharmacy,Digestive health,5,None,High protein,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,5,1,3,2,4
+27,Female,Homemaker,8227,5,1-2,Monthly,No,No,18.99,Can,Convenience store,Weight management,3,BrandA,None,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,5,2,1,4,3
+44,Male,Self-employed,7373,4,3-4,Monthly,Yes,No,16.3,Bottle,Online retailer,Energy boost,3,None,None,1,0,0,0,0,1,0,1,1,1,0,0,0,1,0,0,0,4,5,3,2,1
+36,Female,Student,913,3,5+,Rarely,No,No,1.0,Can,Supermarket,Digestive health,5,BrandA,Eco packaging,0,0,1,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,4,3,5,2
+19,Male,Student,1727,5,3-4,Weekly,No,No,1.99,Bottle,Supermarket,Immune support,4,BrandC,High protein,0,0,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0,5,2,4,3,1
+22,Female,Student,3809,3,1-2,Daily,No,No,6.52,Bottle,Supermarket,Weight management,5,BrandB,Eco packaging,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,5,3,4,1
+21,Male,Working professional,3749,5,1-2,Weekly,Yes,No,9.22,Bottle,Online retailer,Digestive health,3,BrandB,No artificial flavors,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,5,3,2,1,4
+34,Female,Working professional,1655,3,1-2,Daily,Yes,Yes,4.27,Tetra Pak,Online retailer,Muscle recovery,5,BrandB,High protein,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4,3,1,5,2
+18,Male,Student,6975,4,1-2,Daily,Yes,Yes,19.53,Bottle,Online retailer,Immune support,2,BrandC,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,4,1,5,3
+28,Male,Other,6163,3,3-4,Weekly,Yes,Yes,9.04,Bottle,Supermarket,Energy boost,5,BrandA,Organic,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,3,1,2,4,5
+35,Female,Working professional,4126,4,3-4,Weekly,No,No,8.15,Bottle,Supermarket,Immune support,5,BrandC,Gluten-free,0,0,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,4,2,5,3,1
+43,Male,Working professional,2489,4,1-2,Weekly,No,Yes,1.12,Bottle,Convenience store,Weight management,4,BrandA,None,1,0,0,1,0,0,0,0,1,1,0,0,1,0,0,0,0,5,1,3,4,2
+23,Male,Working professional,12630,3,1-2,Monthly,No,Yes,26.45,Bottle,Convenience store,Weight management,4,BrandA,Organic,0,0,0,0,1,1,0,0,0,1,0,0,1,0,0,0,0,5,4,2,3,1
+38,Male,Working professional,21804,4,None,Daily,No,Yes,45.74,Bottle,Gym/Fitness centre,Weight management,5,BrandC,Gluten-free,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2,1,3,5,4
+19,Male,Student,3181,4,1-2,Daily,Yes,Yes,9.25,Bottle,Supermarket,Energy boost,3,BrandA,No artificial flavors,0,1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,3,5,4,1,2
+40,Female,Working professional,2833,2,3-4,Monthly,Yes,No,6.04,Bottle,Convenience store,Muscle recovery,4,None,No artificial flavors,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,1,5,2,3,4
+19,Female,Self-employed,7647,5,1-2,Daily,Yes,Yes,11.47,Bottle,Supermarket,Muscle recovery,5,BrandD,High protein,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,3,1,2,5,4
+24,Female,Working professional,3561,3,3-4,Monthly,No,No,7.02,Jar,Gym/Fitness centre,Weight management,2,BrandD,None,0,0,0,0,1,0,1,0,1,1,0,0,0,0,0,0,0,3,1,2,4,5
+37,Female,Working professional,4335,4,3-4,Daily,No,No,9.54,Tetra Pak,Supermarket,Energy boost,5,BrandB,No artificial flavors,1,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,2,1,4,5,3
+19,Male,Working professional,9563,4,5+,Weekly,Yes,Yes,17.12,Can,Online retailer,Weight management,4,BrandA,Gluten-free,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,3,2,5,1,4
+21,Female,Student,881,4,5+,Daily,No,No,1.23,Powder sachet,Gym/Fitness centre,Weight management,5,None,No artificial flavors,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,5,4,2,3
+33,Male,Working professional,16098,2,3-4,Daily,No,No,29.64,Bottle,Pharmacy,Weight management,2,BrandA,None,1,0,0,0,0,1,1,1,0,0,0,0,1,0,0,0,0,1,2,4,5,3
+33,Male,Working professional,5247,4,None,Monthly,No,Yes,9.27,Bottle,Gym/Fitness centre,Weight management,3,None,Gluten-free,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1,5,3,2,4
+30,Female,Working professional,3394,4,3-4,Never,No,Yes,8.61,Jar,Convenience store,Energy boost,5,BrandA,Gluten-free,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,5,4,2,1,3
+32,Male,Student,4535,4,3-4,Daily,Yes,Yes,10.43,Tetra Pak,Online retailer,Weight management,2,BrandB,None,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,3,1,2,4,5
+27,Female,Self-employed,4751,5,None,Weekly,Yes,No,6.71,Powder sachet,Online retailer,Digestive health,4,BrandC,Low sugar,1,1,1,0,0,0,1,1,0,0,1,0,1,1,0,0,0,2,5,1,4,3
+21,Male,Other,1035,4,3-4,Rarely,Yes,No,1.0,Powder sachet,Supermarket,Energy boost,5,None,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,1,2,3,4,5
+23,Female,Self-employed,18872,2,5+,Weekly,Yes,Yes,37.86,Bottle,Supermarket,Energy boost,3,BrandA,High protein,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,3,1,2,4,5
+20,Female,Homemaker,5101,3,3-4,Rarely,Yes,Yes,10.66,Powder sachet,Gym/Fitness centre,Weight management,4,BrandB,Eco packaging,0,1,1,0,0,1,0,0,1,1,0,0,0,0,0,0,0,5,2,1,4,3
+46,Female,Working professional,7322,3,None,Daily,Yes,Yes,13.32,Powder sachet,Pharmacy,Weight management,2,BrandD,Gluten-free,0,0,1,0,0,1,0,1,1,1,1,0,0,0,0,0,0,1,2,5,3,4
+28,Female,Other,11573,2,None,Never,No,No,24.1,Bottle,Supermarket,Muscle recovery,4,BrandA,Low sugar,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,4,3,1,5,2
+24,Female,Working professional,1960,4,3-4,Weekly,Yes,Yes,3.85,Powder sachet,Supermarket,Immune support,3,BrandA,Gluten-free,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1,5,2,4,3
+25,Male,Other,7526,3,1-2,Weekly,No,No,9.9,Bottle,Supermarket,Digestive health,4,BrandA,Gluten-free,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,4,2,3,5,1
+53,Female,Other,3863,3,3-4,Rarely,Yes,Yes,6.58,Tetra Pak,Pharmacy,Muscle recovery,5,BrandC,Low sugar,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,4,1,5,2
+19,Male,Self-employed,10531,2,3-4,Monthly,Yes,No,19.86,Bottle,Supermarket,Weight management,2,BrandD,Eco packaging,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,1,0,4,2,3,1,5
+28,Female,Other,725,1,1-2,Monthly,Yes,No,2.81,Bottle,Supermarket,Energy boost,4,None,Organic,1,1,0,0,0,0,0,0,1,1,0,1,0,1,0,0,0,1,3,2,4,5
+26,Female,Working professional,4495,2,5+,Rarely,Yes,No,10.38,Can,Supermarket,Weight management,4,BrandB,None,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,4,1,3,5
+29,Female,Working professional,2857,3,3-4,Monthly,Yes,Yes,2.37,Bottle,Supermarket,Digestive health,3,BrandA,Low sugar,1,1,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,2,3,1,4,5
+18,Male,Working professional,7252,4,1-2,Daily,Yes,No,15.38,Tetra Pak,Gym/Fitness centre,Digestive health,4,BrandB,Low sugar,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,3,5,2,1,4
+42,Male,Working professional,7503,4,3-4,Monthly,Yes,Yes,14.86,Can,Convenience store,Weight management,5,BrandA,Low sugar,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,1,2,5,3,4
+50,Female,Student,2600,2,3-4,Daily,Yes,Yes,5.45,Bottle,Supermarket,Energy boost,5,BrandB,Low sugar,1,1,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,4,2,1,5,3
+27,Male,Working professional,2589,4,3-4,Rarely,Yes,No,3.95,Bottle,Supermarket,Energy boost,1,BrandC,High protein,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,5,1,4
+32,Male,Other,4449,3,5+,Never,No,No,8.77,Tetra Pak,Pharmacy,Energy boost,4,BrandA,None,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,2,4,1,5,3
+48,Male,Working professional,2193,3,3-4,Weekly,Yes,No,6.69,Jar,Pharmacy,Digestive health,4,BrandC,Eco packaging,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,1,3,5
+32,Female,Self-employed,10486,1,5+,Weekly,Yes,Yes,21.2,Tetra Pak,Supermarket,Energy boost,5,None,Organic,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,5,1,4,3,2
+19,Female,Retired,3525,4,3-4,Daily,No,No,6.97,Tetra Pak,Supermarket,Weight management,2,None,No artificial flavors,0,1,1,1,0,0,0,0,1,1,0,0,0,1,0,0,0,2,5,1,3,4
+28,Male,Retired,359,4,3-4,Daily,Yes,No,1.0,Can,Convenience store,Digestive health,5,BrandB,No artificial flavors,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,1,3,5,4,2
+29,Male,Other,3508,3,5+,Never,No,No,9.12,Bottle,Online retailer,Energy boost,5,BrandB,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,3,2,4,5,1
+24,Male,Working professional,1930,2,3-4,Daily,No,No,1.3,Can,Convenience store,Weight management,5,BrandB,No artificial flavors,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,4,1,2,3,5
+34,Female,Other,1132,5,1-2,Weekly,No,No,1.0,Powder sachet,Supermarket,Energy boost,4,None,High protein,0,0,0,0,0,0,1,1,0,1,1,0,0,0,0,0,0,1,4,5,2,3
+50,Female,Self-employed,1614,3,3-4,Rarely,Yes,Yes,1.0,Tetra Pak,Online retailer,Weight management,3,None,No artificial flavors,1,0,1,0,1,0,1,0,0,1,1,0,0,0,0,0,0,3,5,1,4,2
+49,Male,Working professional,5423,3,3-4,Rarely,No,No,11.25,Can,Online retailer,Energy boost,4,None,High protein,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,2,5,1,4,3
+25,Male,Working professional,16249,5,1-2,Monthly,No,No,34.86,Can,Pharmacy,Weight management,3,BrandC,Eco packaging,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,2,4,1,3,5
+19,Male,Self-employed,6515,5,5+,Monthly,Yes,No,12.37,Can,Convenience store,Digestive health,4,BrandA,Low sugar,0,1,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,2,1,4,3,5
+68,Female,Working professional,2847,4,1-2,Monthly,Yes,Yes,3.56,Tetra Pak,Supermarket,Muscle recovery,4,None,None,0,1,0,1,0,0,0,0,1,0,0,0,0,1,0,1,0,4,2,5,3,1
+39,Female,Working professional,7408,4,1-2,Never,Yes,Yes,18.09,Can,Online retailer,Weight management,3,None,Organic,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,3,5,4,1,2
+19,Male,Working professional,3251,3,5+,Monthly,No,Yes,7.4,Tetra Pak,Supermarket,Digestive health,3,None,No artificial flavors,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4,1,3,2,5
+48,Male,Working professional,2630,2,3-4,Monthly,Yes,No,5.82,Bottle,Pharmacy,Energy boost,1,BrandB,None,0,1,0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,2,1,3,4,5
+42,Male,Working professional,1739,4,None,Daily,No,No,3.1,Can,Gym/Fitness centre,Digestive health,3,BrandB,Organic,0,0,0,1,0,0,0,1,1,0,0,0,1,0,0,0,0,2,4,3,5,1
+26,Other,Self-employed,1016,2,3-4,Daily,Yes,Yes,3.37,Powder sachet,Pharmacy,Energy boost,4,BrandA,Low sugar,0,0,0,0,1,0,0,0,1,1,0,0,1,0,0,0,0,3,1,4,5,2
+28,Male,Working professional,3460,4,3-4,Monthly,No,No,7.44,Bottle,Supermarket,Weight management,3,None,No artificial flavors,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,4,2,1,5,3
+24,Female,Student,5666,5,None,Never,Yes,No,10.37,Powder sachet,Supermarket,Energy boost,5,None,Organic,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,4,2,5,1,3
+18,Female,Student,4505,5,5+,Rarely,Yes,No,8.38,Bottle,Supermarket,Energy boost,4,BrandB,Eco packaging,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,2,4,5,1,3
+22,Male,Working professional,3380,3,3-4,Never,Yes,Yes,4.72,Bottle,Supermarket,Immune support,5,BrandC,None,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,2,3,4,1,5
+37,Male,Retired,2098,4,3-4,Monthly,Yes,No,1.91,Can,Supermarket,Energy boost,2,BrandA,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,3,1,2,5
+18,Male,Working professional,8497,4,3-4,Rarely,Yes,Yes,16.4,Jar,Convenience store,Weight management,5,BrandB,High protein,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,4,3,1,2,5
+22,Female,Working professional,1502,5,3-4,Rarely,Yes,No,5.31,Tetra Pak,Online retailer,Weight management,5,BrandB,High protein,0,1,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,3,2,1,4,5
+24,Female,Working professional,9882,3,1-2,Monthly,Yes,Yes,17.7,Bottle,Online retailer,Weight management,4,BrandB,None,0,0,1,0,1,0,0,0,1,0,1,0,1,1,0,0,0,1,3,4,5,2
+27,Female,Working professional,1994,1,1-2,Weekly,No,Yes,5.66,Bottle,Pharmacy,Digestive health,3,BrandB,High protein,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,1,0,2,3,5,4,1
+48,Female,Self-employed,2497,3,3-4,Weekly,No,No,3.4,Can,Pharmacy,Immune support,4,BrandB,None,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5,4,1,2,3
+23,Male,Self-employed,1313,3,5+,Rarely,Yes,Yes,1.0,Bottle,Online retailer,Weight management,4,BrandD,No artificial flavors,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,5,3,4,2,1
+23,Other,Student,3130,3,None,Weekly,Yes,Yes,7.35,Can,Supermarket,Energy boost,2,BrandB,Low sugar,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,4,3,1,5,2
+34,Female,Working professional,11823,5,3-4,Never,Yes,No,26.9,Can,Supermarket,Energy boost,5,None,No artificial flavors,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,4,3,5,2
+25,Male,Student,7817,4,5+,Weekly,No,No,13.92,Can,Online retailer,Weight management,4,BrandC,None,1,0,0,0,0,0,0,1,1,1,0,0,0,0,1,0,0,1,4,2,3,5
+21,Other,Working professional,11856,3,1-2,Rarely,Yes,No,20.57,Bottle,Gym/Fitness centre,Energy boost,5,BrandD,Low sugar,0,0,0,1,0,1,0,0,1,0,0,0,0,0,1,0,0,3,2,5,1,4
+25,Female,Working professional,7863,4,None,Monthly,Yes,Yes,16.64,Bottle,Gym/Fitness centre,Weight management,4,None,Gluten-free,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,2,3,5,4,1
+19,Female,Student,1820,2,1-2,Rarely,Yes,Yes,1.79,Bottle,Online retailer,Digestive health,3,BrandA,Eco packaging,0,1,0,0,1,0,0,1,1,0,0,0,0,0,1,0,0,1,4,3,2,5
+20,Female,Working professional,3649,5,3-4,Weekly,No,Yes,8.37,Bottle,Pharmacy,Weight management,2,BrandB,None,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,4,3,5,1,2
+26,Female,Working professional,2435,5,1-2,Never,Yes,Yes,7.17,Can,Pharmacy,Energy boost,3,BrandA,Gluten-free,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2,4,3,5,1
+24,Female,Retired,16277,5,3-4,Monthly,No,No,33.22,Jar,Convenience store,Weight management,5,BrandB,High protein,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,2,5,3,4
+47,Male,Other,1674,5,3-4,Weekly,Yes,Yes,4.97,Bottle,Pharmacy,Muscle recovery,4,BrandA,None,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,5,3,1,4
+23,Male,Student,10985,3,3-4,Monthly,Yes,Yes,23.6,Bottle,Supermarket,Weight management,5,BrandC,None,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,1,0,2,5,1,3,4
+28,Female,Self-employed,10978,1,1-2,Weekly,Yes,Yes,23.94,Bottle,Supermarket,Energy boost,5,BrandD,No artificial flavors,0,0,1,0,0,0,0,0,1,1,0,0,1,0,0,0,0,2,4,3,1,5
+30,Male,Working professional,25506,4,3-4,Weekly,Yes,Yes,51.1,Jar,Online retailer,Weight management,2,BrandB,None,0,1,1,0,0,0,0,1,0,0,1,1,0,0,1,1,0,1,4,2,5,3
+18,Male,Working professional,3399,5,3-4,Weekly,Yes,No,8.36,Bottle,Online retailer,Weight management,3,BrandB,Low sugar,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,2,4,5,3
+31,Male,Self-employed,9331,3,5+,Rarely,Yes,No,18.99,Powder sachet,Online retailer,Energy boost,5,BrandA,Gluten-free,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,1,5,2,3,4
+20,Male,Retired,38311,1,5+,Monthly,Yes,Yes,77.4,Bottle,Supermarket,Immune support,4,BrandA,No artificial flavors,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,3,1,4,5,2
+56,Female,Other,2819,5,3-4,Monthly,Yes,Yes,11.74,Bottle,Pharmacy,Digestive health,4,BrandC,No artificial flavors,1,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,5,1,2,3,4
+19,Female,Working professional,1235,2,3-4,Weekly,Yes,Yes,2.95,Bottle,Supermarket,Muscle recovery,4,BrandA,None,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,3,1,2,5
+24,Male,Working professional,905,4,1-2,Weekly,No,No,1.0,Can,Convenience store,Digestive health,5,None,High protein,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,2,3,4
+19,Male,Self-employed,9334,4,1-2,Never,Yes,No,18.27,Can,Online retailer,Muscle recovery,4,BrandC,No artificial flavors,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,1,5,4,3
+80,Male,Working professional,902,3,1-2,Monthly,Yes,Yes,1.18,Can,Supermarket,Digestive health,5,BrandB,Organic,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,2,3,1,5,4
+26,Female,Working professional,3515,2,3-4,Never,Yes,Yes,6.5,Bottle,Supermarket,Weight management,5,BrandA,None,0,0,1,0,1,0,0,1,1,0,0,0,0,1,0,0,0,2,1,5,3,4
+28,Female,Working professional,7285,5,1-2,Weekly,Yes,No,16.48,Bottle,Supermarket,Weight management,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,5,1,3
+18,Male,Working professional,5806,4,1-2,Daily,Yes,No,13.87,Bottle,Supermarket,Energy boost,4,None,Low sugar,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,3,4,2,5
+34,Female,Working professional,7208,5,5+,Rarely,Yes,No,14.2,Can,Gym/Fitness centre,Energy boost,4,None,Eco packaging,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,5,4,3,1,2
+20,Female,Working professional,6003,3,1-2,Monthly,Yes,Yes,9.22,Bottle,Supermarket,Weight management,3,BrandA,No artificial flavors,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,5,3,4,1
+45,Female,Retired,15537,2,1-2,Daily,Yes,Yes,31.27,Tetra Pak,Pharmacy,Muscle recovery,4,BrandD,Eco packaging,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,3,5,4,2,1
+20,Female,Student,2086,4,None,Weekly,No,Yes,3.09,Bottle,Supermarket,Weight management,2,BrandB,Organic,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,5,1,4,2,3
+20,Male,Working professional,2672,4,3-4,Rarely,Yes,No,5.76,Bottle,Supermarket,Muscle recovery,5,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,4,5,1,2,3
+18,Female,Working professional,2452,3,3-4,Weekly,Yes,No,4.66,Can,Pharmacy,Muscle recovery,4,BrandC,None,0,0,1,1,0,0,1,1,1,1,0,0,0,0,1,0,0,5,3,2,4,1
+25,Male,Student,10375,5,1-2,Monthly,Yes,Yes,23.18,Bottle,Online retailer,Energy boost,5,None,None,1,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,2,4,1,3,5
+27,Female,Student,11052,3,3-4,Weekly,Yes,Yes,22.65,Can,Online retailer,Energy boost,3,BrandA,None,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,3,5,4,2,1
+18,Female,Working professional,7377,3,3-4,Weekly,No,Yes,13.67,Bottle,Supermarket,Energy boost,5,BrandA,Gluten-free,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,1,4,3,5
+35,Female,Homemaker,14259,2,5+,Never,Yes,Yes,25.75,Bottle,Supermarket,Energy boost,4,BrandC,Organic,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,3,1,2,4,5
+25,Female,Working professional,1702,4,5+,Weekly,Yes,Yes,3.31,Powder sachet,Supermarket,Weight management,5,None,No artificial flavors,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,4,1,2,5,3
+26,Male,Other,22038,4,5+,Monthly,Yes,No,43.99,Bottle,Online retailer,Muscle recovery,3,BrandC,Gluten-free,0,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,5,3,2,4,1
+24,Female,Working professional,19359,4,3-4,Rarely,Yes,Yes,38.19,Can,Supermarket,Energy boost,4,BrandB,Organic,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,2,3,5,4
+24,Other,Working professional,9529,4,1-2,Weekly,Yes,Yes,20.61,Jar,Online retailer,Digestive health,4,None,Low sugar,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,4,3,2,5,1
+27,Female,Working professional,24431,5,None,Weekly,Yes,No,46.1,Bottle,Pharmacy,Digestive health,4,None,No artificial flavors,0,0,0,1,1,0,1,0,1,1,0,0,1,1,0,0,0,5,2,3,1,4
+20,Male,Working professional,1107,2,None,Monthly,Yes,Yes,1.0,Powder sachet,Supermarket,Weight management,3,BrandD,No artificial flavors,0,0,1,0,1,0,0,1,0,1,1,0,1,0,0,0,0,1,2,5,3,4
+20,Male,Self-employed,3066,2,3-4,Weekly,Yes,Yes,22.68,Bottle,Convenience store,Muscle recovery,5,None,Low sugar,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,3,5,4,1,2
+41,Male,Working professional,2536,1,5+,Weekly,Yes,Yes,3.95,Can,Supermarket,Energy boost,2,BrandD,No artificial flavors,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,5,3,1,2,4
+53,Female,Working professional,9408,2,3-4,Weekly,Yes,No,18.1,Tetra Pak,Pharmacy,Muscle recovery,3,BrandB,None,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,3,4,2,5
+23,Female,Homemaker,1910,4,None,Monthly,Yes,No,3.7,Powder sachet,Pharmacy,Energy boost,3,BrandA,Organic,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,5,2,4,3,1
+21,Male,Retired,9718,4,3-4,Monthly,No,Yes,20.81,Tetra Pak,Supermarket,Muscle recovery,5,BrandC,Eco packaging,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,5,3,2,1,4
+30,Female,Homemaker,16873,5,5+,Monthly,Yes,No,33.54,Can,Convenience store,Weight management,4,None,No artificial flavors,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,5,1,3
+24,Female,Working professional,9188,3,3-4,Daily,Yes,Yes,14.44,Can,Online retailer,Immune support,4,None,None,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,1,2,3,4,5
+18,Female,Self-employed,6345,3,5+,Monthly,Yes,No,11.48,Bottle,Supermarket,Weight management,4,BrandA,High protein,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4,5,2,1,3
+20,Female,Working professional,2020,4,5+,Never,Yes,No,5.03,Tetra Pak,Online retailer,Energy boost,5,BrandA,Organic,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,4,5,3,1,2
+33,Female,Working professional,2293,2,5+,Monthly,Yes,No,6.11,Bottle,Convenience store,Weight management,1,None,Low sugar,0,0,0,0,0,1,0,0,0,0,1,0,0,1,1,0,0,2,1,3,4,5
+30,Female,Working professional,15133,4,3-4,Rarely,No,Yes,31.9,Can,Pharmacy,Digestive health,1,BrandC,Eco packaging,0,1,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,5,4,1,2,3
+18,Male,Working professional,9911,5,3-4,Monthly,No,No,22.02,Tetra Pak,Supermarket,Muscle recovery,1,BrandB,Low sugar,0,1,1,0,0,1,0,1,1,1,0,0,0,0,0,0,0,1,2,5,3,4
+21,Female,Working professional,4745,4,1-2,Rarely,Yes,No,9.73,Powder sachet,Online retailer,Immune support,4,BrandC,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,1,0,4,3,5,2,1
+21,Female,Working professional,3374,5,None,Never,Yes,No,7.27,Can,Supermarket,Digestive health,4,BrandA,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,4,5,1,3
+31,Female,Homemaker,794,4,3-4,Daily,Yes,No,1.0,Jar,Online retailer,Weight management,4,None,Organic,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,4,2,5,3,1
+18,Female,Working professional,1875,2,1-2,Weekly,Yes,Yes,1.0,Bottle,Online retailer,Energy boost,4,None,No artificial flavors,1,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,2,1,3,4,5
+19,Female,Student,27454,4,5+,Weekly,No,Yes,52.07,Bottle,Supermarket,Energy boost,3,None,No artificial flavors,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,5,1,4,2
+37,Male,Student,1552,3,1-2,Weekly,Yes,Yes,1.7,Can,Online retailer,Immune support,3,BrandA,Low sugar,0,1,0,1,0,1,0,0,1,0,0,0,0,1,0,1,0,5,4,3,2,1
+20,Male,Retired,5829,1,5+,Daily,Yes,Yes,8.94,Can,Convenience store,Immune support,3,None,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,5,3,4,1,2
+30,Male,Working professional,12170,4,1-2,Rarely,Yes,No,23.75,Tetra Pak,Online retailer,Energy boost,2,BrandC,None,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,3,1,4,2,5
+21,Male,Working professional,1589,5,1-2,Daily,Yes,No,2.25,Tetra Pak,Pharmacy,Muscle recovery,3,BrandB,Organic,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,2,1,4,5,3
+19,Female,Self-employed,5804,3,5+,Monthly,No,No,13.48,Bottle,Supermarket,Muscle recovery,4,BrandB,Low sugar,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,4,5,3,2,1
+21,Other,Self-employed,11431,4,1-2,Monthly,Yes,Yes,20.92,Tetra Pak,Convenience store,Muscle recovery,4,None,None,0,0,0,0,0,1,0,1,0,0,1,0,0,0,1,0,0,3,2,4,5,1
+33,Male,Working professional,4970,5,1-2,Weekly,Yes,Yes,10.22,Bottle,Supermarket,Digestive health,5,BrandC,Gluten-free,0,1,1,0,0,0,0,0,0,1,0,0,1,0,0,1,0,3,1,2,4,5
+41,Male,Working professional,64962,5,1-2,Never,Yes,No,129.08,Bottle,Online retailer,Energy boost,4,BrandB,None,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,4,3,5,1,2
+39,Female,Self-employed,1095,4,3-4,Rarely,No,Yes,1.0,Bottle,Gym/Fitness centre,Digestive health,3,None,No artificial flavors,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,3,5,2,1,4
+24,Male,Working professional,12745,3,1-2,Weekly,No,Yes,24.03,Tetra Pak,Pharmacy,Weight management,4,BrandB,No artificial flavors,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,3,5,4,2
+31,Female,Working professional,4207,5,3-4,Weekly,Yes,No,4.31,Can,Supermarket,Weight management,4,None,None,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,4,5,1
+20,Female,Homemaker,50952,3,3-4,Weekly,Yes,No,103.4,Bottle,Online retailer,Weight management,5,BrandD,No artificial flavors,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,4,5,3,2,1
+22,Female,Working professional,7311,4,3-4,Rarely,Yes,Yes,17.43,Can,Online retailer,Weight management,5,BrandD,High protein,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,5,2,3,1,4
+45,Male,Working professional,2541,1,3-4,Daily,Yes,No,4.55,Bottle,Supermarket,Muscle recovery,4,BrandC,Gluten-free,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,2,5,1,4,3
+18,Male,Working professional,6040,4,3-4,Monthly,Yes,No,12.14,Jar,Online retailer,Muscle recovery,4,BrandA,None,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,3,1,4,5,2
+19,Female,Student,923,3,1-2,Rarely,Yes,No,1.25,Can,Supermarket,Weight management,3,None,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,5,2,3
+20,Female,Student,8458,4,5+,Weekly,Yes,No,15.28,Bottle,Supermarket,Muscle recovery,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,1,5,4,2,3
+18,Male,Self-employed,6428,3,1-2,Rarely,Yes,Yes,14.27,Powder sachet,Supermarket,Weight management,5,BrandC,Organic,1,0,0,0,1,1,0,0,0,0,1,0,0,1,0,0,0,1,4,2,5,3
+20,Female,Student,8732,3,3-4,Daily,No,No,18.1,Bottle,Supermarket,Immune support,4,BrandA,Low sugar,0,1,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,5,2,1,4,3
+28,Male,Working professional,12738,4,3-4,Never,Yes,Yes,19.65,Tetra Pak,Pharmacy,Energy boost,3,BrandA,None,0,0,0,0,0,1,0,1,1,1,0,1,0,0,0,0,0,5,1,4,3,2
+24,Female,Working professional,6842,5,5+,Daily,Yes,Yes,11.61,Can,Online retailer,Weight management,4,BrandC,Organic,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,2,4,5,1,3
+44,Male,Student,5615,5,3-4,Monthly,Yes,No,7.12,Bottle,Online retailer,Energy boost,5,None,Low sugar,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,3,5,4,2,1
+38,Female,Other,2224,3,1-2,Weekly,Yes,No,7.56,Tetra Pak,Supermarket,Weight management,2,BrandB,None,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5,3,1,4,2
+23,Male,Working professional,2589,4,3-4,Rarely,Yes,No,4.83,Bottle,Supermarket,Energy boost,4,BrandA,Eco packaging,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,2,3,4,1,5
+21,Male,Working professional,14301,4,3-4,Monthly,No,No,29.08,Powder sachet,Online retailer,Immune support,3,BrandC,None,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,2,3,1,4
+23,Male,Working professional,17903,3,1-2,Daily,Yes,No,35.1,Bottle,Supermarket,Energy boost,3,BrandD,Eco packaging,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,2,5,3,1,4
+28,Male,Working professional,3967,1,3-4,Monthly,No,No,10.14,Bottle,Pharmacy,Weight management,4,BrandB,No artificial flavors,0,1,0,0,0,1,1,1,0,0,0,0,1,0,0,0,0,1,5,4,3,2
+21,Female,Student,5123,4,3-4,Weekly,Yes,Yes,11.97,Tetra Pak,Convenience store,Digestive health,4,BrandC,Low sugar,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,1,3,2
+29,Other,Self-employed,2177,5,5+,Monthly,Yes,Yes,3.92,Bottle,Pharmacy,Energy boost,3,BrandA,No artificial flavors,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,1,2,4,5
+24,Male,Other,14122,4,3-4,Rarely,Yes,Yes,31.68,Can,Online retailer,Digestive health,4,BrandB,Low sugar,0,0,1,0,0,0,0,1,0,1,0,0,1,0,0,0,0,5,1,4,3,2
+27,Male,Working professional,8945,4,1-2,Weekly,Yes,Yes,18.26,Powder sachet,Online retailer,Digestive health,4,BrandB,High protein,0,1,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,3,5,4,1,2
+24,Female,Working professional,28201,4,1-2,Weekly,Yes,Yes,53.48,Tetra Pak,Convenience store,Muscle recovery,1,BrandD,No artificial flavors,1,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,4,1,2,3,5
+22,Female,Self-employed,2229,3,5+,Daily,No,No,4.66,Bottle,Online retailer,Energy boost,5,BrandB,Low sugar,1,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,5,4,2,1,3
+53,Female,Self-employed,3497,5,5+,Monthly,No,No,8.03,Tetra Pak,Online retailer,Energy boost,3,BrandB,Eco packaging,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,4,2,3,5
+35,Male,Working professional,6053,4,1-2,Weekly,No,No,11.84,Powder sachet,Online retailer,Energy boost,4,BrandC,None,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,4,3,1,5,2
+19,Male,Working professional,8794,2,1-2,Weekly,No,No,16.77,Bottle,Gym/Fitness centre,Energy boost,3,BrandC,None,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,2,4,5,1
+42,Female,Working professional,4048,5,3-4,Daily,No,No,11.62,Can,Online retailer,Energy boost,4,BrandC,Eco packaging,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,4,2,3,5,1
+26,Male,Self-employed,2240,3,1-2,Weekly,Yes,Yes,2.11,Bottle,Online retailer,Digestive health,4,BrandB,Low sugar,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,4,2,3,1,5
+44,Female,Self-employed,10865,5,1-2,Never,Yes,Yes,16.2,Powder sachet,Gym/Fitness centre,Weight management,4,BrandC,None,1,1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,3,1,4,2,5
+37,Male,Working professional,9405,4,1-2,Weekly,Yes,Yes,22.05,Tetra Pak,Pharmacy,Weight management,5,None,High protein,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,2,3,5,1,4
+24,Female,Working professional,2155,3,1-2,Monthly,Yes,No,1.86,Jar,Online retailer,Energy boost,5,BrandA,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,4,3,1,5,2
+18,Male,Retired,16646,4,3-4,Rarely,No,Yes,32.72,Powder sachet,Gym/Fitness centre,Weight management,4,BrandB,Eco packaging,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,5,2,4,3,1
+21,Female,Self-employed,14089,4,3-4,Rarely,Yes,No,80.1,Bottle,Supermarket,Weight management,2,BrandC,No artificial flavors,0,0,0,1,0,0,0,0,1,0,1,0,1,1,0,0,0,3,2,5,1,4
+27,Female,Other,5546,2,1-2,Weekly,Yes,No,13.56,Bottle,Pharmacy,Digestive health,4,BrandD,None,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4,2,5,3,1
+30,Female,Self-employed,5280,4,1-2,Monthly,No,Yes,13.43,Bottle,Supermarket,Energy boost,4,BrandD,Eco packaging,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,3,2,4,5
+21,Male,Working professional,8092,4,1-2,Rarely,Yes,Yes,13.6,Bottle,Online retailer,Digestive health,3,BrandC,Low sugar,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,3,4,5,1,2
+19,Female,Working professional,2263,4,3-4,Daily,Yes,Yes,7.24,Tetra Pak,Pharmacy,Muscle recovery,1,BrandB,No artificial flavors,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,1,5,4,3
+39,Female,Working professional,5049,1,1-2,Weekly,No,Yes,12.77,Jar,Online retailer,Immune support,3,BrandC,Low sugar,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,4,5
+67,Female,Student,708,4,3-4,Weekly,No,No,1.45,Bottle,Supermarket,Energy boost,3,BrandA,Gluten-free,0,1,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,1,2,5,3,4
+26,Female,Working professional,10816,2,3-4,Weekly,Yes,No,23.5,Can,Supermarket,Energy boost,4,BrandA,Eco packaging,1,1,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,2,3,5,1,4
+20,Female,Self-employed,1206,4,None,Weekly,No,No,4.48,Jar,Convenience store,Weight management,5,None,Low sugar,1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,5,2,3,4,1
+21,Female,Working professional,19017,2,None,Rarely,No,No,37.53,Bottle,Supermarket,Immune support,4,None,None,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,4,5,1,2,3
+18,Male,Self-employed,3651,5,None,Daily,No,No,6.99,Bottle,Supermarket,Muscle recovery,5,BrandD,Eco packaging,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,2,3,5,1,4
+47,Female,Working professional,4062,4,3-4,Monthly,No,No,9.3,Can,Online retailer,Muscle recovery,3,BrandB,Low sugar,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,4,5,2,1,3
+19,Female,Other,2793,4,5+,Monthly,Yes,Yes,2.33,Can,Online retailer,Energy boost,3,BrandC,Organic,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,5,3,2,1,4
+28,Male,Student,3792,4,None,Weekly,Yes,No,6.88,Powder sachet,Gym/Fitness centre,Weight management,4,BrandC,None,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,0,4,1,2,5,3
+21,Male,Working professional,17618,2,5+,Rarely,Yes,Yes,32.84,Bottle,Gym/Fitness centre,Weight management,5,BrandC,No artificial flavors,0,1,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,2,4,1,3,5
+27,Male,Working professional,524,3,1-2,Weekly,Yes,Yes,3.9,Jar,Pharmacy,Weight management,4,BrandD,None,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,0,0,2,3,5,1,4
+30,Female,Working professional,15510,5,5+,Never,Yes,Yes,30.29,Can,Convenience store,Energy boost,4,BrandA,Low sugar,1,1,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,3,2,5,1,4
+39,Female,Self-employed,6662,5,3-4,Weekly,Yes,No,13.88,Bottle,Gym/Fitness centre,Energy boost,5,BrandB,Organic,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,4,1,5,3,2
+20,Female,Self-employed,1659,1,3-4,Monthly,Yes,Yes,2.88,Bottle,Supermarket,Muscle recovery,4,BrandD,Gluten-free,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,3,4,1,5,2
+18,Female,Student,1867,4,3-4,Rarely,Yes,Yes,3.17,Bottle,Online retailer,Immune support,5,None,High protein,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,3,4,1,2,5
+19,Male,Working professional,22220,4,3-4,Weekly,Yes,No,44.86,Bottle,Online retailer,Muscle recovery,5,None,No artificial flavors,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,5,1,2,3,4
+45,Male,Working professional,2099,4,5+,Daily,No,No,2.74,Bottle,Online retailer,Muscle recovery,1,BrandD,None,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,2,3,1,4,5
+42,Male,Working professional,1741,2,3-4,Rarely,Yes,No,3.09,Can,Supermarket,Immune support,5,BrandA,Organic,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,2,3,4,1,5
+28,Male,Retired,13679,3,3-4,Weekly,Yes,No,26.95,Tetra Pak,Online retailer,Energy boost,3,BrandB,None,0,0,0,1,0,0,0,1,0,0,0,0,1,1,0,0,0,2,3,4,5,1
+29,Male,Self-employed,6665,3,1-2,Rarely,Yes,No,12.48,Can,Pharmacy,Energy boost,5,BrandA,High protein,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,5,3,1,2,4
+31,Male,Working professional,2113,5,1-2,Never,Yes,No,5.01,Bottle,Online retailer,Muscle recovery,3,BrandC,Low sugar,1,1,0,1,0,1,0,0,0,1,1,1,1,0,0,0,0,4,3,5,2,1
+20,Female,Self-employed,5973,4,5+,Weekly,No,Yes,38.25,Tetra Pak,Online retailer,Weight management,4,BrandB,Eco packaging,1,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,5,1,2,3,4
+47,Female,Working professional,1952,4,3-4,Weekly,Yes,No,7.13,Can,Online retailer,Weight management,5,BrandC,None,1,1,0,0,0,1,0,0,1,0,0,0,0,1,0,1,0,5,1,4,2,3
+24,Other,Retired,64498,5,3-4,Weekly,Yes,No,130.25,Powder sachet,Supermarket,Energy boost,2,None,High protein,1,1,0,0,1,1,1,0,1,0,0,1,0,0,0,0,0,3,2,4,5,1
+23,Female,Working professional,12775,4,3-4,Weekly,Yes,Yes,22.85,Powder sachet,Online retailer,Weight management,4,BrandB,Eco packaging,0,0,0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,5,3,4,1,2
+26,Female,Self-employed,7933,5,5+,Rarely,Yes,Yes,16.97,Jar,Supermarket,Weight management,4,BrandB,No artificial flavors,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,3,1,2,4,5
+18,Male,Homemaker,6806,4,3-4,Rarely,Yes,Yes,12.23,Tetra Pak,Online retailer,Weight management,1,BrandA,Gluten-free,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,5,3,1,2,4
+20,Female,Working professional,23982,2,3-4,Weekly,Yes,No,48.24,Bottle,Gym/Fitness centre,Weight management,5,BrandA,None,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,4,3,5,2,1
+34,Female,Self-employed,4913,5,3-4,Daily,Yes,Yes,8.36,Bottle,Gym/Fitness centre,Weight management,2,BrandC,Gluten-free,0,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,3,2,1,5,4
+19,Male,Working professional,1696,4,1-2,Weekly,No,No,1.0,Jar,Supermarket,Immune support,5,BrandD,Gluten-free,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,4,5,2,3,1
+29,Male,Working professional,7365,3,1-2,Weekly,Yes,No,14.69,Can,Supermarket,Immune support,4,BrandC,Organic,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,5,3,4,2,1
+21,Female,Working professional,32127,3,5+,Rarely,Yes,No,61.39,Can,Gym/Fitness centre,Digestive health,5,None,None,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,1,4,2,3,5
+23,Male,Other,11077,2,1-2,Daily,Yes,No,22.99,Jar,Supermarket,Immune support,5,BrandB,Low sugar,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,3,5,2,4
+22,Female,Homemaker,3550,4,5+,Rarely,Yes,Yes,7.45,Tetra Pak,Supermarket,Energy boost,4,BrandC,Gluten-free,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,4,3,2,5
+23,Female,Self-employed,7150,5,None,Monthly,Yes,Yes,13.09,Bottle,Online retailer,Digestive health,5,BrandC,Organic,1,0,1,0,0,0,0,1,1,0,1,0,1,0,0,0,0,4,2,3,5,1
+33,Male,Self-employed,4682,5,None,Rarely,Yes,Yes,13.02,Bottle,Gym/Fitness centre,Weight management,2,BrandB,No artificial flavors,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,2,1,4,5,3
+22,Male,Working professional,2030,5,5+,Weekly,No,No,1.58,Bottle,Pharmacy,Muscle recovery,5,BrandB,High protein,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,5,4,1,2
+28,Male,Retired,13490,2,3-4,Monthly,Yes,Yes,25.73,Tetra Pak,Convenience store,Energy boost,4,BrandC,Gluten-free,1,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,4,1,5,2,3
+25,Male,Working professional,39658,4,1-2,Monthly,No,Yes,77.07,Can,Supermarket,Digestive health,3,BrandA,None,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,3,1,2,5,4
+31,Male,Working professional,5864,1,3-4,Rarely,Yes,Yes,15.81,Powder sachet,Supermarket,Energy boost,4,None,Organic,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,4,1,2,3
+51,Female,Working professional,2178,5,3-4,Weekly,No,No,7.06,Tetra Pak,Online retailer,Energy boost,4,BrandA,Organic,0,0,0,1,1,0,0,1,1,0,1,0,0,1,0,1,0,2,4,5,3,1
+33,Male,Self-employed,1219,4,3-4,Weekly,Yes,Yes,1.0,Bottle,Pharmacy,Digestive health,4,BrandA,None,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,0,0,2,3,1,4,5
+20,Female,Self-employed,6199,4,None,Monthly,No,No,10.75,Bottle,Supermarket,Muscle recovery,3,BrandA,Organic,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,5,4,3,1
+18,Male,Working professional,72986,4,5+,Daily,Yes,Yes,144.39,Can,Online retailer,Weight management,2,BrandC,High protein,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,5,3,1,2,4
+21,Female,Student,7538,4,5+,Weekly,No,No,13.97,Powder sachet,Online retailer,Muscle recovery,2,BrandB,None,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,2,4,3,5
+28,Male,Self-employed,4904,3,1-2,Never,No,Yes,7.72,Bottle,Gym/Fitness centre,Energy boost,3,BrandB,None,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,5,2,3,4,1
+18,Male,Student,2892,5,5+,Daily,Yes,No,4.57,Jar,Supermarket,Muscle recovery,3,BrandA,No artificial flavors,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,3,5,2,1,4
+26,Female,Self-employed,1839,5,5+,Weekly,Yes,No,5.69,Bottle,Convenience store,Energy boost,4,BrandA,High protein,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,1,0,2,1,4,3,5
+28,Female,Other,10418,3,3-4,Weekly,No,Yes,24.73,Bottle,Online retailer,Digestive health,4,BrandA,Eco packaging,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,4,1,2,5,3
+22,Male,Working professional,11186,4,3-4,Monthly,Yes,No,19.28,Powder sachet,Supermarket,Weight management,5,BrandA,No artificial flavors,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,2,4,5,3,1
+35,Female,Working professional,4463,5,1-2,Daily,Yes,No,6.84,Bottle,Supermarket,Immune support,4,BrandD,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,3,5,4,1,2
+19,Male,Self-employed,20555,1,1-2,Monthly,No,No,41.54,Tetra Pak,Supermarket,Weight management,3,BrandC,None,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,4,3,1,2,5
+18,Female,Self-employed,8239,4,3-4,Daily,Yes,No,13.32,Bottle,Online retailer,Weight management,1,BrandB,Low sugar,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,1,3,5,4,2
+33,Male,Working professional,17320,2,5+,Daily,Yes,Yes,35.12,Jar,Gym/Fitness centre,Weight management,4,BrandB,High protein,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,3,4,1,2,5
+26,Male,Other,1469,4,3-4,Rarely,Yes,No,4.02,Jar,Supermarket,Weight management,5,None,Eco packaging,0,1,1,0,0,1,0,1,1,0,0,0,0,0,1,1,1,5,4,1,3,2
+31,Female,Student,5603,1,3-4,Weekly,No,No,12.61,Powder sachet,Online retailer,Energy boost,4,BrandD,No artificial flavors,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5,2,3,1,4
+24,Female,Working professional,4298,4,1-2,Never,Yes,No,9.62,Bottle,Gym/Fitness centre,Digestive health,4,None,Low sugar,0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,0,0,1,5,4,2,3
+21,Male,Self-employed,7727,3,None,Daily,Yes,No,14.38,Bottle,Supermarket,Weight management,3,BrandA,Gluten-free,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,3,1,4,5
+38,Female,Homemaker,24754,4,3-4,Weekly,Yes,Yes,49.14,Can,Online retailer,Weight management,4,BrandA,No artificial flavors,0,0,0,0,0,0,0,0,0,1,1,0,1,0,1,0,0,5,4,1,3,2
+37,Female,Working professional,9279,5,None,Daily,No,No,16.2,Bottle,Supermarket,Energy boost,4,BrandD,Gluten-free,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,4,3,2,1,5
+32,Male,Self-employed,3950,5,3-4,Weekly,Yes,No,8.83,Tetra Pak,Supermarket,Energy boost,3,BrandA,Low sugar,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,4,5,3,1,2
+21,Female,Working professional,1951,5,1-2,Never,Yes,Yes,7.11,Can,Online retailer,Muscle recovery,4,BrandB,Low sugar,0,0,0,1,0,0,0,1,1,1,0,0,1,0,1,0,0,3,5,4,1,2
+28,Male,Working professional,14869,4,3-4,Rarely,Yes,No,30.66,Bottle,Supermarket,Digestive health,2,BrandA,Organic,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,1,3,5
+23,Female,Student,2063,1,1-2,Daily,No,No,2.74,Tetra Pak,Online retailer,Weight management,4,BrandA,Low sugar,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,4,5,3,2,1
+19,Female,Homemaker,21282,3,3-4,Monthly,No,Yes,44.55,Jar,Convenience store,Energy boost,4,BrandA,Organic,1,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,4,2,5,3,1
+47,Female,Working professional,3805,5,3-4,Monthly,Yes,Yes,12.34,Powder sachet,Supermarket,Energy boost,4,BrandC,High protein,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,4,3,2,5,1
+19,Male,Working professional,20569,4,None,Weekly,Yes,No,41.62,Bottle,Supermarket,Digestive health,4,BrandD,Low sugar,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,3,4,2,1,5
+54,Male,Working professional,9055,2,None,Daily,No,Yes,19.22,Bottle,Gym/Fitness centre,Muscle recovery,4,BrandA,Low sugar,1,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,5,2,1,3,4
+25,Male,Homemaker,4345,4,1-2,Never,Yes,Yes,10.05,Bottle,Supermarket,Immune support,5,BrandB,Low sugar,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,5,1,3,2,4
