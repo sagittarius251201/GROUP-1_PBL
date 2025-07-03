@@ -1,5 +1,6 @@
 
 import streamlit as st
+from streamlit_option_menu import option_menu
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -93,14 +94,26 @@ if "SurveyDate" in df.columns:
 st.sidebar.download_button("⬇️ Download Filtered Data", df.to_csv(index=False).encode(), "filtered.csv")
 
 # ---------------- Tabs ----------------
-tabs = st.tabs([
-    "Visualization","Classification","Clustering","Association",
-    "Anomaly","Regression","Forecasting","Cohort",
-    "Geography","Sentiment","LTV & Churn","Price Elasticity"
-])
 
-# 1️⃣ Visualization
-with tabs[0]:
+# ---- Top Navigation Menu ----
+selected = option_menu(
+    menu_title=None,
+    options=["Visualization","Classification","Clustering","Association","Anomaly","Regression","Forecasting","Cohort","Geography","Sentiment","LTV & Churn","Price Elasticity"],
+    icons=["bar-chart","cpu","people","diagram-3","exclamation-triangle","graph-up","clock-history","calendar","geo","chat-dots","cash-stack","cash-coin"],
+    menu_icon="grid-3x3-gap",
+    default_index=0,
+    orientation="horizontal",
+    styles={
+        "container": {"padding":"0!important","background-color":"#F0F3FB"},
+        "icon": {"color":"#026EBD","font-size":"18px"},
+        "nav-link": {"font-size":"16px","text-align":"center","margin":"0px 8px","--hover-color":"#E0E8F9"},
+        "nav-link-selected": {"background-color":"#026EBD","color":"white"},
+    }
+)
+
+if selected == 'Visualization':
+    # 1️⃣ Visualization
+elif selected == 'Visualization':
     st.header("Visualization")
     chart = st.selectbox("Chart Type", ["Scatter","Histogram","Box","Bar"])
     num_cols = df.select_dtypes(include="number").columns.tolist()
@@ -141,7 +154,7 @@ with tabs[0]:
         st.markdown(f"**Insight:** `{metric}` across `{cat}`.")
 
 # 2️⃣ Classification
-with tabs[1]:
+elif selected == 'Classification':
     st.header("Classification")
     X = df.select_dtypes(include="number").drop(columns=["SpendPerServing"], errors="ignore")
     y = LabelEncoder().fit_transform(df.TryNewBrand)
@@ -175,7 +188,7 @@ with tabs[1]:
     st.markdown("**Insight:** These metrics guide targeted marketing strategies.")
 
 # 3️⃣ Clustering
-with tabs[2]:
+elif selected == 'Clustering':
     st.header("Clustering")
     feats = ["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
     k = st.slider("Clusters (k)", 2, 8, 4)
@@ -187,7 +200,7 @@ with tabs[2]:
     st.markdown("**Insight:** Identify distinct personas for personalized campaigns.")
 
 # 4️⃣ Association Rules
-with tabs[3]:
+elif selected == 'Association':
     st.header("Association Rules")
     cols = [c for c in df.columns if c.startswith(("Flavour_","Context_"))]
     sup = st.slider("Min Support", 0.01, 0.2, 0.05)
@@ -203,7 +216,7 @@ with tabs[3]:
     st.markdown("**Insight:** Bundle products based on strong associations.")  
 
 # 5️⃣ Anomaly Detection
-with tabs[4]:
+elif selected == 'Anomaly':
     st.header("Anomaly Detection")
     feats = ["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
     iso = IsolationForest(contamination=0.05, random_state=42).fit(df[feats])
@@ -215,7 +228,7 @@ with tabs[4]:
     st.markdown("**Insight:** High-value outliers may represent VIP customers.")  
 
 # 6️⃣ Regression
-with tabs[5]:
+elif selected == 'Regression':
     st.header("Regression")
     Xr = df[["MonthlyDisposableIncome","HealthConsciousness","Age"]]
     yr = df["SpendPerServing"]
@@ -228,7 +241,7 @@ with tabs[5]:
     st.markdown("**Insight:** Reliable spend forecasts aid pricing decisions.")
 
 # 7️⃣ Time Series Forecasting
-with tabs[6]:
+elif selected == 'Forecasting':
     st.header("Time Series Forecasting")
     ts = df[["SurveyDate","SpendPerServing"]].dropna().rename(columns={"SurveyDate":"ds","SpendPerServing":"y"})
     m = Prophet(); m.fit(ts)
@@ -237,7 +250,7 @@ with tabs[6]:
     st.markdown("**Insight:** Projected spend trend for next 30 days.")
 
 # 8️⃣ Cohort Analysis
-with tabs[7]:
+elif selected == 'Cohort':
     st.header("Cohort Analysis")
     df["CohortMonth"] = df.SurveyDate.dt.to_period("M").astype(str)
     cohort = df.groupby("CohortMonth")["SubscribePlan"].apply(lambda x: (x=="Yes").mean()).reset_index(name="Rate")
@@ -246,7 +259,7 @@ with tabs[7]:
     st.markdown("**Insight:** Track subscription retention over time.")
 
 # 9️⃣ Geographic View
-with tabs[8]:
+elif selected == 'Geography':
     st.header("Geographic Spend")
     city_avg = df.groupby("City")["SpendPerServing"].mean().reset_index()
     fig = px.bar(city_avg, x="City", y="SpendPerServing", title="Avg Spend per City")
@@ -254,7 +267,7 @@ with tabs[8]:
     st.markdown("**Insight:** Focus marketing on high-spend emirates.")
 
 # 🔟 Sentiment Analysis
-with tabs[9]:
+elif selected == 'Sentiment':
     st.header("Sentiment Word Cloud")
     text = " ".join(df.Feedback.astype(str))
     wc = WordCloud(width=800, height=400).generate(text)
@@ -264,7 +277,7 @@ with tabs[9]:
     st.markdown("**Insight:** Consumer barriers highlight areas for improvement.")
 
 # 1️⃣1️⃣ LTV & Churn
-with tabs[10]:
+elif selected == 'Classification':
     st.header("LTV & Churn Prediction")
     df["FreqNum"] = df.ConsumptionFrequency.map({"Never":0,"Rarely":1,"1-2":2,"3-4":4,"5+":5})
     df["LTV"] = df.SpendPerServing * df.FreqNum * 12
@@ -283,7 +296,7 @@ with tabs[10]:
     st.markdown("**Insight:** High LTV segments warrant VIP retention programs.")
 
 # 1️⃣2️⃣ Price Elasticity
-with tabs[11]:
+elif selected == 'Classification':
     st.header("Price Elasticity Simulator")
     price = st.slider("Price per Serving (AED)", 5, 30, 12)
     buyers = df[df.SpendPerServing >= price].shape[0]
