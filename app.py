@@ -189,8 +189,7 @@ with tabs[3]:
     conf = st.slider("Min Confidence", 0.1, 0.7, 0.3)
     freq = apriori(df[cols], min_support=sup, use_colnames=True)
     rules = association_rules(freq, metric="confidence", min_threshold=conf)
-    rules["rule"] = rules["antecedents"].apply(lambda x: ", ".join(x)) + " → " + \  
-                    rules["consequents"].apply(lambda x: ", ".join(x))
+    rules["rule"] = rules["antecedents"].apply(lambda x: ", ".join(x)) + " → " + rules["consequents"].apply(lambda x: ", ".join(x))
     top = rules.sort_values("lift", ascending=False).head(10)
     fig = px.bar(top, x="lift", y="rule", orientation="h",  
                  color="confidence", color_continuous_scale="Viridis",  
