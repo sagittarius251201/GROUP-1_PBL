@@ -80,36 +80,36 @@ with st.sidebar.expander("Demographics", expanded=True):
         g = st.multiselect("Gender", df.Gender.unique(), df.Gender.unique())
         df = df[df.Gender.isin(g)]
         if isinstance(g, list) and len(g) > 0:
-            filters.append("Gender: " + ", ".join(g))
+            filters.append("Gender: " + ", ".join([str(i) for i in g]))
     if "Occupation" in df:
         occ = st.multiselect("Occupation", df.Occupation.unique(), df.Occupation.unique())
         df = df[df.Occupation.isin(occ)]
         if isinstance(occ, list) and len(occ) > 0:
-            filters.append("Occ: " + ", ".join(occ))
+            filters.append("Occ: " + ", ".join([str(i) for i in occ]))
 
 with st.sidebar.expander("Behavior"):
     if "ExerciseFrequency" in df:
         ex = st.multiselect("Exercise Freq", df.ExerciseFrequency.unique(), df.ExerciseFrequency.unique())
         df = df[df.ExerciseFrequency.isin(ex)]
         if isinstance(ex, list) and len(ex) > 0:
-            filters.append("ExFreq: " + ", ".join(ex))
+            filters.append("ExFreq: " + ", ".join([str(i) for i in ex]))
     if "ConsumptionFrequency" in df:
         cf = st.multiselect("Consumption Freq", df.ConsumptionFrequency.unique(), df.ConsumptionFrequency.unique())
         df = df[df.ConsumptionFrequency.isin(cf)]
         if isinstance(cf, list) and len(cf) > 0:
-            filters.append("ConFreq: " + ", ".join(cf))
+            filters.append("ConFreq: " + ", ".join([str(i) for i in cf]))
 
 with st.sidebar.expander("Subscription & Location"):
     if "SubscribePlan" in df:
         sub = st.multiselect("Subscribe Plan", df.SubscribePlan.unique(), df.SubscribePlan.unique())
         df = df[df.SubscribePlan.isin(sub)]
         if isinstance(sub, list) and len(sub) > 0:
-            filters.append("SubPlan: " + ", ".join(sub))
+            filters.append("SubPlan: " + ", ".join([str(i) for i in sub]))
     if "City" in df:
         city = st.multiselect("City", df.City.unique(), df.City.unique())
         df = df[df.City.isin(city)]
         if isinstance(city, list) and len(city) > 0:
-            filters.append("City: " + ", ".join(city))
+            filters.append("City: " + ", ".join([str(i) for i in city]))
 
 with st.sidebar.expander("Survey Date"):
     if "SurveyDate" in df:
