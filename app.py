@@ -25,12 +25,10 @@ from sklearn.metrics import (
 from mlxtend.frequent_patterns import apriori, association_rules
 import time
 
-# --- Session State & Config ---
 if 'theme' not in st.session_state:
     st.session_state.theme = 'Light'
 st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
 
-# --- Theme Switcher ---
 theme = st.sidebar.radio("Theme", ['Light','Dark'], index=0)
 st.session_state.theme = theme
 if theme == 'Dark':
@@ -50,12 +48,10 @@ else:
         </style>
         """, unsafe_allow_html=True)
 
-# --- Logo Upload ---
 logo = st.sidebar.file_uploader("Upload Logo", type=["png","jpg"])
 if logo:
     st.sidebar.image(logo, use_column_width=True)
 
-# --- Data Loading & Refresh ---
 def load_data():
     local = Path(__file__).parent / "data" / "health_drink_survey_1000_augmented.csv"
     if local.exists():
@@ -73,7 +69,6 @@ if st.sidebar.button("Refresh Data"):
 
 df = load_data()
 
-# --- Sidebar Filters & Chips ---
 filters = []
 with st.sidebar.expander("Demographics", expanded=True):
     if "Age" in df:
@@ -84,29 +79,29 @@ with st.sidebar.expander("Demographics", expanded=True):
     if "Gender" in df:
         g = st.multiselect("Gender", df.Gender.unique(), df.Gender.unique())
         df = df[df.Gender.isin(g)]
-        filters.append("Gender: " + ", ".join(g))
+        if g: filters.append("Gender: " + ", ".join(g))
     if "Occupation" in df:
         occ = st.multiselect("Occupation", df.Occupation.unique(), df.Occupation.unique())
         df = df[df.Occupation.isin(occ)]
-        filters.append("Occ: " + ", ".join(occ))
+        if occ: filters.append("Occ: " + ", ".join(occ))
 with st.sidebar.expander("Behavior"):
     if "ExerciseFrequency" in df:
         ex = st.multiselect("Exercise Freq", df.ExerciseFrequency.unique(), df.ExerciseFrequency.unique())
         df = df[df.ExerciseFrequency.isin(ex)]
-        filters.append("ExFreq: " + ", ".join(ex))
+        if ex: filters.append("ExFreq: " + ", ".join(ex))
     if "ConsumptionFrequency" in df:
         cf = st.multiselect("Consumption Freq", df.ConsumptionFrequency.unique(), df.ConsumptionFrequency.unique())
         df = df[df.ConsumptionFrequency.isin(cf)]
-        filters.append("ConFreq: " + ", ".join(cf))
+        if cf: filters.append("ConFreq: " + ", ".join(cf))
 with st.sidebar.expander("Subscription & Location"):
     if "SubscribePlan" in df:
         sub = st.multiselect("Subscribe Plan", df.SubscribePlan.unique(), df.SubscribePlan.unique())
         df = df[df.SubscribePlan.isin(sub)]
-        filters.append("SubPlan: " + ", ".join(sub))
+        if sub: filters.append("SubPlan: " + ", ".join(sub))
     if "City" in df:
         city = st.multiselect("City", df.City.unique(), df.City.unique())
         df = df[df.City.isin(city)]
-        filters.append("City: " + ", ".join(city))
+        if city: filters.append("City: " + ", ".join(city))
 with st.sidebar.expander("Survey Date"):
     if "SurveyDate" in df:
         dr = st.date_input("Date range", [df.SurveyDate.min(), df.SurveyDate.max()])
@@ -119,7 +114,6 @@ if filters:
     chips = " ".join([f"<span style='background:#EF476F;color:#FFF;padding:4px 8px;border-radius:4px;margin:2px'>{f}</span>" for f in filters])
     st.markdown("**Active Filters:** " + chips, unsafe_allow_html=True)
 
-# --- Breadcrumbs & Navigation ---
 pages = [
     "Visualization","Classification","Clustering","Association","Anomaly","Regression",
     "Forecasting","Cohort","Geography","Sentiment","LTV & Churn","Price Elasticity","Changelog"
@@ -131,7 +125,6 @@ icons = [
 page = option_menu(None, pages, icons=icons, menu_icon="cast", orientation="horizontal", styles={"container":{"padding":"0px"},"nav-link":{"font-size":"14px"},"nav-link-selected":{"background-color":"#EF476F"}})
 st.markdown(f"**Home** > **{page}**")
 
-# Visualization
 if page=="Visualization":
     st.header("📊 Visualization")
     c1,c2,c3=st.columns(3)
@@ -185,6 +178,7 @@ elif page=="Classification":
     y=LabelEncoder().fit_transform(df.TryNewBrand)
     Xt,Xe,yt,ye=train_test_split(X,y,test_size=0.2,random_state=42)
     sc=StandardScaler().fit(Xt); Xt_s,Xe_s=sc.transform(Xt),sc.transform(Xe)
+    from sklearn.neighbors import KNeighborsClassifier
     algo=st.selectbox("Algorithm", ["KNN","Decision Tree","Random Forest","GBRT"])
     model = (KNeighborsClassifier() if algo=="KNN" else
              DecisionTreeClassifier() if algo=="Decision Tree" else
@@ -292,7 +286,6 @@ elif page=="Geography":
             title="Average Spend by City"
         )
         st.plotly_chart(fig, use_container_width=True)
-        # --- Dynamic Insight Section ---
         overall_avg = df["SpendPerServing"].mean()
         top_city = city_stats.iloc[0]
         low_city = city_stats.iloc[-1]
@@ -305,7 +298,6 @@ elif page=="Geography":
             f"({pct_top:+.1f}% vs. UAE avg).\n"
             f"- **{low_city['City']}** has the lowest at **AED {low_city['SpendPerServing']:.2f}** ({pct_low:+.1f}% vs. avg).\n"
         )
-        # Business implication
         if pct_top > 8:
             insight += (
                 f"> **Business Implication:** Focus premium pricing, exclusive launches, or loyalty programs in {top_city['City']}. "
@@ -323,3 +315,47 @@ elif page=="Geography":
         st.markdown(insight)
     else:
         st.warning("No city data available in this dataset.")
+
+elif page=="Sentiment":
+    st.header("💬 Sentiment Word Cloud")
+    text=" ".join(df.Feedback.astype(str))
+    wc=WordCloud(width=800,height=400).generate(text)
+    fig,ax=plt.subplots(figsize=(10,5)); ax.imshow(wc,interpolation="bilinear"); ax.axis("off")
+    st.pyplot(fig)
+    st.markdown("**Insight:** The most common words reflect top concerns and interests of your consumers. Use for campaign copywriting.")
+
+elif page=="LTV & Churn":
+    st.header("💰 LTV & Churn")
+    df["FreqNum"]=df.ConsumptionFrequency.map({"Never":0,"Rarely":1,"1-2":2,"3-4":4,"5+":5})
+    df["LTV"]=df.SpendPerServing*df.FreqNum*12
+    churn=(df.SubscribePlan=="No").astype(int)
+    Xc=df[["MonthlyDisposableIncome","HealthConsciousness","Age"]]
+    Xt,Xe,yt,ye=train_test_split(Xc,churn,test_size=0.2,random_state=42)
+    clf=RandomForestClassifier(random_state=42).fit(Xt,yt); pr=clf.predict(Xe)
+    metrics={"Accuracy":accuracy_score(ye,pr),"Precision":precision_score(ye,pr),"Recall":recall_score(ye,pr)}
+    st.table(pd.DataFrame.from_dict(metrics,orient='index',columns=['Value']))
+    st.plotly_chart(px.histogram(df,x="LTV",nbins=30),use_container_width=True)
+    avg_ltv = df["LTV"].mean()
+    st.markdown(f"**Insight:** Average LTV is AED {avg_ltv:.2f}. Focus retention efforts on high-LTV, high-churn-risk segments.")
+
+elif page=="Price Elasticity":
+    st.header("💵 Price Elasticity")
+    price=st.slider("Price per Serving",5,30,12)
+    buyers=df[df.SpendPerServing>=price].shape[0]
+    revenue=buyers*price
+    st.metric("Buyers",buyers); st.metric("Revenue (AED)",revenue)
+    st.markdown("**Insight:** As price increases, buyer count drops but revenue can peak at optimal price. Use this to set prices.")
+
+elif page=="Changelog":
+    st.header("📄 Changelog")
+    changelog=Path(__file__).parent/"CHANGELOG.md"
+    if changelog.exists():
+        st.markdown(changelog.read_text())
+    else:
+        st.info("No changelog found.")
+
+if st.button("💡 Send Feedback"):
+    fb=st.text_area("Your feedback:")
+    if st.button("Submit"):
+        with open("feedback.txt","a") as f: f.write(fb+"\\n---\\n")
+        st.success("Thank you!")
