@@ -68,7 +68,7 @@ if page == "Visualization":
         x = st.selectbox("X-axis", num_cols, index=0)
         y = st.selectbox("Y-axis", num_cols, index=1 if len(num_cols)>1 else 0)
         fig = px.scatter(df, x=x, y=y, color=df.columns[1] if df.columns[1] in df else None,
-                         title=f"{y} vs {x}", trendline="ols")
+                         title=f"{y} vs {x}")
         st.plotly_chart(fig, use_container_width=True)
         corr = df[x].corr(df[y])
         st.markdown(f"**Insight:** Correlation between {x} and {y} is {corr:.2f}.")
