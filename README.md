@@ -1,15 +1,9 @@
-# Health Drink Dashboard — Ultimate Enhanced
+# Health Drink Dashboard — Ultimate Enhanced v2
 
 Features:
-- Six tabs: Visualization, Classification, Clustering, Association, Anomaly, Regression
-- Toggle controls in Visualization tab for selecting chart type and factors
-- Consistent teal/coral color scheme across all tabs
-- Detailed business insights under every chart
-- Rich sidebar filters and data download
+- Nine tabs: Visualization, Classification, Clustering, Association, Anomaly, Regression, Barrier Analysis, Ranking, Recommendation
+- Toggle controls for chart types and axes in Visualization tab, including different aggregations
+- Cohesive teal/coral palette across all visuals
+- Detailed, data-driven business insights under every chart
+- Rich sidebar filters and downloadable filtered data
 - Deploy via Streamlit Cloud
-
-## Setup
-1. Copy all files into your GitHub repo root.
-2. Commit & push.
-3. In Streamlit Cloud, set **App file path** to `app.py`.
-4. Redeploy and enjoy!
