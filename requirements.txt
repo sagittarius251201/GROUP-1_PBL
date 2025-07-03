@@ -4,3 +4,5 @@ numpy
 scikit-learn
 mlxtend
 matplotlib
+plotly
+plotly-express

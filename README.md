@@ -1,14 +1,17 @@
-# Health Drink Dashboard — Enhanced UI/UX
+# Health Drink Dashboard — Super Enhanced
 
-This Streamlit application features:
-- Rich sidebar filters for demographics, habits, channels, and preferences
-- Enhanced visualizations (bar charts, scatter, boxplots) with color themes
-- Key metric cards with hover tooltips explaining the metrics
-- Tabs for Visualization, Classification, Clustering, Association Rules, Anomaly Detection, Regression
+This Streamlit application includes:
+- Interactive Plotly visuals on every tab
+- Rich sidebar filters for multiple demographics and preferences
+- Hover tooltips on key metric cards
+- Download filtered dataset feature
+- Enhanced interactivity for classification, clustering, association, anomaly, regression
+- Modern theme and layout
 
 ## Setup
-
-1. Place `app.py`, `requirements.txt`, and `.streamlit/config.toml` at the root of your GitHub repo.
+1. Copy all files into your repo root.
 2. Commit & push to GitHub.
 3. On Streamlit Cloud, set **App file path** to `app.py`.
-4. Click **Redeploy**.
+4. Redeploy!
+
+Enjoy your super interactive dashboard! 🚀
