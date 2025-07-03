@@ -16,7 +16,6 @@ from sklearn.metrics import (
     mean_squared_error, r2_score
 )
 from mlxtend.frequent_patterns import apriori, association_rules
-import shap
 
 st.set_page_config(page_title="Industry-Grade Health Drink Dashboard", page_icon="🥤", layout="wide")
 st.title("🥤 Health Drink Survey Dashboard (Industry Grade)")
@@ -132,13 +131,6 @@ with tabs[1]:
     else:
         st.info("Feature importance not available for selected model.")
 
-    st.subheader("SHAP Explainability")
-    explainer = shap.Explainer(clf, X_train)
-    shap_values = explainer(X_test)
-    fig = shap.plots.beeswarm(shap_values, show=False)
-    st.pyplot(fig)
-
-# 3. Clustering
 with tabs[2]:
     st.header("Clustering & Segmentation")
     algo = st.selectbox("Clustering Algorithm", ["KMeans","DBSCAN","Agglomerative"])
