@@ -8,3 +8,4 @@ plotly
 plotly-express
 prophet
 wordcloud
+streamlit-option-menu
