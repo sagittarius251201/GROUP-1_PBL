@@ -15,15 +15,16 @@ from sklearn.ensemble import (
     RandomForestRegressor, IsolationForest
 )
 from sklearn.cluster import KMeans
-from sklearn.metrics import (, roc_curve)
+from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
-    confusion_matrix, mean_squared_error, r2_score
+    confusion_matrix, roc_curve,
+    mean_squared_error, r2_score
 )
 from mlxtend.frequent_patterns import apriori, association_rules
 
 # Page config
 st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
-st.title("🥤 Health Drink Survey Dashboard — Super Enhanced")
+st.title("🥤 Health Drink Survey Dashboard — Super Enhanced v3 (Fixed)")
 
 # Sidebar
 st.sidebar.header("1. Data & Filters")
@@ -56,18 +57,33 @@ occupations = st.sidebar.multiselect("Occupation", df.Occupation.unique(), defau
 df = df[df.Occupation.isin(occupations)]
 
 st.sidebar.markdown("## Behavior & Preferences")
-df = df[df.ConsumptionFrequency.isin(
-    st.sidebar.multiselect("Consumption Frequency", df.ConsumptionFrequency.unique(), default=list(df.ConsumptionFrequency.unique()))
-)]
-df = df[df.PurchaseChannel.isin(
-    st.sidebar.multiselect("Purchase Channel", df.PurchaseChannel.unique(), default=list(df.PurchaseChannel.unique()))
-)]
-df = df[df.TopHealthBenefit.isin(
-    st.sidebar.multiselect("Top Health Benefit", df.TopHealthBenefit.unique(), default=list(df.TopHealthBenefit.unique()))
-)]
-df = df[df.PackagingFormat.isin(
-    st.sidebar.multiselect("Packaging Format", df.PackagingFormat.unique(), default=list(df.PackagingFormat.unique()))
-)]
+cons_freq = st.sidebar.multiselect(
+    "Consumption Frequency",
+    df.ConsumptionFrequency.unique(),
+    default=list(df.ConsumptionFrequency.unique())
+)
+df = df[df.ConsumptionFrequency.isin(cons_freq)]
+
+channels = st.sidebar.multiselect(
+    "Purchase Channel",
+    df.PurchaseChannel.unique(),
+    default=list(df.PurchaseChannel.unique())
+)
+df = df[df.PurchaseChannel.isin(channels)]
+
+benefits = st.sidebar.multiselect(
+    "Top Health Benefit",
+    df.TopHealthBenefit.unique(),
+    default=list(df.TopHealthBenefit.unique())
+)
+df = df[df.TopHealthBenefit.isin(benefits)]
+
+packaging = st.sidebar.multiselect(
+    "Packaging Format",
+    df.PackagingFormat.unique(),
+    default=list(df.PackagingFormat.unique())
+)
+df = df[df.PackagingFormat.isin(packaging)]
 
 # Download filtered data
 csv = df.to_csv(index=False).encode()
@@ -76,10 +92,14 @@ st.sidebar.download_button("📥 Download Filtered Data", csv, "filtered_survey.
 # Key metrics
 st.subheader("📊 Key Metrics")
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("Avg Spend (AED)", f"{df.SpendPerServing.mean():.2f}", help="Average spend per serving; higher suggests premium acceptance.")
-col2.metric("Try New Brand %", f"{(df.TryNewBrand=='Yes').mean()*100:.1f}%", help="Rate willing to try a new brand; higher indicates market interest.")
-col3.metric("Subscription Interest %", f"{(df.SubscribePlan=='Yes').mean()*100:.1f}%", help="Interested in monthly plan; supports recurring revenue potential.")
-col4.metric("Avg Health Consciousness", f"{df.HealthConsciousness.mean():.1f}", help="Average self-rated health focus (1–5 scale).")
+col1.metric("Avg Spend (AED)", f"{df.SpendPerServing.mean():.2f}",
+            help="Average spend per serving; higher suggests premium acceptance.")
+col2.metric("Try New Brand %", f"{(df.TryNewBrand=='Yes').mean()*100:.1f}%",
+            help="Rate willing to try a new brand; higher indicates interest.")
+col3.metric("Subscription Interest %", f"{(df.SubscribePlan=='Yes').mean()*100:.1f}%",
+            help="Interested in subscription; indicates recurring revenue potential.")
+col4.metric("Avg Health Consciousness", f"{df.HealthConsciousness.mean():.1f}",
+            help="Average health focus (1–5 scale).")
 
 # Tabs
 tabs = st.tabs(["Visualization","Classification","Clustering","Association","Anomaly","Regression"])
@@ -87,28 +107,20 @@ tabs = st.tabs(["Visualization","Classification","Clustering","Association","Ano
 # Visualization Tab
 with tabs[0]:
     st.header("Interactive Visualizations")
-    # Scatter Age vs Spend
     fig = px.scatter(df, x="Age", y="SpendPerServing", color="Gender",
                      title="Spend per Serving by Age & Gender", size="MonthlyDisposableIncome")
     st.plotly_chart(fig, use_container_width=True)
-
-    # Histogram Income
     fig = px.histogram(df, x="MonthlyDisposableIncome", nbins=30,
                        title="Monthly Disposable Income Distribution")
     st.plotly_chart(fig, use_container_width=True)
-
-    # Box Consumption vs Spend
     fig = px.box(df, x="ConsumptionFrequency", y="SpendPerServing",
                  title="Spend per Serving by Consumption Frequency")
     st.plotly_chart(fig, use_container_width=True)
-
-    # Bar Packaging Preference
     prefs = df.PackagingFormat.value_counts()
-    fig = px.bar(x=prefs.index, y=prefs.values, labels={'x':'Packaging','y':'Count'},
+    fig = px.bar(x=prefs.index, y=prefs.values,
+                 labels={'x':'Packaging','y':'Count'},
                  title="Preferred Packaging Formats")
     st.plotly_chart(fig, use_container_width=True)
-
-    # Correlation Heatmap
     corr = df.select_dtypes(include=[np.number]).corr()
     fig = go.Figure(data=go.Heatmap(z=corr.values, x=corr.columns, y=corr.columns, colorscale="Viridis"))
     fig.update_layout(title="Feature Correlation Heatmap")
@@ -135,15 +147,12 @@ with tabs[1]:
     y_pred = model.predict(X_test_s)
     y_prob = model.predict_proba(X_test_s)[:,1]
     st.subheader("Performance Metrics")
-    st.write({
-        "Accuracy": accuracy_score(y_test, y_pred),
-        "Precision": precision_score(y_test, y_pred),
-        "Recall": recall_score(y_test, y_pred),
-        "F1": f1_score(y_test, y_pred)
-    })
-    st.subheader("ROC Curve")
-    roc_fig = go.Figure()
+    st.write({"Accuracy": accuracy_score(y_test,y_pred),
+              "Precision": precision_score(y_test,y_pred),
+              "Recall": recall_score(y_test,y_pred),
+              "F1": f1_score(y_test,y_pred)})
     fpr, tpr, _ = roc_curve(y_test, y_prob)
+    roc_fig = go.Figure()
     roc_fig.add_trace(go.Scatter(x=fpr, y=tpr, mode='lines', name=algo))
     roc_fig.update_layout(xaxis_title='FPR', yaxis_title='TPR', title='ROC Curve')
     st.plotly_chart(roc_fig, use_container_width=True)
@@ -156,7 +165,6 @@ with tabs[2]:
     k = st.slider("K-Means: # Clusters", 2, 10, 4)
     km = KMeans(n_clusters=k, random_state=42).fit(data)
     df['Cluster'] = km.labels_
-    # PCA
     from sklearn.decomposition import PCA
     comp = PCA(2).fit_transform(StandardScaler().fit_transform(data))
     pca_df = pd.DataFrame(comp, columns=['PC1','PC2'])
@@ -176,7 +184,7 @@ with tabs[3]:
     rules = association_rules(freq, metric="confidence", min_threshold=min_conf)
     st.subheader("Top 10 Rules by Lift")
     fig = px.bar(rules.sort_values('lift', ascending=False).head(10), 
-                 x='lift', y=rules.columns[0], orientation='h',
+                 x='lift', y=cols[0], orientation='h',
                  title='Top Rules by Lift', hover_data=['support','confidence'])
     st.plotly_chart(fig, use_container_width=True)
 
