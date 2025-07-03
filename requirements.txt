@@ -6,3 +6,5 @@ mlxtend
 matplotlib
 plotly
 shap
+scipy
+plotly-express
