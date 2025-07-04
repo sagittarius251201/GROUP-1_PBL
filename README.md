@@ -1,7 +1,13 @@
-# Health Drink Dashboard — Integrated Ultimate
+# Health Drink Dashboard - UAE
 
-This single `app.py` includes all modules:
-- Filters: demographics, behavior, subscription, city, date
-- Tabs: Visualization, Classification, Clustering, Association, Anomaly, Regression
-- New Tabs: Forecasting, Cohort Analysis, Geographic View, Sentiment Analysis, LTV & Churn, Price Elasticity
-- Data loaded from `data/health_drink_survey_1000_augmented.csv`
+## Features
+- Data exploration, clustering, classification, regression, and more.
+- Elbow method for K-means, labeled confusion matrix, advanced charts.
+- OG Streamlit UI/UX with vibrant look, instant filtering.
+
+## How to Run
+1. Place your data as `health_drink_survey_1000_augmented.csv` in this folder.
+2. Install dependencies:  
+   `pip install -r requirements.txt`
+3. Launch:  
+   `streamlit run app.py`

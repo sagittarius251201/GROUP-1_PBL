@@ -1,10 +1,11 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import confusion_matrix, roc_curve, accuracy_score, precision_score, recall_score, f1_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
@@ -14,9 +15,9 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.cluster import KMeans
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import io
 
-
-st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
+st.set_page_config(page_title="Health Drink Dashboard", layout="wide", page_icon="🥤")
 st.title("🥤 Health Drink Dashboard - UAE Launch Insights")
 
 @st.cache_data
@@ -24,22 +25,16 @@ def load_data():
     df = pd.read_csv("health_drink_survey_1000_augmented.csv", encoding="utf-8")
     return df
 
-df = load_data()
+df0 = load_data()
 
-# Sidebar filters
+# Sidebar - Smart Filters
 with st.sidebar:
     st.header("🔎 Filters")
-    city = st.multiselect("City", sorted(df["City"].unique()), default=sorted(df["City"].unique()))
-    age = st.slider("Age", int(df["Age"].min()), int(df["Age"].max()), (int(df["Age"].min()), int(df["Age"].max())))
-    gender = st.multiselect("Gender", df["Gender"].unique(), default=list(df["Gender"].unique()))
-    inc = st.slider("Monthly Disposable Income (AED)", int(df["MonthlyDisposableIncome"].min()), int(df["MonthlyDisposableIncome"].max()),
-                    (int(df["MonthlyDisposableIncome"].min()), int(df["MonthlyDisposableIncome"].max())))
-    df = df[
-        df["City"].isin(city) &
-        df["Gender"].isin(gender) &
-        df["MonthlyDisposableIncome"].between(*inc) &
-        df["Age"].between(*age)
-    ]
+    city = st.multiselect("City", sorted(df0["City"].unique()), default=sorted(df0["City"].unique()))
+    gender = st.multiselect("Gender", df0["Gender"].unique(), default=list(df0["Gender"].unique()))
+    age = st.slider("Age", int(df0["Age"].min()), int(df0["Age"].max()), (int(df0["Age"].min()), int(df0["Age"].max())))
+    inc = st.slider("Monthly Disposable Income (AED)", int(df0["MonthlyDisposableIncome"].min()), int(df0["MonthlyDisposableIncome"].max()),
+                    (int(df0["MonthlyDisposableIncome"].min()), int(df0["MonthlyDisposableIncome"].max())))
     st.markdown("---")
     page = st.radio(
         "Navigate", [
@@ -48,6 +43,23 @@ with st.sidebar:
         ],
         index=0
     )
+
+def filter_df(df):
+    df = df[
+        df["City"].isin(city) &
+        df["Gender"].isin(gender) &
+        df["MonthlyDisposableIncome"].between(*inc) &
+        df["Age"].between(*age)
+    ]
+    return df
+
+df = filter_df(df0.copy())
+if df.empty:
+    st.warning("No data for selected filters. Please broaden your selection.")
+    st.stop()
+
+def safe_col(df, col):
+    return col if col in df.columns else None
 
 # Visualization Tab
 if page == "Visualization":
@@ -113,41 +125,44 @@ if page == "Visualization":
 elif page == "Classification":
     st.header("🧩 Classification")
     features = ["Age", "MonthlyDisposableIncome", "HealthConsciousness", "SpendPerServing"]
-    label = "Tried"
-    df2 = df.copy()
-    for col in features + [label]:
-        if df2[col].dtype == "object":
-            df2[col] = LabelEncoder().fit_transform(df2[col].astype(str))
-    X = df2[features]
-    y = df2[label]
-    Xt, Xe, yt, ye = train_test_split(X, y, test_size=0.2, random_state=42)
-    model = st.selectbox("Classifier", ["KNN", "Decision Tree", "Random Forest", "GBRT"])
-    if model == "KNN":
-        clf = KNeighborsClassifier(n_neighbors=5)
-    elif model == "Decision Tree":
-        clf = DecisionTreeClassifier(random_state=42)
-    elif model == "Random Forest":
-        clf = RandomForestClassifier(random_state=42)
+    label = safe_col(df, "Tried")
+    if not label:
+        st.error("Column 'Tried' not found in data.")
     else:
-        clf = GradientBoostingClassifier(random_state=42)
-    clf.fit(Xt, yt)
-    p = clf.predict(Xe)
-    metrics = {
-        "Accuracy": accuracy_score(ye, p),
-        "Precision": precision_score(ye, p),
-        "Recall": recall_score(ye, p),
-        "F1": f1_score(ye, p)
-    }
-    st.write("### Model Metrics")
-    st.table(pd.DataFrame(metrics, index=["Value"]).T)
-    cm = confusion_matrix(ye, p)
-    z_text = [[str(y) for y in x] for x in cm]
-    fig_cm = go.Figure(data=go.Heatmap(
-        z=cm, x=["Predicted: No", "Predicted: Yes"], y=["Actual: No", "Actual: Yes"],
-        colorscale="Blues", text=z_text, texttemplate="%{text}", showscale=True
-    ))
-    fig_cm.update_layout(title="Confusion Matrix", xaxis_title="Predicted", yaxis_title="Actual")
-    st.plotly_chart(fig_cm, use_container_width=True)
+        df2 = df.copy()
+        for col in features + [label]:
+            if col in df2.columns and df2[col].dtype == "object":
+                df2[col] = LabelEncoder().fit_transform(df2[col].astype(str))
+        X = df2[[f for f in features if f in df2.columns]]
+        y = df2[label]
+        Xt, Xe, yt, ye = train_test_split(X, y, test_size=0.2, random_state=42)
+        model = st.selectbox("Classifier", ["KNN", "Decision Tree", "Random Forest", "GBRT"])
+        if model == "KNN":
+            clf = KNeighborsClassifier(n_neighbors=5)
+        elif model == "Decision Tree":
+            clf = DecisionTreeClassifier(random_state=42)
+        elif model == "Random Forest":
+            clf = RandomForestClassifier(random_state=42)
+        else:
+            clf = GradientBoostingClassifier(random_state=42)
+        clf.fit(Xt, yt)
+        p = clf.predict(Xe)
+        metrics = {
+            "Accuracy": accuracy_score(ye, p),
+            "Precision": precision_score(ye, p, zero_division=0),
+            "Recall": recall_score(ye, p, zero_division=0),
+            "F1": f1_score(ye, p, zero_division=0)
+        }
+        st.write("### Model Metrics")
+        st.table(pd.DataFrame(metrics, index=["Value"]).T)
+        cm = confusion_matrix(ye, p)
+        z_text = [[str(y) for y in x] for x in cm]
+        fig_cm = go.Figure(data=go.Heatmap(
+            z=cm, x=["Predicted: No", "Predicted: Yes"], y=["Actual: No", "Actual: Yes"],
+            colorscale="Blues", text=z_text, texttemplate="%{text}", showscale=True
+        ))
+        fig_cm.update_layout(title="Confusion Matrix", xaxis_title="Predicted", yaxis_title="Actual")
+        st.plotly_chart(fig_cm, use_container_width=True)
 
 # Clustering Tab (with Elbow Method)
 elif page == "Clustering":
@@ -174,5 +189,4 @@ elif page == "Clustering":
                  labels={"index": "Cluster"})
     st.plotly_chart(fig, use_container_width=True)
 
-# --- Rest of your tabs remain unchanged ---
-
+# [Add more tabs as needed with same robust structure]
