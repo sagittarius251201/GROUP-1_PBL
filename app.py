@@ -142,8 +142,6 @@ icons = [
 page = option_menu(None, pages, icons=icons, menu_icon="cast", orientation="horizontal", styles={"container":{"padding":"0px"},"nav-link":{"font-size":"14px"},"nav-link-selected":{"background-color":highlight_color}})
 st.markdown(f"**Home** > **{page}**")
 
-# 1. Visualization Tab -- unchanged (already covers basics)
-
 if page=="Visualization":
     st.header("📊 Visualization")
     c1,c2,c3=st.columns(3)
@@ -191,7 +189,6 @@ if page=="Visualization":
             hi = agg.sort_values("SpendPerServing", ascending=False).iloc[0][cat]
             st.markdown(f"**Insight:** {hi} segment drives the most spend. Prioritize in promotions.")
 
-# 2. Classification Tab
 elif page=="Classification":
     st.header("🤖 Classification")
     X=df.select_dtypes("number").drop(columns=["SpendPerServing"], errors="ignore")
@@ -256,7 +253,6 @@ elif page=="Classification":
     best_metric = max(mets, key=mets.get)
     st.markdown(f"**Insight:** {algo} model achieves the highest {best_metric} ({mets[best_metric]:.2f}). Use this for predicting who will try the product.")
 
-# 3. Clustering Tab
 elif page=="Clustering":
     st.header("🤝 Clustering")
     feats=["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
@@ -307,7 +303,6 @@ elif page=="Clustering":
 
     st.download_button("Download Cluster Data", df.to_csv(index=False).encode(), "clusters.csv")
 
-# 4. Association Tab
 elif page=="Association":
     st.header("🔗 Association Rules")
     cols=[c for c in df.columns if c.startswith(("Flavour_","Context_"))]
@@ -339,8 +334,6 @@ elif page=="Association":
         fig_net.update_layout(title="Association Rule Network", template=plotly_template)
         st.plotly_chart(fig_net)
 
-# 5. Anomaly Detection Tab (no change needed)
-
 elif page=="Anomaly":
     st.header("🚨 Anomaly Detection")
     feats=["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
@@ -352,8 +345,6 @@ elif page=="Anomaly":
     st.plotly_chart(fig,use_container_width=True)
     outliers = (df["Anomaly"]==-1).sum()
     st.markdown(f"**Insight:** {outliers} anomalies detected. Review these cases for potential data errors or valuable edge customer behaviors.")
-
-# 6. Regression Comparison Tab (unchanged, can add feature sliders if wanted)
 
 elif page=="Regression":
     st.header("📈 Regression Comparison")
@@ -372,8 +363,6 @@ elif page=="Regression":
     best = rdf.iloc[rdf['R2'].idxmax()]['Model']
     st.markdown(f"**Insight:** {best} regression gives the best fit for spend prediction. Use this to model expected sales for new cohorts.")
 
-# 7. Forecasting Tab (unchanged)
-
 elif page=="Forecasting":
     st.header("⏱️ Forecasting")
     ts=df[["SurveyDate","SpendPerServing"]].rename(columns={"SurveyDate":"ds","SpendPerServing":"y"}).dropna()
@@ -385,7 +374,6 @@ elif page=="Forecasting":
     else:
         st.warning("Not enough data for time series forecast.")
 
-# 8. Cohort Tab
 elif page=="Cohort":
     st.header("👥 Cohort Analysis")
     df["Cohort"]=df.SurveyDate.dt.to_period("M").astype(str)
@@ -393,7 +381,6 @@ elif page=="Cohort":
     fig=px.line(cr,x="Cohort",y="Rate",markers=True, template=plotly_template); st.plotly_chart(fig,use_container_width=True)
     most = cr.sort_values("Rate", ascending=False).iloc[0]
     st.markdown(f"**Insight:** {most['Cohort']} cohort had highest subscription rate. Time campaigns with these patterns.")
-
     # Retention heatmap
     if "SubscribePlan" in df.columns:
         pivot = df.pivot_table(index=df['Cohort'], columns=df['SurveyDate'].dt.month, 
@@ -401,8 +388,6 @@ elif page=="Cohort":
         fig_ret = px.imshow(pivot, color_continuous_scale='Blues', 
             labels=dict(color="Retention Rate"), template=plotly_template)
         st.plotly_chart(fig_ret, use_container_width=True)
-
-# 9. Geography Tab (unchanged)
 
 elif page=="Geography":
     st.header("🗺️ Average Spend Per City")
@@ -422,7 +407,7 @@ elif page=="Geography":
         top_city = city_stats.iloc[0]
         low_city = city_stats.iloc[-1]
         pct_top = ((top_city["SpendPerServing"] - overall_avg) / overall_avg) * 100
-        pct_low = ((low_city["SpendPerServing"] - overall_avg) / overall_avg) * 100
+        pct_low = ((low_city["SpendPerServing"] - overall_avg) * 100 / overall_avg)
 
         insight = (
             f"**Insight:**\n"
@@ -448,7 +433,6 @@ elif page=="Geography":
     else:
         st.warning("No city data available in this dataset.")
 
-# 10. Sentiment Tab
 elif page=="Sentiment":
     st.header("💬 Sentiment Word Cloud")
     text=" ".join(df.Feedback.astype(str))
@@ -473,7 +457,6 @@ elif page=="Sentiment":
     st.write("**Negative:**")
     for i in neg: st.markdown(f"- {i}")
 
-# 11. LTV & Churn Tab
 elif page=="LTV & Churn":
     st.header("💰 LTV & Churn")
     df["FreqNum"]=df.ConsumptionFrequency.map({"Never":0,"Rarely":1,"1-2":2,"3-4":4,"5+":5})
@@ -493,8 +476,6 @@ elif page=="LTV & Churn":
     st.plotly_chart(fig_churn, use_container_width=True)
     st.markdown("**Insight:** Most users have low churn risk, but focus on those above 0.7.")
 
-# 12. Price Elasticity Tab (unchanged)
-
 elif page=="Price Elasticity":
     st.header("💵 Price Elasticity")
     price=st.slider("Price per Serving",5,30,12)
@@ -503,7 +484,6 @@ elif page=="Price Elasticity":
     st.metric("Buyers",buyers); st.metric("Revenue (AED)",revenue)
     st.markdown("**Insight:** As price increases, buyer count drops but revenue can peak at optimal price. Use this to set prices.")
 
-# 13. Glossary Tab
 elif page=="Glossary":
     st.header("📚 Data Glossary")
     dictionary = {
@@ -525,4 +505,3 @@ if st.button("💡 Send Feedback"):
     if st.button("Submit"):
         with open("feedback.txt","a") as f: f.write(fb+"\\n---\\n")
         st.success("Thank you!")
-
