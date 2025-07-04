@@ -9,3 +9,4 @@ plotly-express
 prophet
 wordcloud
 streamlit-option-menu
+textblob
