@@ -14,7 +14,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.cluster import KMeans
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
 st.title("🥤 Health Drink Dashboard - UAE Launch Insights")
