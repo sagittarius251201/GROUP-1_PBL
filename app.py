@@ -4,189 +4,260 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import confusion_matrix, roc_curve, accuracy_score, precision_score, recall_score, f1_score
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.cluster import KMeans
+from prophet import Prophet
+from prophet.plot import plot_plotly
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import io
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.linear_model import LinearRegression, Lasso, Ridge
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, RandomForestRegressor, IsolationForest
+from sklearn.cluster import KMeans
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, roc_curve, mean_squared_error, r2_score
+from mlxtend.frequent_patterns import apriori, association_rules
+from pathlib import Path
+from streamlit_option_menu import option_menu
 
-st.set_page_config(page_title="Health Drink Dashboard", layout="wide", page_icon="🥤")
-st.title("🥤 Health Drink Dashboard - UAE Launch Insights")
+# Styling
+st.markdown("""<style>
+body { background-color: #1B1B2F; color: #FFFFFF; }
+.sidebar .sidebar-content { background-color: #30475E; }
+h1, h2, h3, h4 { color: #EF476F; }
+</style>""", unsafe_allow_html=True)
 
-@st.cache_data
-def load_data():
-    df = pd.read_csv("health_drink_survey_1000_augmented.csv", encoding="utf-8")
-    return df
-
-df0 = load_data()
-
-# Sidebar - Smart Filters
-with st.sidebar:
-    st.header("🔎 Filters")
-    city = st.multiselect("City", sorted(df0["City"].unique()), default=sorted(df0["City"].unique()))
-    gender = st.multiselect("Gender", df0["Gender"].unique(), default=list(df0["Gender"].unique()))
-    age = st.slider("Age", int(df0["Age"].min()), int(df0["Age"].max()), (int(df0["Age"].min()), int(df0["Age"].max())))
-    inc = st.slider("Monthly Disposable Income (AED)", int(df0["MonthlyDisposableIncome"].min()), int(df0["MonthlyDisposableIncome"].max()),
-                    (int(df0["MonthlyDisposableIncome"].min()), int(df0["MonthlyDisposableIncome"].max())))
-    st.markdown("---")
-    page = st.radio(
-        "Navigate", [
-            "Visualization", "Classification", "Clustering", "Regression", "Association",
-            "Anomaly", "Forecasting", "Cohort", "Geography", "Sentiment", "LTV & Churn", "Price Elasticity"
-        ],
-        index=0
-    )
-
-def filter_df(df):
-    df = df[
-        df["City"].isin(city) &
-        df["Gender"].isin(gender) &
-        df["MonthlyDisposableIncome"].between(*inc) &
-        df["Age"].between(*age)
-    ]
-    return df
-
-df = filter_df(df0.copy())
-if df.empty:
-    st.warning("No data for selected filters. Please broaden your selection.")
-    st.stop()
-
-def safe_col(df, col):
-    return col if col in df.columns else None
-
-# Visualization Tab
-if page == "Visualization":
-    st.header("📊 Data Visualization")
-    nums = df.select_dtypes(include=np.number).columns.tolist()
-    cats = df.select_dtypes(include="object").columns.tolist()
-
-    chart = st.selectbox("Chart Type", ["Scatter", "Histogram", "Box", "Bar", "Pie", "Violin", "Line", "Stacked Bar"])
-    if chart == "Scatter":
-        x = st.selectbox("X-axis", nums)
-        y = st.selectbox("Y-axis", nums)
-        color = st.selectbox("Color By", ["None"] + cats)
-        fig = px.scatter(df, x=x, y=y, color=None if color=="None" else color,
-                         title=f"{y} vs {x} Scatter", labels={x: x, y: y, "color": color})
-        st.plotly_chart(fig, use_container_width=True)
-    elif chart == "Histogram":
-        col = st.selectbox("Column", nums)
-        color = st.selectbox("Color By", ["None"] + cats)
-        fig = px.histogram(df, x=col, color=None if color=="None" else color,
-                           title=f"Histogram of {col}", labels={col: col})
-        st.plotly_chart(fig, use_container_width=True)
-    elif chart == "Box":
-        y = st.selectbox("Y-axis", nums)
-        x = st.selectbox("X-axis", ["None"] + cats)
-        fig = px.box(df, y=y, x=None if x=="None" else x, points="all",
-                     title=f"Box Plot of {y}" + (f" by {x}" if x!="None" else ""),
-                     labels={y: y, x: x})
-        st.plotly_chart(fig, use_container_width=True)
-    elif chart == "Bar":
-        x = st.selectbox("X-axis", cats)
-        y = st.selectbox("Y-axis", nums)
-        agg = st.selectbox("Aggregation", ["count", "mean", "sum"])
-        data = df.groupby(x)[y].agg(agg).reset_index()
-        fig = px.bar(data, x=x, y=y, title=f"{agg.title()} of {y} by {x}",
-                     labels={x: x, y: f"{agg.title()} {y}"})
-        st.plotly_chart(fig, use_container_width=True)
-    elif chart == "Pie":
-        cat = st.selectbox("Category", cats)
-        data = df[cat].value_counts().reset_index()
-        data.columns = [cat, "count"]
-        fig = px.pie(data, names=cat, values="count", title=f"Pie Chart of {cat}")
-        st.plotly_chart(fig, use_container_width=True)
-    elif chart == "Violin":
-        val = st.selectbox("Value", nums)
-        cat = st.selectbox("Category", cats)
-        fig = px.violin(df, y=val, x=cat, box=True, points="all", color=cat,
-            title=f"Violin Plot of {val} by {cat}", labels={val: val, cat: cat})
-        st.plotly_chart(fig, use_container_width=True)
-    elif chart == "Line":
-        x = st.selectbox("X-axis", nums + (["SurveyDate"] if "SurveyDate" in df.columns else []))
-        y = st.selectbox("Y-axis", nums)
-        fig = px.line(df, x=x, y=y, color_discrete_sequence=px.colors.sequential.Plasma, title=f"Line Plot of {y} over {x}", labels={x: x, y: y})
-        st.plotly_chart(fig, use_container_width=True)
-    elif chart == "Stacked Bar":
-        cat1 = st.selectbox("Main Category", cats)
-        cat2 = st.selectbox("Stacked by", [c for c in cats if c != cat1])
-        data = df.groupby([cat1, cat2]).size().reset_index(name="count")
-        fig = px.bar(data, x=cat1, y="count", color=cat2, barmode="stack", title=f"Stacked Bar of {cat1} by {cat2}",
-                     labels={cat1: cat1, cat2: cat2, "count": "Count"})
-        st.plotly_chart(fig, use_container_width=True)
-
-# Classification Tab
-elif page == "Classification":
-    st.header("🧩 Classification")
-    features = ["Age", "MonthlyDisposableIncome", "HealthConsciousness", "SpendPerServing"]
-    label = safe_col(df, "Tried")
-    if not label:
-        st.error("Column 'Tried' not found in data.")
+# Data load
+local = Path(__file__).parent / "data" / "health_drink_survey_1000_augmented.csv"
+if local.exists():
+    df = pd.read_csv(local, parse_dates=["SurveyDate"])
+else:
+    uploaded = st.sidebar.file_uploader("Upload CSV", type="csv")
+    if uploaded:
+        df = pd.read_csv(uploaded, parse_dates=["SurveyDate"])
     else:
-        df2 = df.copy()
-        for col in features + [label]:
-            if col in df2.columns and df2[col].dtype == "object":
-                df2[col] = LabelEncoder().fit_transform(df2[col].astype(str))
-        X = df2[[f for f in features if f in df2.columns]]
-        y = df2[label]
-        Xt, Xe, yt, ye = train_test_split(X, y, test_size=0.2, random_state=42)
-        model = st.selectbox("Classifier", ["KNN", "Decision Tree", "Random Forest", "GBRT"])
-        if model == "KNN":
-            clf = KNeighborsClassifier(n_neighbors=5)
-        elif model == "Decision Tree":
-            clf = DecisionTreeClassifier(random_state=42)
-        elif model == "Random Forest":
-            clf = RandomForestClassifier(random_state=42)
+        st.stop()
+
+st.set_page_config(page_title="Health Drink Dashboard", layout="wide")
+st.title("🥤 Health Drink Survey Dashboard — Fully Featured")
+
+# Sidebar filters
+with st.sidebar.expander("Demographics", True):
+    if "Age" in df:
+        amin, amax = int(df.Age.min()), int(df.Age.max())
+        age = st.slider("Age range", amin, amax, (amin, amax))
+        df = df[df.Age.between(*age)]
+    if "Gender" in df:
+        g = st.multiselect("Gender", df.Gender.unique(), df.Gender.unique())
+        df = df[df.Gender.isin(g)]
+with st.sidebar.expander("Behavior"):
+    if "ExerciseFrequency" in df:
+        ex = st.multiselect("Exercise Freq", df.ExerciseFrequency.unique(), df.ExerciseFrequency.unique())
+        df = df[df.ExerciseFrequency.isin(ex)]
+    if "ConsumptionFrequency" in df:
+        cf = st.multiselect("Consumption Freq", df.ConsumptionFrequency.unique(), df.ConsumptionFrequency.unique())
+        df = df[df.ConsumptionFrequency.isin(cf)]
+with st.sidebar.expander("Subscription & Location"):
+    if "SubscribePlan" in df:
+        sp = st.multiselect("Subscribe Plan", df.SubscribePlan.unique(), df.SubscribePlan.unique())
+        df = df[df.SubscribePlan.isin(sp)]
+    if "City" in df:
+        city = st.multiselect("City", df.City.unique(), df.City.unique())
+        df = df[df.City.isin(city)]
+with st.sidebar.expander("Survey Date"):
+    if "SurveyDate" in df:
+        dr = st.date_input("Date range", [df.SurveyDate.min(), df.SurveyDate.max()])
+        df = df[df.SurveyDate.between(pd.to_datetime(dr[0]), pd.to_datetime(dr[1]))]
+st.sidebar.download_button("Download CSV", df.to_csv(index=False).encode(), "filtered.csv")
+
+# Navigation
+page = option_menu(None,
+    ["Visualization","Classification","Clustering","Association","Anomaly","Regression",
+     "Forecasting","Cohort","Geography","Sentiment","LTV & Churn","Price Elasticity"],
+    icons=["bar-chart","cpu","people","diagram-3","exclamation-triangle","graph-up",
+           "clock-history","calendar","geo","chat-dots","cash-stack","cash-coin"],
+    orientation="horizontal", menu_icon="cast", default_index=0,
+    styles={"container":{"background-color":"#1B1B2F"},
+            "nav-link":{"color":"#FFFFFF","font-size":"16px","margin":"0px 8px"},
+            "nav-link-selected":{"background-color":"#EF476F","color":"#FFFFFF"}}
+)
+
+# Visualization
+if page=="Visualization":
+    st.header("📊 Visualization")
+    chart = st.selectbox("Chart Type", ["Scatter","Histogram","Box","Bar"])
+    nums = df.select_dtypes("number").columns.tolist()
+    cats = df.select_dtypes(exclude="number").columns.tolist()
+    if chart=="Scatter":
+        x = st.selectbox("X-axis", nums, 0)
+        y = st.selectbox("Y-axis", nums, 1)
+        fig = px.scatter(df, x=x, y=y, color=cats[0] if cats else None,
+                         color_discrete_sequence=px.colors.sequential.Plasma)
+        st.plotly_chart(fig, use_container_width=True)
+    elif chart=="Histogram":
+        col = st.selectbox("Feature", nums)
+        fig = px.histogram(df, x=col, nbins=30, color_discrete_sequence=px.colors.sequential.Viridis)
+        st.plotly_chart(fig, use_container_width=True)
+    elif chart=="Box":
+        cat = st.selectbox("Category", cats)
+        val = st.selectbox("Value", nums)
+        fig = px.box(df, x=cat, y=val, color=cat, color_discrete_sequence=px.colors.sequential.Inferno)
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        cat = st.selectbox("Category", cats)
+        metric = st.selectbox("Metric", ["Count","Mean Spend","Sum Spend"])
+        if metric=="Count":
+            data = df[cat].value_counts().reset_index()
+            data.columns=[cat,"count"]
+            fig = px.bar(data, x=cat, y="count", color=cat, color_discrete_sequence=px.colors.sequential.Magma)
         else:
-            clf = GradientBoostingClassifier(random_state=42)
-        clf.fit(Xt, yt)
-        p = clf.predict(Xe)
-        metrics = {
-            "Accuracy": accuracy_score(ye, p),
-            "Precision": precision_score(ye, p, zero_division=0),
-            "Recall": recall_score(ye, p, zero_division=0),
-            "F1": f1_score(ye, p, zero_division=0)
-        }
-        st.write("### Model Metrics")
-        st.table(pd.DataFrame(metrics, index=["Value"]).T)
-        cm = confusion_matrix(ye, p)
-        z_text = [[str(y) for y in x] for x in cm]
-        fig_cm = go.Figure(data=go.Heatmap(
-            z=cm, x=["Predicted: No", "Predicted: Yes"], y=["Actual: No", "Actual: Yes"],
-            colorscale="Blues", text=z_text, texttemplate="%{text}", showscale=True
-        ))
-        fig_cm.update_layout(title="Confusion Matrix", xaxis_title="Predicted", yaxis_title="Actual")
-        st.plotly_chart(fig_cm, use_container_width=True)
+            agg = df.groupby(cat)["SpendPerServing"].agg("mean" if metric=="Mean Spend" else "sum").reset_index()
+            fig = px.bar(agg, x=cat, y="SpendPerServing", color=cat, color_discrete_sequence=px.colors.sequential.Magma)
+        st.plotly_chart(fig, use_container_width=True)
 
-# Clustering Tab (with Elbow Method)
-elif page == "Clustering":
-    st.header("🤝 Clustering")
-    feats = ["Age", "MonthlyDisposableIncome", "SpendPerServing", "HealthConsciousness"]
-    k = st.slider("Number of Clusters", 2, 8, 4)
-    show_elbow = st.checkbox("Show Elbow Method (Optimal k)", value=True)
-    if show_elbow:
-        inertias = []
-        ks = list(range(1, 11))
-        for ki in ks:
-            km = KMeans(n_clusters=ki, random_state=42).fit(df[feats])
-            inertias.append(km.inertia_)
-        fig_elbow = px.line(x=ks, y=inertias, markers=True,
-            labels={"x": "Number of Clusters (k)", "y": "Inertia (SSE)"},
-            title="Elbow Method for K Selection")
-        st.plotly_chart(fig_elbow, use_container_width=True)
-    km = KMeans(n_clusters=k, random_state=42).fit(df[feats])
-    df["Cluster"] = km.labels_
-    centers = pd.DataFrame(km.cluster_centers_, columns=feats).round(2)
-    fig = px.bar(centers, x=centers.index, y=feats, barmode="group",
-                 color_discrete_sequence=px.colors.qualitative.Plotly,
-                 title="Cluster Centers (Personas)",
-                 labels={"index": "Cluster"})
+# Classification
+elif page=="Classification":
+    st.header("🤖 Classification")
+    X = df.select_dtypes("number").drop(columns=["SpendPerServing"], errors="ignore")
+    y = LabelEncoder().fit_transform(df.TryNewBrand)
+    Xtr,Xte,ytr,yte = train_test_split(X,y,test_size=0.2,random_state=42)
+    scaler = StandardScaler().fit(Xtr)
+    Xtr_s,Xte_s = scaler.transform(Xtr), scaler.transform(Xte)
+    algo = st.selectbox("Algorithm", ["KNN","Decision Tree","Random Forest","GBRT"])
+    model = (KNeighborsClassifier() if algo=="KNN" else
+             DecisionTreeClassifier() if algo=="Decision Tree" else
+             RandomForestClassifier() if algo=="Random Forest" else
+             GradientBoostingClassifier())
+    model.fit(Xtr_s,ytr); pred=model.predict(Xte_s); prob=model.predict_proba(Xte_s)[:,1]
+    metrics = {
+        "Accuracy": accuracy_score(yte,pred),
+        "Precision": precision_score(yte,pred),
+        "Recall": recall_score(yte,pred),
+        "F1": f1_score(yte,pred)
+    }
+    st.table(pd.DataFrame(metrics, index=["Value"]).T)
+    cm = confusion_matrix(yte,pred)
+    fig = go.Figure(go.Heatmap(z=cm, x=["No","Yes"], y=["No","Yes"], colorscale="Plasma"))
     st.plotly_chart(fig, use_container_width=True)
+    fpr,tpr,_ = roc_curve(yte,prob)
+    fig2 = go.Figure(go.Scatter(x=fpr,y=tpr,mode="lines",line_color="#EF476F"))
+    st.plotly_chart(fig2, use_container_width=True)
 
-# [Add more tabs as needed with same robust structure]
+# Clustering
+elif page=="Clustering":
+    st.header("🤝 Clustering")
+    feats=["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
+    k=st.slider("Clusters",2,8,4)
+    km=KMeans(n_clusters=k,random_state=42).fit(df[feats])
+    df["Cluster"]=km.labels_
+    centers=pd.DataFrame(km.cluster_centers_,columns=feats).round(2)
+    fig=px.bar(centers,x=centers.index,y=feats,barmode="group",
+               color_discrete_sequence=px.colors.qualitative.Plotly)
+    st.plotly_chart(fig,use_container_width=True)
+
+# Association
+elif page=="Association":
+    st.header("🔗 Association Rules")
+    cols=[c for c in df.columns if c.startswith(("Flavour_","Context_"))]
+    sup=st.slider("Support",0.01,0.2,0.05)
+    conf=st.slider("Confidence",0.1,0.7,0.3)
+    freq=apriori(df[cols],min_support=sup,use_colnames=True)
+    rules=association_rules(freq,metric="confidence",min_threshold=conf)
+    rules["rule"]=rules["antecedents"].apply(lambda x:", ".join(x))+" → "+rules["consequents"].apply(lambda x:", ".join(x))
+    top=rules.sort_values("lift",ascending=False).head(10)
+    fig=px.bar(top,x="lift",y="rule",orientation="h",
+               color="confidence",color_continuous_scale="Plasma")
+    st.plotly_chart(fig,use_container_width=True)
+
+# Anomaly
+elif page=="Anomaly":
+    st.header("🚨 Anomaly Detection")
+    feats=["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
+    iso=IsolationForest(contamination=0.05,random_state=42).fit(df[feats])
+    df["Anomaly"]=iso.predict(df[feats])
+    fig=px.scatter(df,x="MonthlyDisposableIncome",y="SpendPerServing",
+                   color=df["Anomaly"].map({1:"Normal",-1:"Anomaly"}),
+                   color_discrete_sequence=["#00FF00","#FF0000"])
+    st.plotly_chart(fig,use_container_width=True)
+
+# Regression
+elif page=="Regression":
+    st.header("📈 Regression Comparison")
+    Xr=df[["MonthlyDisposableIncome","HealthConsciousness","Age"]]; yr=df["SpendPerServing"]
+    Xt,Xte,yt,yte=train_test_split(Xr,yr,test_size=0.2,random_state=42)
+    models = {
+        "Linear": LinearRegression(),
+        "Lasso": Lasso(),
+        "Ridge": Ridge(),
+        "Tree": DecisionTreeRegressor(random_state=42)
+    }
+    results = []
+    for name,mdl in models.items():
+        mdl.fit(Xt,yt); pred=mdl.predict(Xte)
+        results.append({
+            "Model": name,
+            "R2": r2_score(yte,pred),
+            "RMSE": np.sqrt(mean_squared_error(yte,pred))
+        })
+    res_df=pd.DataFrame(results)
+    st.table(res_df)
+    fig=px.bar(res_df, x="Model", y=["R2","RMSE"], barmode="group",
+               color_discrete_sequence=px.colors.qualitative.Plotly)
+    st.plotly_chart(fig,use_container_width=True)
+
+# Forecasting
+elif page=="Forecasting":
+    st.header("⏱️ Forecasting")
+    ts=df[["SurveyDate","SpendPerServing"]].rename(columns={"SurveyDate":"ds","SpendPerServing":"y"}).dropna()
+    m=Prophet(); m.fit(ts)
+    fut=m.make_future_dataframe(periods=30); fc=m.predict(fut)
+    st.plotly_chart(plot_plotly(m,fc),use_container_width=True)
+
+# Cohort
+elif page=="Cohort":
+    st.header("👥 Cohort Analysis")
+    df["Cohort"]=df.SurveyDate.dt.to_period("M").astype(str)
+    cohort=df.groupby("Cohort")["SubscribePlan"].apply(lambda x:(x=="Yes").mean()).reset_index(name="Rate")
+    fig=px.line(cohort,x="Cohort",y="Rate",markers=True)
+    st.plotly_chart(fig,use_container_width=True)
+
+# Geography
+elif page=="Geography":
+    st.header("🗺️ Geographic Spend")
+    city=df.groupby("City")["SpendPerServing"].mean().reset_index()
+    fig=px.choropleth(city, locations="City", locationmode="country names", color="SpendPerServing",
+                      color_continuous_scale="Viridis")
+    st.plotly_chart(fig,use_container_width=True)
+
+# Sentiment
+elif page=="Sentiment":
+    st.header("💬 Sentiment Word Cloud")
+    text=" ".join(df.Feedback.astype(str))
+    wc=WordCloud(width=800,height=400).generate(text)
+    plt.imshow(wc,interpolation="bilinear"); plt.axis("off")
+    st.pyplot(plt.gcf())
+
+# LTV & Churn
+elif page=="LTV & Churn":
+    st.header("💰 LTV & Churn")
+    df["FreqNum"]=df.ConsumptionFrequency.map({"Never":0,"Rarely":1,"1-2":2,"3-4":4,"5+":5})
+    df["LTV"]=df.SpendPerServing*df.FreqNum*12
+    churn=(df.SubscribePlan=="No").astype(int)
+    Xc=df[["MonthlyDisposableIncome","HealthConsciousness","Age"]]
+    Xt,Xv,yt,yv=train_test_split(Xc,churn,test_size=0.2,random_state=42)
+    clf=RandomForestClassifier(random_state=42).fit(Xt,yt); pred=clf.predict(Xv)
+    st.table(pd.DataFrame([{
+        "Accuracy":accuracy_score(yv,pred),
+        "Precision":precision_score(yv,pred),
+        "Recall":recall_score(yv,pred)
+    }]).T)
+    st.plotly_chart(px.histogram(df,x="LTV",nbins=30),use_container_width=True)
+
+# Price Elasticity
+elif page=="Price Elasticity":
+    st.header("💵 Price Elasticity")
+    price=st.slider("Price per Serving",5,30,12)
+    buyers=df[df.SpendPerServing>=price].shape[0]
+    revenue=buyers*price
+    st.metric("Estimated Buyers",buyers)
+    st.metric("Projected Revenue (AED)",revenue)

@@ -1,7 +1,11 @@
 streamlit
 pandas
 numpy
-plotly
 scikit-learn
+mlxtend
 matplotlib
+plotly
+plotly-express
+prophet
 wordcloud
+streamlit-option-menu
