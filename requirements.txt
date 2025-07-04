@@ -1,12 +1,12 @@
 streamlit
+streamlit-option-menu
 pandas
 numpy
-scikit-learn
-mlxtend
 matplotlib
 plotly
-plotly-express
+scikit-learn
+mlxtend
 prophet
 wordcloud
-streamlit-option-menu
 textblob
+networkx
