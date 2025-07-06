@@ -101,7 +101,7 @@ with st.sidebar.expander("Survey Date"):
         df = df[(df.SurveyDate >= start) & (df.SurveyDate <= end)]
         filters.append(f"Date: {dr[0]}–{dr[1]}")
 # In your sidebar, after all the filters:
-wwith st.sidebar.expander("🔎 Active Filters", expanded=False):
+with st.sidebar.expander("🔎 Active Filters", expanded=False):
     filters = []
     if "age" in locals() and age is not None and isinstance(age, (list, tuple)) and len(age) == 2:
         filters.append(f"Age: {age[0]}–{age[1]}")
