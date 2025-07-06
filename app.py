@@ -1,6 +1,31 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+# 1) File‐uploader widget (always at top level)
+uploaded = st.sidebar.file_uploader("Upload CSV (optional)", type="csv")
+
+@st.cache_data(ttl=3600)
+def load_data(uploaded_file):
+    # 2) Try local file first
+    local = Path(__file__).parent / "data" / "health_drink_survey_1000_augmented.csv"
+    if local.exists():
+        return pd.read_csv(local, parse_dates=["SurveyDate"])
+    # 3) Fallback to GitHub raw URL
+    url = "https://raw.githubusercontent.com/sagittarius251201/second-/main/health_drink_survey_1000_augmented.csv"
+    try:
+        df = pd.read_csv(url, parse_dates=["SurveyDate"])
+        return df
+    except Exception:
+        # 4) Finally use uploaded file if present
+        if uploaded_file is not None:
+            return pd.read_csv(uploaded_file, parse_dates=["SurveyDate"])
+        # 5) Otherwise error out
+        st.error("No data file found locally or on GitHub, and no upload provided.")
+        st.stop()
+
+# Call it once
+df = load_data(uploaded)
+
 import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
@@ -23,6 +48,7 @@ from mlxtend.frequent_patterns import apriori, association_rules
 from textblob import TextBlob
 import networkx as nx
 import time
+
 
 # ── GLOBAL CSS ───────────────────────────────────────────────────────────────
 st.markdown("""
