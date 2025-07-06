@@ -132,9 +132,6 @@ with st.sidebar.expander("🔎 Active Filters", expanded=False):
 
 
 st.sidebar.download_button("📥 Download Filtered CSV", df.to_csv(index=False).encode(), "filtered.csv")
-if filters:
-    chips = "  ".join(f"<span class='card tooltip' title='{f}'>{f}</span>" for f in filters)
-    st.sidebar.markdown(f"**Active Filters:**<br>{chips}", unsafe_allow_html=True)
 
 # ─── Navigation menu ────────────────────────────────────────────────────────────
 pages = ["Visualization","Classification","Clustering","Association","Anomaly","Regression",
