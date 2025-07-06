@@ -10,3 +10,4 @@ prophet
 wordcloud
 textblob
 networkx
+openai
