@@ -378,24 +378,27 @@ elif page == "Price Elasticity":
 elif page == "Chat":
     st.header("💬 Ask GPT")
     try:
+        import openai
+    except ImportError:
+        st.warning("ChatGPT feature unavailable. Make sure `openai` is in requirements.txt.")
+    else:
         if "msgs" not in st.session_state:
-            st.session_state.msgs = [{"role":"system","content":"You are a data analyst assistant."}]
+            st.session_state.msgs = [{"role": "system", "content": "You are a data analyst assistant."}]
         query = st.chat_input("Your question...")
         if query:
-            st.session_state.msgs.append({"role":"user","content":query})
-            openai.api_key = st.secrets["OPENAI_API_KEY"]
+            st.session_state.msgs.append({"role": "user", "content": query})
+            openai.api_key = st.secrets.get("OPENAI_API_KEY", "")
             try:
-                resp = openai.chat.completions.create(model="gpt-3.5-turbo", messages=st.session_state.msgs)
+                resp = openai.chat.completions.create(
+                    model="gpt-3.5-turbo",
+                    messages=st.session_state.msgs
+                )
                 msg = resp["choices"][0]["message"]
-                st.session_state.msgs.append({"role":msg["role"],"content":msg["content"]})
-            except RateLimitError:
-                st.error("Rate limit exceeded; try again soon.")
-            except OpenAIError as e:
-                st.error(f"OpenAI error: {e}")
+                st.session_state.msgs.append({"role": msg["role"], "content": msg["content"]})
+            except Exception as e:
+                st.error(f"OpenAI API error: {e}")
         for m in st.session_state.msgs:
             st.chat_message(m["role"]).write(m["content"])
-    except Exception:
-        st.warning("ChatGPT feature still unavailable. Check your `requirements.txt` and redeploy.")
 
 # --- Page: Glossary ---
 elif page == "Glossary":
