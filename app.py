@@ -234,11 +234,19 @@ elif page=="Chat":
     if query:
         st.session_state.msgs.append({"role":"user","content":query})
         openai.api_key = st.secrets["OPENAI_API_KEY"]
-        resp = openai.ChatCompletion.create(model="gpt-4", messages=st.session_state.msgs)
-        ans = resp.choices[0].message
-        st.session_state.msgs.append({"role":ans.role,"content":ans.content})
+        # ← Updated call here:
+        resp = openai.chat.completions.create(
+            model="gpt-4",
+            messages=st.session_state.msgs
+        )
+        assistant_msg = resp["choices"][0]["message"]
+        st.session_state.msgs.append({
+            "role": assistant_msg["role"],
+            "content": assistant_msg["content"]
+        })
     for m in st.session_state.msgs:
         st.chat_message(m["role"]).write(m["content"])
+
 
 # --- Page: Glossary ---
 elif page=="Glossary":
