@@ -234,19 +234,21 @@ elif page=="Chat":
     if query:
         st.session_state.msgs.append({"role":"user","content":query})
         openai.api_key = st.secrets["OPENAI_API_KEY"]
+        try:
+            resp = openai.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=st.session_state.msgs
+            )
+            assistant_msg = resp["choices"][0]["message"]
+            st.session_state.msgs.append({
+                "role": assistant_msg["role"],
+                "content": assistant_msg["content"]
+            })
+        except openai.error.RateLimitError:
+            st.error("⚠️ Rate limit exceeded. Please wait a moment and try again.")
+        except Exception as e:
+            st.error(f"⚠️ An error occurred: {str(e)}")
 
-        # Always use the free GPT-3.5 model
-        resp = openai.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=st.session_state.msgs
-        )
-        assistant_msg = resp["choices"][0]["message"]
-        st.session_state.msgs.append({
-            "role": assistant_msg["role"],
-            "content": assistant_msg["content"]
-        })
-
-    # Render the conversation
     for m in st.session_state.msgs:
         st.chat_message(m["role"]).write(m["content"])
 
