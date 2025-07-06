@@ -100,6 +100,30 @@ with st.sidebar.expander("Survey Date"):
         start, end = pd.to_datetime(dr[0]), pd.to_datetime(dr[1])
         df = df[(df.SurveyDate >= start) & (df.SurveyDate <= end)]
         filters.append(f"Date: {dr[0]}–{dr[1]}")
+# In your sidebar, after all the filters:
+with st.sidebar.expander("🔎 Active Filters", expanded=False):
+    filters = []
+    if "age" in locals():
+        filters.append(f"Age: {age[0]}–{age[1]}")
+    if "gender" in locals() and gender:
+        filters.append(f"Gender: {', '.join(gender)}")
+    if "occ" in locals() and occ:
+        filters.append(f"Occupation: {', '.join(occ)}")
+    if "ex" in locals() and ex:
+        filters.append(f"Exercise Freq: {', '.join(ex)}")
+    if "cf" in locals() and cf:
+        filters.append(f"Consumption Freq: {', '.join(cf)}")
+    if "sub" in locals() and sub:
+        filters.append(f"Subscribe Plan: {', '.join(sub)}")
+    if "city" in locals() and city:
+        filters.append(f"City: {', '.join(city)}")
+    if "dr" in locals() and dr:
+        filters.append(f"Date: {dr[0]}–{dr[1]}")
+    if filters:
+        st.write("\n".join(filters))
+    else:
+        st.write("No filters applied.")
+
 
 st.sidebar.download_button("📥 Download Filtered CSV", df.to_csv(index=False).encode(), "filtered.csv")
 if filters:
