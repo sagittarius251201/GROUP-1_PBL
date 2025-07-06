@@ -234,9 +234,10 @@ elif page=="Chat":
     if query:
         st.session_state.msgs.append({"role":"user","content":query})
         openai.api_key = st.secrets["OPENAI_API_KEY"]
-        # ← Updated call here:
+
+        # Always use the free GPT-3.5 model
         resp = openai.chat.completions.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=st.session_state.msgs
         )
         assistant_msg = resp["choices"][0]["message"]
@@ -244,8 +245,11 @@ elif page=="Chat":
             "role": assistant_msg["role"],
             "content": assistant_msg["content"]
         })
+
+    # Render the conversation
     for m in st.session_state.msgs:
         st.chat_message(m["role"]).write(m["content"])
+
 
 
 # --- Page: Glossary ---
