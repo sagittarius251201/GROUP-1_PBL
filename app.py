@@ -3,11 +3,11 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-import matplotlib.pyplot as plt
 from pathlib import Path
 from prophet import Prophet
 from prophet.plot import plot_plotly
 from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.linear_model import LinearRegression, Lasso, Ridge
@@ -24,39 +24,33 @@ from textblob import TextBlob
 import networkx as nx
 import time
 
-# ── GLOBAL CSS ───────────────────────────────────────────────────────────────
+# ── GLOBAL STYLES ────────────────────────────────────────────────────────────
 st.markdown("""
     <style>
-      .card {
-        background-color: #FFFFFF;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        padding: 16px;
-        margin-bottom: 20px;
-      }
-      abbr { text-decoration: none; }
-      abbr[title]:hover { cursor: help; border-bottom: 1px dotted #EF476F; }
+      body {font-family:'Helvetica Neue',Arial,sans-serif;}
+      .card {background:#FFF;border-radius:12px;padding:16px;
+             box-shadow:0 4px 12px rgba(0,0,0,0.05);margin-bottom:24px;}
+      abbr {text-decoration:none;}
+      abbr[title]:hover {cursor:help;border-bottom:1px dotted #EF476F;}
     </style>
 """, unsafe_allow_html=True)
 
-# ── PAGE CONFIG ─────────────────────────────────────────────────────────────
-st.set_page_config(
-    page_title="🚀 Health Drink Dashboard",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+# ── PAGE LAYOUT ─────────────────────────────────────────────────────────────
+st.set_page_config(page_title="🚀 Health Drink Dashboard", layout="wide")
+st.title("Welcome to the Health Drink Insights Dashboard! 🎉")
+st.markdown(
+    "Use the sidebar filters to hone in on your audience, then explore each tab for "
+    "dynamic charts, deep analysis, and actionable insights."
 )
 
-# ── DATA UPLOAD WIDGET (top level) ──────────────────────────────────────────
+# ── DATA LOADING ────────────────────────────────────────────────────────────
 uploaded = st.sidebar.file_uploader("Upload CSV (optional)", type="csv")
 
-# ── DATA LOADING ────────────────────────────────────────────────────────────
 @st.cache_data(ttl=3600)
 def load_data(uploaded_file):
-    # 1) Local file
     local = Path("data") / "health_drink_survey_1000_augmented.csv"
     if local.exists():
         return pd.read_csv(local, parse_dates=["SurveyDate"])
-    # 2) GitHub fallback
     url = (
         "https://raw.githubusercontent.com/"
         "sagittarius251201/second-/main/"
@@ -64,11 +58,10 @@ def load_data(uploaded_file):
     )
     try:
         return pd.read_csv(url, parse_dates=["SurveyDate"])
-    except Exception:
-        # 3) Uploaded fallback
+    except:
         if uploaded_file is not None:
             return pd.read_csv(uploaded_file, parse_dates=["SurveyDate"])
-        st.error("No data file found locally, on GitHub, or via upload.")
+        st.error("No data found locally, on GitHub, or via upload.")
         st.stop()
 
 df = load_data(uploaded)
@@ -89,28 +82,31 @@ with st.sidebar:
     city = st.multiselect("City", df.City.unique(), df.City.unique())
     df = df[df.City.isin(city)]
 
-    st.download_button("📥 Download CSV", df.to_csv(index=False), "filtered.csv", "text/csv")
+    st.download_button("📥 Download Filtered Data", df.to_csv(index=False), "filtered.csv")
 
 # ── TAB NAVIGATION ──────────────────────────────────────────────────────────
 tabs = st.tabs([
-    "Visualization","Classification","Clustering","Association",
-    "Anomaly","Regression","Forecasting","Cohort",
-    "Geography","Sentiment","LTV & Churn","Price Elasticity","Glossary"
+    "Visualization","Classification","Clustering","Association","Anomaly",
+    "Regression","Forecasting","Cohort","Geography","Sentiment",
+    "LTV & Churn","Price Elasticity","Glossary"
 ])
 
-# 1. Visualization
+# ── 1) VISUALIZATION ────────────────────────────────────────────────────────
 with tabs[0]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.subheader("📊 Quick Metrics")
+    st.subheader("📊 Key Metrics")
     c1, c2, c3 = st.columns(3)
-    c1.metric("Avg Spend", f"AED {df.SpendPerServing.mean():.2f}")
-    c2.metric("Trial Rate", f"{(df.TryNewBrand=='Yes').mean()*100:.1f}%")
-    c3.metric("Subscribers", f"{(df.SubscribePlan=='Yes').sum()}")
+    avg_spend = df.SpendPerServing.mean()
+    trial_rate = (df.TryNewBrand=="Yes").mean()*100
+    subscribers = (df.SubscribePlan=="Yes").sum()
+    c1.metric("Avg Spend (AED)", f"{avg_spend:.2f}")
+    c2.metric("Trial Rate (%)", f"{trial_rate:.1f}")
+    c3.metric("Subscribers", subscribers)
     st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.subheader("Custom Chart")
-    chart = st.selectbox("Chart type", ["Scatter","Histogram","Box","Bar"])
+    st.subheader("Custom Chart & Insight")
+    chart = st.selectbox("Chart Type", ["Scatter","Histogram","Box","Bar"])
     nums = df.select_dtypes("number").columns.tolist()
     cats = df.select_dtypes(exclude="number").columns.tolist()
 
@@ -120,219 +116,232 @@ with tabs[0]:
         fig = px.scatter(df, x=x, y=y, color=cats[0] if cats else None,
                          opacity=0.7, template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
+        corr = df[x].corr(df[y])
+        st.info(f"**Insight:** Correlation between **{x}** & **{y}** is {corr:.2f}.")
     elif chart=="Histogram":
         col = st.selectbox("Feature", nums, key="vh")
         fig = px.histogram(df, x=col, nbins=30, template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
+        skew = df[col].skew()
+        st.info(f"**Insight:** **{col}** has mean {df[col].mean():.2f}, skewness {skew:.2f}.")
     elif chart=="Box":
         cat = st.selectbox("Category", cats, key="vb_cat")
         val = st.selectbox("Value", nums, key="vb_val")
         fig = px.box(df, x=cat, y=val, template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
+        st.info(f"**Insight:** Spread of **{val}** across **{cat}** shows outliers at {df[val].quantile([.05,.95]).tolist()}.")
     else:
         cat = st.selectbox("Category", cats, key="vbar_cat")
-        data = df[cat].value_counts().reset_index()
-        data.columns=[cat,"count"]
-        fig = px.bar(data, x=cat, y="count", template="plotly_white")
+        agg = df[cat].value_counts().reset_index()
+        agg.columns=[cat,"count"]
+        fig = px.bar(agg, x=cat, y="count", template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
+        top = agg.iloc[0][cat]
+        st.info(f"**Insight:** **{top}** is the largest segment with {agg.iloc[0]['count']} respondents.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 2. Classification
+# ── 2) CLASSIFICATION ────────────────────────────────────────────────────────
 with tabs[1]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.subheader("🤖 Classification")
+    st.subheader("🤖 Will-Try Classifier")
     X = df.select_dtypes("number").drop(columns=["SpendPerServing"], errors="ignore")
     y = LabelEncoder().fit_transform(df.TryNewBrand)
-    Xt, Xe, yt, ye = train_test_split(X, y, test_size=0.2, random_state=42)
+    Xt, Xe, yt, ye = train_test_split(X, y, test_size=0.2, random_state=0)
     sc = StandardScaler().fit(Xt)
     Xt_s, Xe_s = sc.transform(Xt), sc.transform(Xe)
 
-    algo = st.selectbox("Model", ["KNN","Decision Tree","Random Forest","GBRT"])
-    if algo=="KNN":
-        mdl = KNeighborsClassifier()
-    elif algo=="Decision Tree":
-        mdl = DecisionTreeClassifier()
-    elif algo=="Random Forest":
-        mdl = RandomForestClassifier()
-    else:
-        mdl = GradientBoostingClassifier()
+    algo = st.selectbox("Algorithm", ["KNN","Decision Tree","Random Forest","GBRT"])
+    model = {
+        "KNN": KNeighborsClassifier(),
+        "Decision Tree": DecisionTreeClassifier(),
+        "Random Forest": RandomForestClassifier(),
+        "GBRT": GradientBoostingClassifier()
+    }[algo]
+    model.fit(Xt_s, yt)
+    preds = model.predict(Xe_s)
+    prob = model.predict_proba(Xe_s)[:,1]
 
-    mdl.fit(Xt_s, yt)
-    preds = mdl.predict(Xe_s)
-    prob = mdl.predict_proba(Xe_s)[:,1]
     mets = {
         "Accuracy":accuracy_score(ye,preds),
         "Precision":precision_score(ye,preds),
         "Recall":recall_score(ye,preds),
-        "F1":f1_score(ye,preds)
+        "F1 Score": f1_score(ye,preds)
     }
-    st.table(pd.DataFrame.from_dict(mets,orient='index',columns=['Value']))
+    st.table(pd.DataFrame.from_dict(mets, orient='index', columns=['Value']))
 
-    if hasattr(mdl,'feature_importances_'):
-        imp = pd.Series(mdl.feature_importances_,index=X.columns).sort_values()
-        fig = px.bar(imp, orientation='h', title="Feature Importance", template="plotly_white")
+    if hasattr(model,'feature_importances_'):
+        imp = pd.Series(model.feature_importances_, index=X.columns).sort_values(ascending=False)
+        fig = px.bar(imp, orientation='h', title="Feature Importances", template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
+        top_feat = imp.index[0]
+        st.info(f"**Insight:** Top feature is **{top_feat}** with importance {imp.iloc[0]:.2f}.")
 
-    with st.expander("What‐If Analysis"):
-        inp = pd.DataFrame([{c: st.slider(c, float(df[c].min()), float(df[c].max()), float(df[c].mean())) for c in X.columns}])
-        p = mdl.predict(sc.transform(inp))[0]
-        st.success("Will Try" if p==1 else "Will Not Try")
+    cm = confusion_matrix(ye, preds)
+    fig_cm = go.Figure(go.Heatmap(z=cm,
+        x=["Pred No","Pred Yes"], y=["Actual No","Actual Yes"],
+        text=cm, texttemplate="%{text}", colorscale="Blues"))
+    fig_cm.update_layout(title="Confusion Matrix", template="plotly_white")
+    st.plotly_chart(fig_cm, use_container_width=True)
 
-    cm = confusion_matrix(ye,preds)
-    fig_cm = go.Figure(go.Heatmap(
-        z=cm,x=["Pred No","Pred Yes"],y=["Actual No","Actual Yes"],
-        text=cm,texttemplate="%{text}",colorscale="Blues"
-    ))
-    fig_cm.update_layout(title="Confusion Matrix",template="plotly_white")
-    st.plotly_chart(fig_cm,use_container_width=True)
-
-    fpr,tpr,_ = roc_curve(ye,prob)
-    fig_roc = go.Figure(go.Scatter(x=fpr,y=tpr,mode='lines',line_color="#EF476F"))
-    fig_roc.update_layout(title="ROC Curve",template="plotly_white")
-    st.plotly_chart(fig_roc,use_container_width=True)
+    fpr, tpr, _ = roc_curve(ye, prob)
+    fig_roc = go.Figure(go.Scatter(x=fpr, y=tpr, mode='lines', line_color="#EF476F"))
+    fig_roc.update_layout(title="ROC Curve", template="plotly_white")
+    st.plotly_chart(fig_roc, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 3. Clustering
+# ── 3) CLUSTERING ───────────────────────────────────────────────────────────
 with tabs[2]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.subheader("🤝 Clustering")
-    feats=["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
-    inertias=[KMeans(n_clusters=k,random_state=42).fit(df[feats]).inertia_ for k in range(2,11)]
-    fig_e = px.line(x=list(range(2,11)),y=inertias,markers=True,
-                    labels={'x':'K','y':'Inertia'},template="plotly_white")
-    st.plotly_chart(fig_e,use_container_width=True)
+    st.subheader("🤝 K-Means Clustering")
+    feats = ["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
+    inertias = [KMeans(n_clusters=k, random_state=0).fit(df[feats]).inertia_ for k in range(2,11)]
+    fig = px.line(x=list(range(2,11)), y=inertias,
+                  labels={'x':'k','y':'Inertia'},
+                  markers=True, template="plotly_white")
+    st.plotly_chart(fig, use_container_width=True)
+    k = st.slider("Choose k",2,8,4)
+    km = KMeans(n_clusters=k, random_state=0).fit(df[feats])
+    df["Cluster"] = km.labels_
+    counts = df.Cluster.value_counts().sort_index()
+    st.bar_chart(counts)
+    st.info(f"**Insight:** {counts.max()} users in cluster {counts.idxmax()}, {counts.min()} in {counts.idxmin()}.")
 
-    k = st.slider("Clusters (K)",2,8,4)
-    km = KMeans(n_clusters=k,random_state=42).fit(df[feats])
-    df["Cluster"]=km.labels_
-    centers=pd.DataFrame(km.cluster_centers_,columns=feats).round(2)
-    fig_c=px.bar(centers,x=centers.index,y=feats,barmode='group',template="plotly_white")
-    st.plotly_chart(fig_c,use_container_width=True)
-
-    prof=df.groupby("Cluster")[feats].mean().round(1)
-    st.subheader("Cluster Profiles")
-    for c,row in prof.iterrows():
-        st.info(f"Cluster {c}: "+", ".join(f"{f}={v}" for f,v in row.items()))
+    centers = pd.DataFrame(km.cluster_centers_, columns=feats).round(2)
+    st.data_editor(centers, num_rows="dynamic", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 4. Association
+# ── 4) ASSOCIATION ──────────────────────────────────────────────────────────
 with tabs[3]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("🔗 Association Rules")
-    cols=[c for c in df.columns if c.startswith(("Flavour_","Context_"))]
-    s=st.slider("Min Support",0.01,0.2,0.05); cth=st.slider("Min Confidence",0.1,0.7,0.3)
-    freq=apriori(df[cols],min_support=s,use_colnames=True)
-    rules=association_rules(freq,metric="confidence",min_threshold=cth)
-    rules["rule"]=rules["antecedents"].apply(lambda x:", ".join(x))+" → "+rules["consequents"].apply(lambda x:", ".join(x))
-    top=rules.sort_values("lift",ascending=False).head(10)
-    fig=px.bar(top,x="lift",y="rule",orientation='h',color="confidence",template="plotly_white")
-    st.plotly_chart(fig,use_container_width=True)
-
-    G=nx.Graph()
-    for _,r in top.iterrows():
-        for a in r.antecedents:
-            for b in r.consequents:
-                G.add_edge(a,b)
-    pos=nx.spring_layout(G)
-    edge_x,edge_y=[],[]
-    for e in G.edges():
-        x0,y0=pos[e[0]]; x1,y1=pos[e[1]]
-        edge_x+=[x0,x1,None]; edge_y+=[y0,y1,None]
-    edge_trace=go.Scatter(x=edge_x,y=edge_y,mode='lines',line=dict(width=1),hoverinfo='none')
-    node_x,node_y=zip(*[pos[n] for n in G.nodes()])
-    node_trace=go.Scatter(x=node_x,y=node_y,mode='markers+text',
-                          text=list(G.nodes()),textposition='top center',
-                          marker=dict(size=20,color="#EF476F"))
-    fig_n=go.Figure([edge_trace,node_trace],layout=go.Layout(template="plotly_white",title="Rule Network"))
-    st.plotly_chart(fig_n,use_container_width=True)
+    items = [c for c in df.columns if c.startswith(("Flavour_","Context_"))]
+    sup = st.slider("Support",0.01,0.2,0.05)
+    conf = st.slider("Confidence",0.1,0.7,0.3)
+    freq = apriori(df[items], min_support=sup, use_colnames=True)
+    rules = association_rules(freq, metric="confidence", min_threshold=conf)
+    rules["rule"] = (
+        rules.antecedents.apply(lambda x:", ".join(x))
+        + " → "
+        + rules.consequents.apply(lambda x:", ".join(x))
+    )
+    top10 = rules.sort_values("lift",ascending=False).head(10)
+    st.write(top10[["rule","support","confidence","lift"]])
+    best = top10.iloc[0]
+    st.info(f"**Insight:** Strongest rule: **{best.rule}** (lift={best.lift:.2f}).")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 5. Anomaly
+# ── 5) ANOMALY ───────────────────────────────────────────────────────────────
 with tabs[4]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("🚨 Anomaly Detection")
-    feats=["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
-    iso=IsolationForest(contamination=0.05,random_state=42).fit(df[feats])
-    df["Anomaly"]=iso.predict(df[feats])
-    fig=px.scatter(df,x="MonthlyDisposableIncome",y="SpendPerServing",
-                   color=df["Anomaly"].map({1:"Normal",-1:"Anomaly"}),
-                   color_discrete_sequence=["#00FF00","#FF0000"],template="plotly_white")
-    st.plotly_chart(fig,use_container_width=True)
-    st.markdown(f"**Outliers:** {(df['Anomaly']==-1).sum()}")
+    feats = ["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
+    iso = IsolationForest(contamination=0.05, random_state=0).fit(df[feats])
+    df["Anomaly"] = iso.predict(df[feats])
+    fig = px.scatter(df, x="MonthlyDisposableIncome", y="SpendPerServing",
+                     color=df.Anomaly.map({1:"Normal",-1:"Anomaly"}),
+                     template="plotly_white")
+    st.plotly_chart(fig, use_container_width=True)
+    outliers = (df.Anomaly==-1).sum()
+    st.info(f"**Insight:** Detected {outliers} anomalies ({outliers/len(df)*100:.1f}%).")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 6. Regression
+# ── 6) REGRESSION ───────────────────────────────────────────────────────────
 with tabs[5]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("📈 Regression Comparison")
-    Xr=df[["MonthlyDisposableIncome","HealthConsciousness","Age"]]; yr=df["SpendPerServing"]
-    Xt,Xe,yt,ye=train_test_split(Xr,yr,test_size=0.2,random_state=42)
-    models={"Linear":LinearRegression(),"Lasso":Lasso(),"Ridge":Ridge(),"Tree":DecisionTreeRegressor()}
-    res=[]
-    for name,mdl in models.items():
-        mdl.fit(Xt,yt); pr=mdl.predict(Xe)
-        res.append({"Model":name,"R2":r2_score(ye,pr),"RMSE":np.sqrt(mean_squared_error(ye,pr))})
-    rdf=pd.DataFrame(res)
-    st.table(rdf)
-    fig=px.bar(rdf,x="Model",y=["R2","RMSE"],barmode='group',template="plotly_white")
-    st.plotly_chart(fig,use_container_width=True)
+    Xr = df[["MonthlyDisposableIncome","HealthConsciousness","Age"]]
+    yr = df.SpendPerServing
+    Xt, Xe, yt, ye = train_test_split(Xr, yr, test_size=0.2, random_state=0)
+    mods = {
+        "Linear":LinearRegression(),
+        "Lasso":Lasso(),
+        "Ridge":Ridge(),
+        "Tree":DecisionTreeRegressor()
+    }
+    results=[]
+    for name, m in mods.items():
+        m.fit(Xt,yt)
+        pr=m.predict(Xe)
+        results.append({
+            "Model":name,
+            "R2":r2_score(ye,pr),
+            "RMSE":np.sqrt(mean_squared_error(ye,pr))
+        })
+    res_df=pd.DataFrame(results)
+    st.table(res_df)
+    best = res_df.loc[res_df.R2.idxmax()]
+    st.info(f"**Insight:** Best model **{best.Model}** with R2={best.R2:.2f}.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 7. Forecasting
+# ── 7) FORECASTING ──────────────────────────────────────────────────────────
 with tabs[6]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("⏱️ Forecasting")
-    ts=df[["SurveyDate","SpendPerServing"]].rename(columns={"SurveyDate":"ds","SpendPerServing":"y"}).dropna()
+    ts=df[["SurveyDate","SpendPerServing"]].rename(columns={"SurveyDate":"ds","SpendPerServing":"y"})
     if len(ts)>30:
         m=Prophet(); m.fit(ts)
-        fut=m.make_future_dataframe(periods=30); fc=m.predict(fut)
-        st.plotly_chart(plot_plotly(m,fc),use_container_width=True)
+        fut=m.make_future_dataframe(periods=30)
+        fc=m.predict(fut)
+        st.plotly_chart(plot_plotly(m,fc), use_container_width=True)
+        trend = fc.yhat.diff().mean()
+        st.info(f"**Insight:** Average daily increase {trend:.2f} AED.")
     else:
-        st.warning("Not enough data")
+        st.warning("Not enough data (<30 points).")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 8. Cohort
+# ── 8) COHORT ───────────────────────────────────────────────────────────────
 with tabs[7]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("👥 Cohort Analysis")
-    mode=st.radio("Type",["Time","Cluster"])
+    mode = st.radio("Type",["Time","Cluster"], horizontal=True)
     if mode=="Time":
         df["Month"]=df.SurveyDate.dt.to_period("M").astype(str)
-        cr=df.groupby("Month")["SubscribePlan"].apply(lambda x:(x=="Yes").mean()).reset_index(name="Rate")
-        fig=px.line(cr,x="Month",y="Rate",template="plotly_white"); st.plotly_chart(fig,use_container_width=True)
+        cr=df.groupby("Month").SubscribePlan.apply(lambda x:(x=="Yes").mean()).reset_index(name="Rate")
+        fig=px.line(cr,x="Month",y="Rate",template="plotly_white")
+        st.plotly_chart(fig,use_container_width=True)
+        peak=cr.loc[cr.Rate.idxmax()]
+        st.info(f"**Insight:** Highest subscription in {peak.Month} ({peak.Rate:.1%}).")
     else:
         feats=["Age","MonthlyDisposableIncome","SpendPerServing","HealthConsciousness"]
-        k=st.slider("Clusters",2,8,4,key="cohort_k")
-        cl=KMeans(n_clusters=k,random_state=42).fit_predict(df[feats])
-        df["CohortCluster"]=cl
-        cr=df.groupby("CohortCluster")["SubscribePlan"].apply(lambda x:(x=="Yes").mean()).reset_index(name="Rate")
-        fig=px.bar(cr,x="CohortCluster",y="Rate",template="plotly_white"); st.plotly_chart(fig,use_container_width=True)
+        k=st.slider("Clusters",2,8,4)
+        df["CohortCluster"]=KMeans(n_clusters=k,random_state=0).fit_predict(df[feats])
+        cr=df.groupby("CohortCluster").SubscribePlan.apply(lambda x:(x=="Yes").mean()).reset_index(name="Rate")
+        fig=px.bar(cr,x="CohortCluster",y="Rate",template="plotly_white")
+        st.plotly_chart(fig,use_container_width=True)
+        topc=cr.loc[cr.Rate.idxmax()]
+        st.info(f"**Insight:** Cluster {topc.CohortCluster} most likely to subscribe ({topc.Rate:.1%}).")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 9. Geography
+# ── 9) GEOGRAPHY ────────────────────────────────────────────────────────────
 with tabs[8]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("🗺️ Geography")
-    stats=df.groupby("City")["SpendPerServing"].mean().reset_index().sort_values("SpendPerServing",ascending=False)
-    fig=px.bar(stats,x="City",y="SpendPerServing",color="SpendPerServing",template="plotly_white")
+    city_avg=df.groupby("City").SpendPerServing.mean().reset_index()
+    fig=px.choropleth_mapbox(city_avg, geojson=None, locations="City", color="SpendPerServing",
+                             mapbox_style="carto-positron", zoom=4, center={"lat":25,"lon":55},
+                             template="plotly_white")
     st.plotly_chart(fig,use_container_width=True)
+    topc=city_avg.loc[city_avg.SpendPerServing.idxmax()]
+    st.info(f"**Insight:** Highest avg spend in {topc.City} ({topc.SpendPerServing:.2f} AED).")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 10. Sentiment
+# ── 10) SENTIMENT ───────────────────────────────────────────────────────────
 with tabs[9]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("💬 Sentiment")
-    text=" ".join(df.Feedback.astype(str))
+    text=" ".join(df.Feedback.fillna("").tolist())
     wc=WordCloud(width=800,height=400).generate(text)
     fig,ax=plt.subplots(figsize=(10,5)); ax.imshow(wc,interpolation="bilinear"); ax.axis("off")
     st.pyplot(fig)
-    sent=df.Feedback.astype(str).apply(lambda x:TextBlob(x).sentiment.polarity)
-    labels=pd.cut(sent,[-1,-0.1,0.1,1],labels=["Negative","Neutral","Positive"])
-    cnt=labels.value_counts()
-    fig2=px.pie(names=cnt.index,values=cnt.values,template="plotly_white"); st.plotly_chart(fig2,use_container_width=True)
+    scores=df.Feedback.fillna("").apply(lambda x:TextBlob(x).sentiment.polarity)
+    dist=scores.value_counts(bins=[-1,-0.1,0.1,1]).sort_index()
+    fig2=px.pie(names=["Negative","Neutral","Positive"],values=dist.values,template="plotly_white")
+    st.plotly_chart(fig2,use_container_width=True)
+    major=dist.idxmax()
+    st.info(f"**Insight:** Majority sentiment is **{major}**.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 11. LTV & Churn
+# ── 11) LTV & CHURN ─────────────────────────────────────────────────────────
 with tabs[10]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("💰 LTV & Churn")
@@ -340,38 +349,44 @@ with tabs[10]:
     df["LTV"]=df.SpendPerServing*df.FreqNum*12
     churn=(df.SubscribePlan=="No").astype(int)
     Xc=df[["MonthlyDisposableIncome","HealthConsciousness","Age"]]
-    Xt,Xe,yt,ye=train_test_split(Xc,churn,test_size=0.2,random_state=42)
-    clf=RandomForestClassifier(random_state=42).fit(Xt,yt); preds=clf.predict(Xe)
-    mets={"Accuracy":accuracy_score(ye,preds),"Precision":precision_score(ye,preds),"Recall":recall_score(ye,preds)}
+    Xt,Xe,yt,ye=train_test_split(Xc,churn,test_size=0.2,random_state=0)
+    clf=RandomForestClassifier(random_state=0).fit(Xt,yt)
+    pr=clf.predict(Xe)
+    mets={"Acc":accuracy_score(ye,pr),"Prec":precision_score(ye,pr),"Rec":recall_score(ye,pr)}
     st.table(pd.DataFrame.from_dict(mets,orient='index',columns=['Value']))
-    fig=px.histogram(df,x="LTV",nbins=30,template="plotly_white"); st.plotly_chart(fig,use_container_width=True)
+    avg_ltv=df.LTV.mean()
+    st.info(f"**Insight:** Avg LTV is {avg_ltv:.2f} AED.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 12. Price Elasticity
+# ── 12) PRICE ELASTICITY ─────────────────────────────────────────────────────
 with tabs[11]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("💵 Price Elasticity")
-    price=st.slider("Price per Serving",5,30,12)
-    buyers=df[df.SpendPerServing>=price].shape[0]
-    rev=buyers*price
-    st.metric("Expected Buyers",buyers); st.metric("Expected Revenue (AED)",rev)
+    base_price = df.SpendPerServing.median()
+    price = st.slider("Price per Serving", int(df.SpendPerServing.min()), int(df.SpendPerServing.max()), base_price)
+    buyers = df[df.SpendPerServing>=price].shape[0]
+    rev = buyers * price
+    elasticity = buyers / len(df)
+    st.metric("Buyers", buyers)
+    st.metric("Revenue (AED)", rev)
+    st.info(f"**Insight:** Conversion at {price} AED is {elasticity:.1%}.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 13. Glossary
+# ── 13) GLOSSARY ────────────────────────────────────────────────────────────
 with tabs[12]:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.header("📚 Glossary")
-    glossary={
-        "SpendPerServing":"AED spent per serving.",
-        "HealthConsciousness":"Self-rated health importance (1-10).",
-        "TryNewBrand":"Willingness to try a new brand (Yes/No).",
-        "SubscribePlan":"Subscription status (Yes/No).",
-        "MonthlyDisposableIncome":"Monthly disposable income (AED).",
-        "Age":"Age of respondent.",
-        "ExerciseFrequency":"How often respondent exercises.",
-        "ConsumptionFrequency":"How often health drink is consumed.",
-        "Feedback":"Free-text user feedback."
+    glossary = {
+        "SpendPerServing": "AED spent per serving.",
+        "HealthConsciousness": "Self-rated health importance (1–10).",
+        "TryNewBrand": "Willingness to try new brand (Yes/No).",
+        "SubscribePlan": "Subscription status.",
+        "MonthlyDisposableIncome": "Disposable income per month (AED).",
+        "Age": "Respondent age.",
+        "ExerciseFrequency": "Exercise frequency.",
+        "ConsumptionFrequency": "Consumption frequency.",
+        "Feedback": "User comments."
     }
-    for k,v in glossary.items():
-        st.markdown(f"**{k}** <abbr title='{v}'>ℹ️</abbr>")
+    for term, desc in glossary.items():
+        st.markdown(f"**{term}** <abbr title='{desc}'>ℹ️</abbr>")
     st.markdown('</div>', unsafe_allow_html=True)
